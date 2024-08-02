@@ -58,7 +58,9 @@ format: revealjs
 - Learn how to use statistical methods on biological data.
 - How to use R to effectively derive insights from data.
 
+## Course Repository
 
+https://github.com/adejumoridwan/Biostatistics-with-R
 
 
 
