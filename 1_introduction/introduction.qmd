@@ -37,6 +37,8 @@ format: revealjs
 - Survival analysis
 - Categorical data analysis
 - Genetic studies
+- Public Health
+- Epidemiology
 
 ## Career prospects in Biostatistics
 
@@ -52,6 +54,7 @@ format: revealjs
 - Stata
 - SPSS
 - SAS
+
 
 ## What this course is all about?
 

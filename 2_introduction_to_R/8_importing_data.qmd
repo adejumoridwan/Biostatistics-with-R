@@ -1,0 +1,195 @@
+---
+title: "Importing Data"
+author: "Adejumo Ridwan Suleiman"
+output: html_document
+---
+
+
+## Importing data 
+So far, we've looked at examples of data they either came shipped with base R or `ggplot2`, or simple toy examples that we created ourselves, like `bookstore`. While you can do all your data entry work in R, `bookstore` style, it is much more common to load data from other sources. Two important types of files are _comma-separated value files_, `.csv`, and Excel spreadsheets, `.xlsx`. `.csv` files are spreadsheets stored as text files - basically Excel files stripped down to the bare minimum - no formatting, no formulas, no macros. You can open and edit them in spreadsheet software like LibreOffice Calc, Google Sheets or Microsoft Excel. Many devices and databases can export data in `.csv` format, making it a commonly used file format that you are likely to encounter sooner rather than later.
+
+### Importing csv files
+In order to load data from a file into R, you need its _path_ - that is, you need to tell R where to find the file. Unless you specify otherwise, R will look for files in its current _working directory_. To see what your current working directory is, run the following code in the Console panel:
+
+```{r eval=FALSE}
+getwd()
+```
+
+In RStudio, your working directory will usually be shown in the Files panel. If you have opened RStudio by opening a `.R` file, the working directory will be the directory in which the file is stored. You can change the working directory by using the function `setwd` or selecting _Session > Set Working Directory > Choose Directory_ in the RStudio menu.
+
+
+Import the philosopher's file
+```{r eval=FALSE}
+"Name","Description","Born","Deceased","Rating"
+"Aristotle","Pretty influential, as philosophers go.",-384,"322 BC",
+"4.8"
+"Basilides","Denied the existence of incorporeal entities.",-175,
+"125 BC",4
+"Cercops","An Orphic poet",,,"3.2"
+"Dexippus","Neoplatonic!",235,"375 AD","2.7"
+"Epictetus","A stoic philosopher",50,"135 AD",5
+"Favorinus","Sceptic",80,"160 AD","4.7"
+```
+
+Then run the following code to import the data using the `read.csv` function and store it in a variable named `imported_data`:
+
+```{r eval=FALSE}
+imported_data <- read.csv("philosophers.csv")
+```
+
+If you get an error message that says:
+
+```{r eval=FALSE}
+Error in file(file, "rt") : cannot open the connection
+In addition: Warning message:
+In file(file, "rt") :
+  cannot open file 'philosophers.csv': No such file or directory
+```
+
+...it means that `philosophers.csv` is not in your working directory. Either move the file to the right directory (remember, you can use run `getwd()` to see what your working directory is) or change your working directory, as described above.
+
+Now, let's have a look at `imported_data`:
+
+```{r eval=FALSE}
+View(imported_data)
+str(imported_data)
+```
+
+The columns `Name` and `Description` both contain text, and have been imported as `character` vectors^[If you are running an older version of R (specifically, a version older than the 4.0.0 version released in April 2020), the `character` vectors will have been imported as `factor` vectors instead. You can change that behaviour by adding a `stringsAsFactors = FALSE` argument to `read.csv`.]. The `Rating` column contains numbers with decimals and has been imported as a `numeric` vector. The column `Born` only contain integer values, and has been imported as an `integer` vector. The missing value is represented by an `NA`. The `Deceased` column contains years formatted like `125 BC` and `135 AD`. These have been imported into a `character` vector - because numbers and letters are mixed in this column, R treats is as a text string we will see how we can convert it to numbers or proper dates). In this case, the missing value is represented by an empty string, `""`, rather than by `NA`.
+
+So, what can you do in case you need to import data from a file that is not in your working directory? This is a common problem, as many of us store script files and data files in separate folders (or even on separate drives). One option is to use `file.choose`\index{\texttt{file.choose}}, which opens a pop-up window that lets you choose which file to open using a graphical interface:
+
+```{r eval=FALSE}
+imported_data2 <- read.csv(file.choose())
+```
+
+A third option is not to write any code at all. Instead, you can import the data using RStudio's graphical interface by choosing _File > Import dataset > From Text (base)_ and then choosing `philosophers.csv`. This will generate the code needed to import the data (using `read.csv`) and run it in the Console window.
+
+The latter two solutions work just fine if you just want to open a single file once. But if you want to reuse your code or run it multiple times, you probably don't want to have to click and select your file each time. Instead, you can specify the path to your file in the call to `read.csv`.
+
+### File paths
+File paths look different in different operating systems. If the user `Mans` has a file named `philosophers.csv` stored in a folder called `MyData` on his desktop, its path on an English-language Windows system would be:
+
+```{r eval=FALSE}
+C:\Users\Mans\Desktop\MyData\philosophers.csv
+```
+
+On a Mac it would be:
+
+```{r eval=FALSE}
+/Users/Mans/Desktop/MyData/philosophers.csv
+```
+
+And on Linux:
+
+```{r eval=FALSE}
+/home/Mans/Desktop/MyData/philosophers.csv
+```
+
+You can copy the path of the file from your file browser:\index{file!find path} Explorer^[To copy the path, navigate to the file in Explorer. Hold down the Shift key and right-click the file, selecting _Copy as path_.] (Windows), Finder^[To copy the path, navigate to the file in Finder and right-click/Control+click/two-finger click on the file. Hold down the Option key, and then select _Copy "file name" as Pathname_.] (Mac) or Nautilus/similar^[To copy the path from Nautilus, navigate to the file and press Ctrl+L to show the path, then copy it. If you are using some other file browser or the terminal, my guess is that you're tech-savvy enough that you don't need me to tell you how to find the path of a file.] (Linux). Once you have copied the path, you can store it in R as a `character` string.
+
+Here's how to do this on Mac and Linux:
+
+```{r eval=FALSE}
+file_path <- "/Users/Mans/Desktop/MyData/philosophers.csv" # Mac
+file_path <- "/home/Mans/Desktop/MyData/philosophers.csv"  # Linux
+```
+
+If you're working on a Windows system, file paths are written using backslashes, `\`, like so:
+
+```{r eval=FALSE}
+C:\Users\Mans\Desktop\MyData\file.csv
+```
+
+You have to be careful when using backslashes in `character` strings in R, because they are used to create special characters If we place the above path in a string, R won't recognize it as a path. Instead we have to reformat it into one of the following two formats:
+
+```{r eval=FALSE}
+# Windows example 1:
+file_path <- "C:/Users/Mans/Desktop/MyData/philosophers.csv"
+# Windows example 2:
+file_path <- "C:\\Users\\Mans\\Desktop\\MyData\\philosophers.csv"
+```
+
+If you've copied the path to your clipboard, you can also get the path in the second of the formats above by using
+
+```{r eval=FALSE}
+file_path <- readClipboard()   # Windows example 3
+```
+
+Once the path is stored in `file_path`, you can then make a call to `read.csv` to import the data:
+
+```{r eval=FALSE}
+imported_data <- read.csv(file_path)
+```
+
+Try this with your `philosophers.csv` file, to make sure that you know how it works.
+
+Finally, you can read a file directly from a URL, by giving the URL as the file path.Here is an example with data from [the WHO Global Tuberculosis Report](https://www.who.int/tb/country/data/download/en/):
+
+```{r eval=FALSE}
+# Download WHO tuberculosis burden data:
+tb_data <- read.csv("https://tinyurl.com/whotbdata")
+```
+
+`.csv` files can differ slightly in how they are formatted - for instance, different symbols can be used to delimit the columns. You will learn how to handle this in the exercises below.
+
+A downside to `read.csv` is that it is very slow when reading large (50 MB or more) csv files. Faster functions are available in add-on packages. In addition, it is also possible to import data from other statistical software packages such as SAS and SPSS, from other file formats like JSON, and from databases. We'll discuss most of these in this section.
+
+### Importing Excel files
+One common file format we will discuss right away though - `.xlsx` - Excel spreadsheet files. There are several packages that can be used to import Excel files to R. I like the `openxlsx` package, so let's install that:
+
+```{r eval=FALSE}
+install.packages("openxlsx")
+```
+
+Now, [download the `philosophers.xlsx` file from the book's web page](http://www.modernstatisticswithr.com/data.zip) and save it in a folder of your choice. Then set `file_path` to the path of the file, just as you did for the `.csv` file. To import data from the Excel file, you can then use:
+
+```{r eval=FALSE}
+library(openxlsx)
+imported_from_Excel <- read.xlsx(file_path)
+View(imported_from_Excel)
+str(imported_from_Excel)
+```
+
+As with `read.csv`, you can replace the file path with `file.choose()` in order to select the file manually.
+
+#### Exercise
+The abbreviation CSV stands for _Comma Separated Values_, i.e. that commas `,` are used to separate the data columns. Unfortunately, the `.csv` format is not standardised, and `.csv` files can use different characters to delimit the columns. Examples include semicolons (`;`) and tabs (multiple spaces, denoted `\t` in strings in R). Moreover, decimal points can be given either as points (`.`) or as commas (`,`).
+
+In this dataset, a number of patients with chronic pain have recorded how much pain they experience each day during a period, using the Visual Analogue Scale (VAS, ranging from 0 - no pain - to 10 - worst imaginable pain). Inspect the file in a spreadsheet software and a text editor - check which symbol is used to separate the columns and whether a decimal point or a decimal comma is used. Then set `file_path` to its path and import the data from it using the code below:
+```{r eval=FALSE}
+vas <- read.csv(file_path, sep = ";", dec = ",", skip = 4)
+View(vas)
+str(vas)
+```
+
+1. Why are there two variables named `X` and `X.1` in the data frame?
+
+2. What happens if you remove the `sep = ";"` argument?
+
+3. What happens if you instead remove the `dec = ","` argument?
+
+4. What happens if you instead remove the `skip = 4` argument?
+
+5. What happens if you change `skip = 4` to `skip = 5`?
+
+
+## Saving and exporting your data
+In many a case, data manipulation is a huge part of statistical work, and of course you want to be able to save a data frame after manipulating it. There are two options for doing this in R - you can either export the data as e.g. a `.csv` or a `.xlsx` file, or save it in R format as an `.RData` file.
+
+### Exporting data
+Just as we used the functions `read.csv` and `read.xlsx` to import data, we can use `write.csv` and `write.xlsx`to export it. The code below saves the `bookstore` data frame as a `.csv` file and an `.xlsx` file. Both files will be created in the current working directory. If you wish to store them somewhere else, you can replace the `"bookstore.csv"` bit with a full path, e.g. `"/home/mans/my-business/bookstore.csv"`.
+
+#### Example
+
+```{r}
+# Bookstore example
+age <- c(28, 48, 47, 71, 22, 80, 48, 30, 31)
+purchase <- c(20, 59, 2, 12, 22, 160, 34, 34, 29)
+bookstore <- data.frame(age, purchase)
+# Export to .csv:
+write.csv(bookstore, "bookstore.csv")
+# Export to .xlsx (Excel):
+library(openxlsx)
+write.xlsx(bookstore, "bookstore.xlsx")
+```

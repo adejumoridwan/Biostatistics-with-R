@@ -1,0 +1,39 @@
+---
+title: "Mathematical Operations"
+author: "Adejumo Ridwan Suleiman"
+output: html_document
+---
+
+### Mathematical operations {#maths}
+To perform addition, subtraction, multiplication and division in R, we can use the standard symbols `+`, `-`, `*`, `/`. As in mathematics, expressions within parentheses are evaluated first, and multiplication is performed before addition. So `1 + 2*(8/2)` is $1+2\cdot(8/2)=1+2\cdot 4=1+8=9$.
+
+In addition to these basic arithmetic operators, R has a number of mathematical functions that you can apply to your variables, including square roots, logarithms and trigonometric functions. Below is an incomplete list, showing the syntax for using the functions on a variable `x`. Throughout, `a` is supposed to be a number.
+
+* `abs(x)`: computes the absolute value $|x|$.
+* `sqrt(x)`: computes $\sqrt{x}$.
+* `log(x)`: computes the logarithm of $x$ with the natural number $e$ as the base.
+* `log(x, base = a)`: computes the logarithm of $x$ with the number $a$ as the base.
+* `a^x`: computes $a^x$.
+* `exp(x)`: computes $e^x$.
+* `sin(x)`: computes $\sin(x)$.
+* `sum(x)`: when `x` is a vector $x=(x_1,x_2,x_3,\ldots,x_n)$, computes the sum of the elements of `x`: $\sum_{i=1}^nx_i$.
+* `prod(x)`: when `x` is a vector $x=(x_1,x_2,x_3,\ldots,x_n)$, computes the product of the elements of `x`: $\prod_{i=1}^nx_i$.
+* `pi`: a built-in variable with value $\pi$, the ratio of the circumference of a circle to its diameter.
+* `x %% a`: computes $x$ modulo $a$.
+* `factorial(x)`: computes $x!$.
+* `choose(n,k)`: computes ${n}\choose{k}$.
+
+```{exercise, label="ch2bexc7"}
+Compute the following:
+1. $\sqrt{\pi}$
+2. $e^2\cdot log(4)$
+```
+
+
+#### Exercise
+R will return non-numerical answers if you try to perform computations where the answer is infinite or undefined. Try the following to see some possible results:
+1. Compute $1/0$.
+2. Compute $0/0$.
+3. Compute $\sqrt{-1}$.
+
+
