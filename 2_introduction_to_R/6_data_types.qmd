@@ -4,12 +4,9 @@ author: "Adejumo Ridwan Suleiman"
 output: html_document
 ---
 
-# Data frames and data types
+# Data types
 
-### Types and structures
-We have already seen that different kinds of data require different kinds of statistical methods. For numeric data we create boxplots and compute means, but for categorical data we don't. Instead we produce bar charts and display the data in tables. It is no surprise then, that what R also treats different kinds of data differently. 
-
-In programming, a variable's _data type_ describes what kind of object is assigned to it. We can assign many different types of objects to the variable `a`: it could for instance contain a number, text, or a data frame. In order to treat `a` correctly, R needs to know what data type its assigned object has. In some programming languages, you have to explicitly state what data type a variable has, but not in R. This makes programming R simpler and faster, but can cause problems if a variable turns out to have a different data type than what you thought..
+In programming, a variable's _data type_ describes what kind of object is assigned to it.
 
 R has six basic data types. For most people, it suffices to know about the first three in the list below:
 
@@ -48,7 +45,7 @@ all_together
 class(all_together)
 ```
 
-In this case, R has coerced the objects in the vector to all be of the same type. Sometimes that is desirable, and sometimes it is not. The lesson here is to be careful when you create a vector from different objects. We'll learn more about coercion and how to change data types in Section .
+In this case, R has coerced the objects in the vector to all be of the same type. 
 
 ### Types of tables 
 The basis for most data analyses in R are data frames: spreadsheet-like tables with rows and columns containing data. You encountered some data frames in the previous chapter. Have a quick look at them to remind yourself of what they look like:

@@ -6,8 +6,6 @@ output: html_document
 
 ### Functions
 
-You have some data. Great. But simply having data is not enough - you want to _do_ something with it. Perhaps you want to draw a graph, compute a mean value or apply some advanced statistical model to it. To do so, you will use a _function_.
-
 A function is a ready-made set of instructions - code - that tells R to do something. There are thousands of functions in R. Typically, you insert a variable into the function, and it returns an answer. The code for doing this follows the pattern `function_name(variable_name)`. 
 
 ```{r eval=FALSE}
@@ -18,7 +16,6 @@ mean(age)
 
 Note that the code follows the pattern `function_name(variable_name)`: the function's name is `mean` and the variable's name is `age`.
 
-Some functions take more than one variable as input, and may also have additional _arguments_(or _parameters_) that you can use to control the behaviour of the function. One such example is `cor`, which computes the correlation between two variables:
 
 ```{r eval=FALSE}
 # Compute the correlation between the variables age and purchase
@@ -27,13 +24,12 @@ purchase <- c(20, 59, 2, 12, 22, 160, 34, 34, 29)
 cor(age, purchase)
 ```
 
-The answer, $0.59$ means that there appears to be a fairly strong positive correlation between age and the purchase size, which implies that older customers tend to spend more. On the other hand, just by looking at the data we can see that the oldest customer - aged 80 - spent much more than anybody else - 160 monetary units. It can happen that such _outliers_ strongly influence the computation of the correlation. By default, `cor` uses the Pearson correlation formula, which is known to be sensitive to outliers. It is therefore of interest to also perform the computation using a formula that is more robust to outliers, such as the Spearman correlation. This can be done by passing an additional _argument_ to `cor`, telling it which method to use for the computation:
+
 
 ```{r eval=FALSE}
 cor(age, purchase, method = "spearman")
 ```
 
-The resulting correlation, $0.35$ is substantially lower than the previous result. Perhaps the correlation isn't all that strong after all.
 
 So, how can we know what arguments to pass to a function? Luckily, we don't have to memorise all possible arguments for all functions. Instead, we can look at the _documentation_, i.e. help file, for a function that we are interested in. This is done by typing `?function_name` in the Console panel, or doing a web search for `R function_name`. To view the documentation for the `cor` function, type:
 
@@ -41,19 +37,6 @@ So, how can we know what arguments to pass to a function? Luckily, we don't have
 ?cor
 ```
 
-The documentation for R functions all follow the same pattern:
-
-* _Description_: a short (and sometimes quite technical) description of what the function does.
-* _Usage_: an abstract example of how the function is used in R code.
-* _Arguments_: a list and description of the input arguments for the function.
-* _Details_: further details about how the function works.
-* _Value_: information about the output from the function.
-* _Note_: additional comments from the function's author (not always included).
-* _References_: references to papers or books related to the function (not always included).
-* _See Also_: a list of related functions.
-* _Examples_: practical (and sometimes less practical) examples of how to use the function.
-
-The first time that you look at the documentation for an R function, all this information can be a bit overwhelming. Perhaps even more so for `cor`, which is a bit unusual in that it shares its documentation page with three other (heavily related) functions: `var`, `cov` and `cov2cor`. Let the section headlines guide you when you look at the documentation. What information are you looking for? If you're just looking for an example of how the function is used, scroll down to Examples. If you want to know what arguments are available, have a look at Usage and Arguments.
 
 #### Exercise
 Using the data you created in Exercise, do the following:

@@ -6,11 +6,8 @@ output: html_document
 
 ## Variables
 
-Of course, R is so much more than just a fancy calculator. To unlock its full potential, we need to discuss two key concepts: *variables* (used for storing data).
-
 ### Storing data
-
-Without data, no data analytics. So how can we store and read data in R? The answer is that we use *variables*. A variable is a name used to store data, so that we can refer to a dataset when we write code. As the name *variable* implies, what is stored can change over time.
+A variable is a name used to store data, so that we can refer to a dataset when we write code. As the name *variable* implies, what is stored can change over time.
 
 The code
 
@@ -18,54 +15,21 @@ The code
 x <- 4
 ```
 
-is used to *assign* the value `4` to the *variable* `x`. It is read as "assign `4` to `x`". The `<-` part is made by writing a less than sign (`<`) and a hyphen (`-`) with no space between them[^1].
 
-[^1]: In RStudio, you can also create the assignment operator `<-` by using the keyboard shortcut Alt+- (i.e. press Alt and the - button at the same time).
 
-If we now type `x` in the Console, R will return the answer `4`. Well, almost. In fact, R returns the following rather cryptic output:
-
-``` {eval="FALSE"}
-[1] 4
-```
-
-The meaning of the `4` is clear - it's a 4. We'll return to what the `[1]` part means soon.
-
-Now that we've created a variable, called `x`, and assigned a value (4) to it, `x` will have the value 4 whenever we use it again. This works just like a mathematical formula, where we for instance can insert the value $x=4$ into the formula $x+1$. The following two lines of code will compute $x+1=4+1=5$ and $x+x=4+4=8$:
+In RStudio, you can also create the assignment operator `<-` by using the keyboard shortcut Alt+- (i.e. press Alt and the - button at the same time).
 
 ```{r eval=FALSE}
 x + 1
 x + x
 ```
 
-Once we have assigned a value to `x`, it will appear in the Environment panel in RStudio, where you can see both the variable's name and its value.
-
-The left-hand side of the assignment `x <- 4` is always the name of a variable, but the right-hand side can be any piece of code that creates some sort of object to be stored in the variable. For instance, we could perform a computation on the right-hand side and then store the result in the variable:
 
 ```{r eval=FALSE}
 x <- 1 + 2 + 3 + 4
 ```
 
-R first evaluates the entire right-hand side, which in this case amounts to computing 1+2+3+4, and then assigns the result (10) to `x`. Note that the value previously assigned to `x` (i.e. `4`) now has been replaced by `10`. After a piece of code has been run, the values of the variables affected by it will have changed. There is no way to revert the run and get that `4` back, save to rerun the code that generated it in the first place.
 
-You'll notice that in the code above, I've added some spaces, for instance between the numbers and the plus signs. This is simply to improve readability. The code works just as well without spaces:
-
-```{r eval=FALSE}
-x<-1+2+3+4
-```
-
-or with spaces in some places but not in others:
-
-```{r eval=FALSE}
-x<- 1+2+3 + 4
-```
-
-However, you can not place a space in the middle of the `<-` arrow. The following will not assign a value to `x`:
-
-```{r eval=FALSE}
-x < - 1 + 2 + 3 + 4
-```
-
-Running that piece of code rendered the output `FALSE`. This is because `< -` with a space has a different meaning than `<-` in R.
 
 In rare cases, you may want to switch the direction of the arrow, so that the variable names is on the right-hand side. This is called right-assignment and works just fine too:
 
@@ -73,7 +37,6 @@ In rare cases, you may want to switch the direction of the arrow, so that the va
 2 + 2 -> y
 ```
 
-Later on, we'll see plenty of examples where right-assignment comes in handy.
 
 #### Exercise
 
