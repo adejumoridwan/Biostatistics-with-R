@@ -1,0 +1,81 @@
+Here are 10 multiple-choice questions based on the provided material, along with their answers:
+
+1. **Which of the following is an example of primary data?**
+   - A) Hospital records
+   - B) Public repositories
+   - C) Surveys
+   - D) Government publications
+   
+   **Answer: C) Surveys**
+
+2. **What type of data does the nominal scale classify?**
+   - A) Numerical data with true zero
+   - B) Categorical data without numerical magnitude
+   - C) Ranked and ordered data
+   - D) Data with arbitrary starting points
+
+   **Answer: B) Categorical data without numerical magnitude**
+
+3. **Which of the following is NOT a characteristic of the nominal scale?**
+   - A) Has a numerical magnitude
+   - B) Classifies or categorizes data
+   - C) Responses are usually coded
+   - D) Measured by counting frequencies
+
+   **Answer: A) Has a numerical magnitude**
+
+4. **Which scale of measurement includes temperature measured in Celsius or Fahrenheit?**
+   - A) Nominal scale
+   - B) Ordinal scale
+   - C) Interval scale
+   - D) Ratio scale
+
+   **Answer: C) Interval scale**
+
+5. **Which of the following is a property unique to the ratio scale?**
+   - A) Arbitrary starting point
+   - B) True zero point
+   - C) Data categorization
+   - D) Measurement in numbers
+
+   **Answer: B) True zero point**
+
+6. **Which type of data is ranked and ordered?**
+   - A) Nominal data
+   - B) Ordinal data
+   - C) Interval data
+   - D) Ratio data
+
+   **Answer: B) Ordinal data**
+
+7. **What type of data is the blood group (A, B, AB, O)?**
+   - A) Nominal scale
+   - B) Ordinal scale
+   - C) Interval scale
+   - D) Ratio scale
+
+   **Answer: A) Nominal scale**
+
+8. **Which of the following is a variable?**
+   - A) Blood group
+   - B) Temperature
+   - C) Height
+   - D) All of the above
+
+   **Answer: D) All of the above**
+
+9. **Which scale of measurement has no absolute zero point?**
+   - A) Nominal scale
+   - B) Ordinal scale
+   - C) Interval scale
+   - D) Ratio scale
+
+   **Answer: C) Interval scale**
+
+10. **Which of the following examples represents ordinal data?**
+    - A) Blood pressure
+    - B) IQ scores
+    - C) Cancer stage
+    - D) Age
+
+    **Answer: C) Cancer stage**

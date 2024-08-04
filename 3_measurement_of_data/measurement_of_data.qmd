@@ -1,0 +1,106 @@
+---
+title: "Measurement of Data"
+author: "Adejumo Ridwan Suleiman"
+format: revealjs
+---
+
+# Data Collection
+
+## Data Collection
+
+- **Primary data:** Surveys, Questionnaires
+- **Secondary data:** Hospital records, public repositories
+
+##
+
+![Source: [Medium](https://medium.com/@shubavarma/data-variables-and-their-types-a007bccb36c6)](images/data_collection.jpg){fig-align="center"}
+
+# Scales of Measurement
+
+**Qualitative Data (Categorical data)**
+
+- Nominal
+
+- Ordinal
+
+**Quantitative Data (Numerical data)**
+
+- Interval
+
+- Ratio
+
+# Nominal Scale
+
+## Nominal Scale
+
+- Does not have a numerical magnitude
+- Classifies or categorizes data
+- Responses are usually coded
+- Measured by counting frequencies in each code or category
+- Summary indices are usually proportions, rates and percentages
+
+## Examples
+- **Blood Group:** A, B, AB, O
+- **Sex:** Male, Female
+- Socio-economic status
+- Marital Status
+
+# Ordinal Scale
+
+## Ordinal Scale
+
+- Has properties of nominal data
+- It is ranked and ordered
+
+## Examples
+
+- Cancer stage
+- Level of education
+- Level of income
+
+# Interval Scale
+
+## Interval Scale
+
+- Measurement is expressed in numbers
+- Starting point is arbitrary
+- There is no absolute zero point
+- Has unit of measurement
+
+## Examples
+- Temperature(Celsius or Fahrenheit)
+- IQ Scores
+- pH measure
+
+
+# Ratio Scale
+
+## Ratio Scale
+
+- Has properties of interval scale
+- Possesses true zero point
+- Can be categorized to ordinal scales
+- Each numerical interval is one unit of measurement
+
+## Examples
+
+- Height
+- Weight
+- Age 
+- Blood pressure
+
+# Variables
+
+## What is a variable?
+
+A variable is a characteristic, number, or quantity that can be measured or quantified.
+
+## 
+
+![Source: [Medium](https://medium.com/@shubavarma/data-variables-and-their-types-a007bccb36c6)](images/variable.jpg){fig-align="center"}
+
+## 
+
+![Source: [Medium](https://medium.com/@shubavarma/data-variables-and-their-types-a007bccb36c6)](images/data_categories.jpg){fig-align="center"}
+
+
