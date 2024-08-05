@@ -1,0 +1,137 @@
+---
+title: "Data Visualization"
+author: "Adejumo Ridwan Suleiman"
+format: revealjs
+---
+
+
+## What is Data Visualization?
+
+- Graphical representation of data using charts and plots.
+- Easily communicate information making it easy to understand.
+
+## Types of Data Visualization
+
+- Histogram
+
+- Frequency Polygon
+
+- Stem and Leaf Plots
+
+- Box Plots
+
+- Bar chart
+
+- Pie chart
+
+# Histogram
+
+## Histogram
+
+- Used with discrete or continuous data
+- Shows the underlying distribution of a data
+- The data is split into intervals called *bins*
+- Each bin contains the number of occurrences of scores in the data set contained within that bin.
+
+## Histogram
+
+```{r echo=FALSE}
+# Load ggplot2 package
+library(ggplot2)
+
+# Load the mtcars dataset
+data("mtcars")
+
+# Create histogram of the mpg variable
+ggplot(mtcars, aes(x = mpg)) +
+  geom_histogram(binwidth = 2, fill = "green", color = "black", alpha = 0.7) +
+  labs(title = "Histogram of Miles Per Gallon (mpg) in mtcars Dataset",
+       x = "Miles Per Gallon (mpg)",
+       y = "Frequency") +
+  theme_minimal()
+
+```
+
+
+# Bar Chart
+
+## Bar Chart
+
+- Used with categorical data
+- Bars are either plotted horizontally or vertically
+- Compares various categories
+
+## Bar Chart
+
+```{r echo=FALSE}
+# Load the ggplot2 package
+library(ggplot2)
+
+# Create a bar chart colored by diamond cut
+ggplot(data = diamonds, aes(x = cut, fill = cut)) + 
+  geom_bar(color = "black") + 
+  labs(title = "Number of Diamonds by Cut",
+       x = "Cut",
+       y = "Count of Diamonds") + 
+  theme_minimal()
+
+```
+
+## Difference between histogram and bar chart
+
+| Feature | Histogram | Bar Chart |
+| --- | --- | --- |
+|Data type | Used with numerical data | Used with categorical data |
+| Purpose | Represents the distribution of numerical data | Compares different categories or groups |
+| Bars | Touch each other (no gaps) | Separated by spaces |
+
+# Box Plot
+
+## Box plot
+
+- Also known as box and whisker plot
+- Used to measure the measures of central tendency in a data
+- Used with numerical data
+- Divides a data into 4 parts
+
+## Box Plot
+
+```{r}
+# Load the ggplot2 package
+library(ggplot2)
+
+# Load the iris dataset
+data(iris)
+
+# Create a boxplot with color by species
+ggplot(iris, aes(x = Species, y = Sepal.Length, color = Species)) +
+  geom_boxplot() +
+  theme_minimal() +
+  labs(title = "Boxplot of Sepal Length by Species",
+       x = "Species",
+       y = "Sepal Length")
+
+
+```
+
+
+## Box Plot
+
+![Different parts of a boxplot. Source: [BYJU](https://byjus.com/maths/box-plot/)](images/boxplot.jpg)
+
+
+# Pie Chart
+
+## Pie Chart
+
+
+# Scatter plot
+
+
+# Line plot
+
+
+# Frequency Polygon
+
+
+# Stem and Leaf Plot
