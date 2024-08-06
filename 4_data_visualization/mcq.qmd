@@ -1,0 +1,71 @@
+1. Which type of graph is best suited for displaying the distribution of continuous data?
+   a) Bar Chart
+   b) Histogram
+   c) Pie Chart
+   d) Scatter Plot
+   Answer: b) Histogram
+
+2. In a box plot, what does the box represent?
+   a) The range of the data
+   b) The interquartile range
+   c) The median
+   d) The mode
+   Answer: b) The interquartile range
+
+3. Which graph type is most appropriate for showing the relationship between two continuous variables?
+   a) Bar Chart
+   b) Line Graph
+   c) Pie Chart
+   d) Scatter Plot
+   Answer: d) Scatter Plot
+
+4. What is the primary purpose of a frequency polygon?
+   a) To show the distribution of categorical data
+   b) To compare multiple distributions
+   c) To display the relationship between two variables
+   d) To represent proportions of a whole
+   Answer: b) To compare multiple distributions
+
+5. In a pie chart, what does each slice represent?
+   a) A percentage of the total
+   b) A specific value
+   c) A range of values
+   d) A correlation between variables
+   Answer: a) A percentage of the total
+
+6. Which graph type is best for showing trends over time?
+   a) Bar Chart
+   b) Histogram
+   c) Line Graph
+   d) Scatter Plot
+   Answer: c) Line Graph
+
+7. What feature of a box plot represents the median of the data?
+   a) The upper whisker
+   b) The lower whisker
+   c) The line inside the box
+   d) The box itself
+   Answer: c) The line inside the box
+
+8. Which graph type is most suitable for comparing categories of data?
+   a) Bar Chart
+   b) Histogram
+   c) Pie Chart
+   d) Scatter Plot
+   Answer: a) Bar Chart
+
+9. In a scatter plot, what do the individual points represent?
+   a) Categories
+   b) Percentages
+   c) Time intervals
+   d) Individual data pairs
+   Answer: d) Individual data pairs
+
+10. What is a key difference between a histogram and a bar chart?
+    a) Histograms use vertical bars, while bar charts use horizontal bars
+    b) Histograms represent continuous data, while bar charts represent categorical data
+    c) Histograms always show percentages, while bar charts show absolute values
+    d) Histograms are three-dimensional, while bar charts are two-dimensional
+    Answer: b) Histograms represent continuous data, while bar charts represent categorical data
+
+Would you like me to explain or elaborate on any of these questions or answers?

@@ -14,15 +14,17 @@ format: revealjs
 
 - Histogram
 
+- Bar Chart
+
+- Box plots
+
+- Pie Chart
+
+- Scatter plot
+
+- Line Graph
+
 - Frequency Polygon
-
-- Stem and Leaf Plots
-
-- Box Plots
-
-- Bar chart
-
-- Pie chart
 
 # Histogram
 
@@ -64,8 +66,7 @@ ggplot(mtcars, aes(x = mpg)) +
 ## Bar Chart
 
 ```{r echo=FALSE}
-# Load the ggplot2 package
-library(ggplot2)
+
 
 # Create a bar chart colored by diamond cut
 ggplot(data = diamonds, aes(x = cut, fill = cut)) + 
@@ -96,9 +97,8 @@ ggplot(data = diamonds, aes(x = cut, fill = cut)) +
 
 ## Box Plot
 
-```{r}
-# Load the ggplot2 package
-library(ggplot2)
+```{r echo=FALSE}
+
 
 # Load the iris dataset
 data(iris)
@@ -109,7 +109,8 @@ ggplot(iris, aes(x = Species, y = Sepal.Length, color = Species)) +
   theme_minimal() +
   labs(title = "Boxplot of Sepal Length by Species",
        x = "Species",
-       y = "Sepal Length")
+       y = "Sepal Length") + 
+  theme_minimal()
 
 
 ```
@@ -124,14 +125,116 @@ ggplot(iris, aes(x = Species, y = Sepal.Length, color = Species)) +
 
 ## Pie Chart
 
+- Circular graph divided into slices
+- Used mostly with categorical data
+- Each slice represents the frequency of a particular category in percentage
+- The entire pie represents 100%
+
+## Pie Chart
+
+```{r  echo=FALSE}
+library(dplyr)
+
+# Use the diamonds dataset (comes with ggplot2)
+data <- diamonds
+
+# Create a data frame with cut counts and percentages
+cut_counts <- data %>%
+  count(cut) %>%
+  mutate(percentage = n / sum(n))
+
+# Create the pie chart
+ggplot(cut_counts, aes(x = "", y = percentage, fill = cut)) +
+  geom_bar(stat = "identity", width = 1) +
+  coord_polar("y", start = 0) +
+  labs(title = "Distribution of Diamonds by Cut",
+       fill = "Cut") +
+  theme_void() +
+  geom_text(aes(label = paste0(round(percentage * 100, 1), "%")), 
+            position = position_stack(vjust = 0.5))
+```
 
 # Scatter plot
 
+## Scatter Plot
 
-# Line plot
+- Can be used to compare two continuous variables
+- Used in also determining the relationship between two variables
+
+## Scatter plot
+
+```{r echo=FALSE}
+# Create the scatterplot
+ggplot(mtcars, aes(x = wt, y = mpg)) +
+  geom_point() +
+  labs(title = "Car Weight vs. Fuel Efficiency",
+       x = "Weight (1000 lbs)",
+       y = "Miles per Gallon") +
+  theme_minimal()
+```
+
+
+# Line Graph
+
+## Line Graph
+
+- Represents change in a variable with respect to time.
+- For example, change in the population of a city in the past two decades.
+- Used to represent quantitative data by plotting each variable value with respect to the time of occurence.
+
+
+## Line Graph
+
+```{r echo=FALSE}
+# Load required library
+library(ggplot2)
+
+# Create the plot
+ggplot(economics, aes(x = date, y = unemploy)) +
+  geom_line(color = "blue") +
+  labs(title = "US Unemployment Over Time",
+       x = "Date",
+       y = "Number of Unemployed (Thousands)") +
+  theme_minimal()
+```
 
 
 # Frequency Polygon
 
+## Frequency Polygon
 
-# Stem and Leaf Plot
+- Similar to a histogram
+- Used to visualize the underlying distribution of a continuous variable
+
+
+## Frequency Polygon
+
+```{r echo=FALSE}
+# Load the ggplot2 library
+library(ggplot2)
+
+# Create the frequency polygon
+ggplot(diamonds, aes(x = price)) +
+  geom_freqpoly(binwidth = 500, color = "blue") +
+  labs(title = "Frequency Polygon of Diamond Prices",
+       x = "Price (USD)",
+       y = "Frequency") +
+  theme_minimal()
+```
+
+## Frequency polygon from histogram
+
+```{r echo=FALSE}
+# Load the ggplot2 library
+library(ggplot2)
+
+# Create the histogram with frequency polygon
+ggplot(diamonds, aes(x = price)) +
+  geom_histogram(binwidth = 500, fill = "lightblue", color = "black") +
+  geom_freqpoly(binwidth = 500, color = "blue") +
+  labs(title = "Histogram and Frequency Polygon of Diamond Prices",
+       x = "Price (USD)",
+       y = "Frequency") +
+  theme_minimal()
+```
+

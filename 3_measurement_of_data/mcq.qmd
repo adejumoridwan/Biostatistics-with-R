@@ -1,5 +1,3 @@
-Here are 10 multiple-choice questions based on the provided material, along with their answers:
-
 1. **Which of the following is an example of primary data?**
    - A) Hospital records
    - B) Public repositories
