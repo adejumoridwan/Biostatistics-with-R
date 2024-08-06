@@ -1,100 +1,110 @@
-Case Study: Analyzing Car Performance Metrics
+Case Study Assignment:
 
-You are a data analyst working for an automotive magazine. Using the "mtcars" dataset, you need to create various visualizations to help readers understand different aspects of car performance. Create the following plots using ggplot2 and provide insights for each:
+Title: Analyzing Tooth Growth in Guinea Pigs using Data Visualization Techniques
 
-1. Histogram: Create a histogram of car weights (wt).
-2. Bar Chart: Show the average horsepower (hp) for each number of cylinders (cyl).
-3. Box Plot: Compare the distribution of miles per gallon (mpg) across different numbers of cylinders (cyl).
-4. Pie Chart: Display the proportion of cars with different numbers of gears (gear).
-5. Scatter Plot: Plot the relationship between horsepower (hp) and miles per gallon (mpg).
-6. Line Graph: Show the trend of average miles per gallon (mpg) as weight (wt) increases.
-7. Frequency Polygon: Create a frequency polygon of miles per gallon (mpg).
+Background:
+The ToothGrowth dataset contains the results of an experiment studying the effect of vitamin C on tooth growth in guinea pigs. The dataset includes 60 observations of 3 variables:
+- len: Tooth length
+- supp: Supplement type (VC: Vitamin C or OJ: Orange Juice)
+- dose: Dose in milligrams/day (0.5, 1, or 2)
 
-Here are the solutions with R code and explanations:
+Your task is to analyze this dataset using various data visualization techniques in R with the ggplot2 package. Create the following visualizations and interpret the results:
+
+1. Histogram: Create a histogram of tooth lengths.
+2. Bar Chart: Compare the average tooth length for each supplement type.
+3. Box Plot: Create box plots of tooth length by dose and supplement type.
+4. Pie Chart: Show the proportion of observations for each dose.
+5. Scatter Plot: Plot tooth length against dose, differentiating by supplement type.
+6. Line Graph: Show the trend of average tooth length across doses for each supplement type.
+7. Frequency Polygon: Compare the distribution of tooth lengths for each supplement type.
+
+Provide code for each visualization and a brief interpretation of the results.
+
+Answer:
+
+Here's the R code to create the requested visualizations using ggplot2, along with interpretations of the results:
 
 ```R
 # Load required libraries
 library(ggplot2)
 library(dplyr)
 
-# Load the dataset
-data(mtcars)
+# Load the ToothGrowth dataset
+data(ToothGrowth)
 
-# 1. Histogram of car weights
-ggplot(mtcars, aes(x = wt)) +
-  geom_histogram(binwidth = 0.5, fill = "skyblue", color = "black") +
-  labs(title = "Distribution of Car Weights",
-       x = "Weight (1000 lbs)",
-       y = "Frequency")
+# 1. Histogram
+ggplot(ToothGrowth, aes(x = len)) +
+  geom_histogram(binwidth = 2, fill = "skyblue", color = "black") +
+  labs(title = "Histogram of Tooth Lengths",
+       x = "Tooth Length", y = "Frequency")
 
-# 2. Bar Chart of average horsepower by number of cylinders
-mtcars %>%
-  group_by(cyl) %>%
-  summarize(avg_hp = mean(hp)) %>%
-  ggplot(aes(x = factor(cyl), y = avg_hp)) +
-  geom_bar(stat = "identity", fill = "coral") +
-  labs(title = "Average Horsepower by Number of Cylinders",
-       x = "Number of Cylinders",
-       y = "Average Horsepower")
+# Interpretation: The histogram shows that tooth lengths are roughly normally distributed, with most values falling between 10 and 30 units. There's a slight right skew, indicating some guinea pigs had longer teeth than average.
 
-# 3. Box Plot of mpg across different numbers of cylinders
-ggplot(mtcars, aes(x = factor(cyl), y = mpg)) +
-  geom_boxplot(fill = "lightgreen") +
-  labs(title = "Distribution of MPG by Number of Cylinders",
-       x = "Number of Cylinders",
-       y = "Miles per Gallon")
+# 2. Bar Chart
+ToothGrowth %>%
+  group_by(supp) %>%
+  summarize(mean_len = mean(len)) %>%
+  ggplot(aes(x = supp, y = mean_len, fill = supp)) +
+  geom_bar(stat = "identity") +
+  labs(title = "Average Tooth Length by Supplement Type",
+       x = "Supplement Type", y = "Average Tooth Length")
 
-# 4. Pie Chart of car gears
-mtcars %>%
-  count(gear) %>%
-  ggplot(aes(x = "", y = n, fill = factor(gear))) +
+# Interpretation: The bar chart shows that, on average, guinea pigs given orange juice (OJ) had slightly longer teeth compared to those given vitamin C (VC).
+
+# 3. Box Plot
+ggplot(ToothGrowth, aes(x = factor(dose), y = len, fill = supp)) +
+  geom_boxplot() +
+  labs(title = "Tooth Length by Dose and Supplement Type",
+       x = "Dose (mg/day)", y = "Tooth Length")
+
+# Interpretation: The box plots reveal that tooth length generally increases with dose for both supplement types. OJ appears more effective at lower doses, while VC catches up at the highest dose.
+
+# 4. Pie Chart
+ToothGrowth %>%
+  group_by(dose) %>%
+  summarize(count = n()) %>%
+  ggplot(aes(x = "", y = count, fill = factor(dose))) +
   geom_bar(stat = "identity", width = 1) +
   coord_polar("y", start = 0) +
-  labs(title = "Proportion of Cars by Number of Gears",
-       fill = "Number of Gears") +
-  theme_void()
+  labs(title = "Proportion of Observations by Dose",
+       fill = "Dose (mg/day)")
 
-# 5. Scatter Plot of horsepower vs mpg
-ggplot(mtcars, aes(x = hp, y = mpg)) +
-  geom_point(color = "purple") +
-  labs(title = "Relationship between Horsepower and Miles per Gallon",
-       x = "Horsepower",
-       y = "Miles per Gallon")
+# Interpretation: The pie chart shows an equal distribution of observations across the three dose levels, indicating a balanced experimental design.
 
-# 6. Line Graph of average mpg as weight increases
-mtcars %>%
-  arrange(wt) %>%
-  mutate(avg_mpg = cummean(mpg)) %>%
-  ggplot(aes(x = wt, y = avg_mpg)) +
-  geom_line(color = "red") +
-  labs(title = "Trend of Average MPG as Weight Increases",
-       x = "Weight (1000 lbs)",
-       y = "Average Miles per Gallon")
+# 5. Scatter Plot
+ggplot(ToothGrowth, aes(x = dose, y = len, color = supp)) +
+  geom_point() +
+  labs(title = "Tooth Length vs. Dose by Supplement Type",
+       x = "Dose (mg/day)", y = "Tooth Length")
 
-# 7. Frequency Polygon of mpg
-ggplot(mtcars, aes(x = mpg)) +
-  geom_freqpoly(binwidth = 2, color = "blue") +
-  labs(title = "Frequency Polygon of Miles per Gallon",
-       x = "Miles per Gallon",
-       y = "Frequency")
+# Interpretation: The scatter plot confirms the positive relationship between dose and tooth length. It also shows that OJ tends to be more effective at lower doses, while the difference becomes less pronounced at higher doses.
+
+# 6. Line Graph
+ToothGrowth %>%
+  group_by(supp, dose) %>%
+  summarize(mean_len = mean(len)) %>%
+  ggplot(aes(x = dose, y = mean_len, color = supp)) +
+  geom_line() +
+  geom_point() +
+  labs(title = "Average Tooth Length Trend by Dose and Supplement Type",
+       x = "Dose (mg/day)", y = "Average Tooth Length")
+
+# Interpretation: The line graph clearly shows the increasing trend in tooth length as the dose increases for both supplement types. OJ starts higher but has a less steep slope, while VC starts lower but increases more rapidly with dose.
+
+# 7. Frequency Polygon
+ggplot(ToothGrowth, aes(x = len, color = supp)) +
+  geom_freqpoly(binwidth = 2) +
+  labs(title = "Distribution of Tooth Lengths by Supplement Type",
+       x = "Tooth Length", y = "Frequency")
+
+# Interpretation: The frequency polygon allows us to compare the distributions of tooth lengths for each supplement type. OJ appears to have a slightly higher peak and is shifted slightly to the right compared to VC, consistent with our earlier observations that OJ tends to result in longer teeth on average.
 ```
 
-Explanations for each plot:
+This case study demonstrates various data visualization techniques using ggplot2 to analyze the ToothGrowth dataset. The visualizations provide insights into the relationships between tooth length, supplement type, and dosage. Key findings include:
 
-1. Histogram: This shows the distribution of car weights. We can see that most cars in the dataset weigh between 2.5 and 3.5 thousand pounds.
+1. Tooth length generally increases with higher doses of vitamin C.
+2. Orange juice (OJ) appears to be more effective than vitamin C (VC) at promoting tooth growth, especially at lower doses.
+3. The effectiveness of VC increases more rapidly with dose compared to OJ.
+4. There is considerable variation in tooth length within each group, highlighting the importance of considering individual differences and potential confounding factors.
 
-2. Bar Chart: This displays the average horsepower for each number of cylinders. As expected, cars with more cylinders tend to have higher average horsepower.
-
-3. Box Plot: This compares the distribution of miles per gallon across different numbers of cylinders. We can observe that cars with fewer cylinders generally have better fuel efficiency (higher mpg).
-
-4. Pie Chart: This shows the proportion of cars with different numbers of gears. We can see the relative frequency of 3-speed, 4-speed, and 5-speed transmissions in the dataset.
-
-5. Scatter Plot: This plot reveals the relationship between horsepower and miles per gallon. There's a clear negative correlation: as horsepower increases, fuel efficiency tends to decrease.
-
-6. Line Graph: This graph shows how the average miles per gallon changes as car weight increases. We can see a downward trend, indicating that heavier cars generally have lower fuel efficiency.
-
-7. Frequency Polygon: This is an alternative to the histogram, showing the distribution of miles per gallon. It allows us to see the shape of the distribution and identify any peaks or patterns in fuel efficiency across the dataset.
-
-These visualizations provide a comprehensive overview of various aspects of car performance in the mtcars dataset. Each plot type serves a different purpose in data visualization, allowing readers to understand different relationships and distributions within the data.
-
-Would you like me to explain or break down any part of the code or analysis further?
+These visualizations showcase the power of ggplot2 in creating informative and visually appealing graphs for biostatistical analysis. Each type of plot offers a different perspective on the data, allowing for a comprehensive understanding of the relationships between variables.
