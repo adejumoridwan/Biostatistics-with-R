@@ -67,7 +67,6 @@ ggplot(mtcars, aes(x = mpg)) +
 
 ```{r echo=FALSE}
 
-
 # Create a bar chart colored by diamond cut
 ggplot(data = diamonds, aes(x = cut, fill = cut)) + 
   geom_bar(color = "black") + 
@@ -106,7 +105,6 @@ data(iris)
 # Create a boxplot with color by species
 ggplot(iris, aes(x = Species, y = Sepal.Length, color = Species)) +
   geom_boxplot() +
-  theme_minimal() +
   labs(title = "Boxplot of Sepal Length by Species",
        x = "Species",
        y = "Sepal Length") + 
@@ -225,9 +223,6 @@ ggplot(diamonds, aes(x = price)) +
 ## Frequency polygon from histogram
 
 ```{r echo=FALSE}
-# Load the ggplot2 library
-library(ggplot2)
-
 # Create the histogram with frequency polygon
 ggplot(diamonds, aes(x = price)) +
   geom_histogram(binwidth = 500, fill = "lightblue", color = "black") +

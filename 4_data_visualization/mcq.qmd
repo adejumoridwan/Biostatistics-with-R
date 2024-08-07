@@ -68,4 +68,111 @@
     d) Histograms are three-dimensional, while bar charts are two-dimensional
     Answer: b) Histograms represent continuous data, while bar charts represent categorical data
 
-Would you like me to explain or elaborate on any of these questions or answers?
+Case Study Assignment:
+
+Title: Analyzing Tooth Growth in Guinea Pigs using Data Visualization Techniques
+
+Background:
+The ToothGrowth dataset contains the results of an experiment studying the effect of vitamin C on tooth growth in guinea pigs. The dataset includes 60 observations of 3 variables:
+- len: Tooth length
+- supp: Supplement type (VC: Vitamin C or OJ: Orange Juice)
+- dose: Dose in milligrams/day (0.5, 1, or 2)
+
+Your task is to analyze this dataset using various data visualization techniques in R with the ggplot2 package. Create the following visualizations and interpret the results:
+
+1. Histogram: Create a histogram of tooth lengths.
+2. Bar Chart: Compare the average tooth length for each supplement type.
+3. Box Plot: Create box plots of tooth length by dose and supplement type.
+4. Pie Chart: Show the proportion of observations for each dose.
+5. Scatter Plot: Plot tooth length against dose, differentiating by supplement type.
+6. Line Graph: Show the trend of average tooth length across doses for each supplement type.
+7. Frequency Polygon: Compare the distribution of tooth lengths for each supplement type.
+
+Provide code for each visualization and a brief interpretation of the results.
+
+Answer:
+
+Here's the R code to create the requested visualizations using ggplot2, along with interpretations of the results:
+
+```R
+# Load required libraries
+library(ggplot2)
+library(dplyr)
+
+# Load the ToothGrowth dataset
+data(ToothGrowth)
+
+# 1. Histogram
+ggplot(ToothGrowth, aes(x = len)) +
+  geom_histogram(binwidth = 2, fill = "skyblue", color = "black") +
+  labs(title = "Histogram of Tooth Lengths",
+       x = "Tooth Length", y = "Frequency")
+
+# Interpretation: The histogram shows that tooth lengths are roughly normally distributed, with most values falling between 10 and 30 units. There's a slight right skew, indicating some guinea pigs had longer teeth than average.
+
+# 2. Bar Chart
+ToothGrowth %>%
+  group_by(supp) %>%
+  summarize(mean_len = mean(len)) %>%
+  ggplot(aes(x = supp, y = mean_len, fill = supp)) +
+  geom_bar(stat = "identity") +
+  labs(title = "Average Tooth Length by Supplement Type",
+       x = "Supplement Type", y = "Average Tooth Length")
+
+# Interpretation: The bar chart shows that, on average, guinea pigs given orange juice (OJ) had slightly longer teeth compared to those given vitamin C (VC).
+
+# 3. Box Plot
+ggplot(ToothGrowth, aes(x = factor(dose), y = len, fill = supp)) +
+  geom_boxplot() +
+  labs(title = "Tooth Length by Dose and Supplement Type",
+       x = "Dose (mg/day)", y = "Tooth Length")
+
+# Interpretation: The box plots reveal that tooth length generally increases with dose for both supplement types. OJ appears more effective at lower doses, while VC catches up at the highest dose.
+
+# 4. Pie Chart
+ToothGrowth %>%
+  group_by(dose) %>%
+  summarize(count = n()) %>%
+  ggplot(aes(x = "", y = count, fill = factor(dose))) +
+  geom_bar(stat = "identity", width = 1) +
+  coord_polar("y", start = 0) +
+  labs(title = "Proportion of Observations by Dose",
+       fill = "Dose (mg/day)")
+
+# Interpretation: The pie chart shows an equal distribution of observations across the three dose levels, indicating a balanced experimental design.
+
+# 5. Scatter Plot
+ggplot(ToothGrowth, aes(x = dose, y = len, color = supp)) +
+  geom_point() +
+  labs(title = "Tooth Length vs. Dose by Supplement Type",
+       x = "Dose (mg/day)", y = "Tooth Length")
+
+# Interpretation: The scatter plot confirms the positive relationship between dose and tooth length. It also shows that OJ tends to be more effective at lower doses, while the difference becomes less pronounced at higher doses.
+
+# 6. Line Graph
+ToothGrowth %>%
+  group_by(supp, dose) %>%
+  summarize(mean_len = mean(len)) %>%
+  ggplot(aes(x = dose, y = mean_len, color = supp)) +
+  geom_line() +
+  geom_point() +
+  labs(title = "Average Tooth Length Trend by Dose and Supplement Type",
+       x = "Dose (mg/day)", y = "Average Tooth Length")
+
+# Interpretation: The line graph clearly shows the increasing trend in tooth length as the dose increases for both supplement types. OJ starts higher but has a less steep slope, while VC starts lower but increases more rapidly with dose.
+
+# 7. Frequency Polygon
+ggplot(ToothGrowth, aes(x = len, color = supp)) +
+  geom_freqpoly(binwidth = 2) +
+  labs(title = "Distribution of Tooth Lengths by Supplement Type",
+       x = "Tooth Length", y = "Frequency")
+
+# Interpretation: The frequency polygon allows us to compare the distributions of tooth lengths for each supplement type. OJ appears to have a slightly higher peak and is shifted slightly to the right compared to VC, consistent with our earlier observations that OJ tends to result in longer teeth on average.
+```
+
+This case study demonstrates various data visualization techniques using ggplot2 to analyze the ToothGrowth dataset. The visualizations provide insights into the relationships between tooth length, supplement type, and dosage. Key findings include:
+
+1. Tooth length generally increases with higher doses of vitamin C.
+2. Orange juice (OJ) appears to be more effective than vitamin C (VC) at promoting tooth growth, especially at lower doses.
+3. The effectiveness of VC increases more rapidly with dose compared to OJ.
+4. There is considerable variation in tooth length within each group, highlighting the importance of considering individual differences and potential confounding factors.
