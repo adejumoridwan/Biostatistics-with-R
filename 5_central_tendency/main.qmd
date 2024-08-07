@@ -1,0 +1,50 @@
+---
+title: "Descriptive Statistics: Measures of Central Tendency"
+author: "Adejumo Ridwan Suleiman"
+format: revealjs
+---
+
+## Descriptive statistics
+
+- Branch of statistics that involves summarizing, organizing and presenting data in a meaningful way.
+- Main objective is to provide a clear and concise summary of a data.
+- Data can be described either numerically or graphically.
+
+## Type of Descriptive Statistics
+
+- **Measures of Central Tendency:** Mean, Median, Mode
+- **Measures of Variability:** Range, Variance, Standard Deviation, Inter-quartile range
+- **Measures of Partition:** Quartiles, Percentiles, Deciles
+
+
+## Measures of Central Tendency
+
+- Single value reflecting the center of a data distribution.
+- Gives a summary of a variable.
+
+## Measures of Central Tendency
+
+![[Source: BYJU](https://byjus.com/maths/central-tendency/)](images/central_tendency.jpg)
+
+# Mean
+
+## Definition
+
+- Average of a given set of values
+- Denoted mathematically as $\bar{x}$
+- 
+
+## Example
+
+- The weight of $5$ students in a class is given as $56, 54, 79, 63, \text{and } 51$
+- The average weight is the sum of all the weight divided by the number of students in the class which is $60.6$.
+
+## Properties of the Mean
+
+
+
+## Types of Mean
+
+- Arithmetic Mean
+- Geometric Mean
+- Harmonic Mean
