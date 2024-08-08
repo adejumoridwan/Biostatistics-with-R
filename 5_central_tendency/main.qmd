@@ -39,12 +39,42 @@ format: revealjs
 - The weight of $5$ students in a class is given as $56, 54, 79, 63, \text{and } 51$
 - The average weight is the sum of all the weight divided by the number of students in the class which is $60.6$.
 
-## Properties of the Mean
+## Merits of the Mean
 
+- It is easy to calculate and understand.
+- It is based upon all the observations of a variable.
+- It is unique and can be used to compare different sets of data.
 
+## Demerits of the Mean
+
+- Easily affected by extreme values
+- Can't be located graphically or by inspection
+- Can only be used with numerical variables
+- Can't be used when there are presence of missing observations
+- Easily affected by sample size, smaller sample size give a more accurate estimate of the true population mean.
 
 ## Types of Mean
 
 - Arithmetic Mean
 - Geometric Mean
 - Harmonic Mean
+
+## Arithmetic Mean
+
+- Also known as average, is the ratio of the sum of all observations to the total number of observations.
+- For example the average weight of patients in an hospital is 65kg
+
+## Geometric Mean
+
+- nth root of the product of all observations in a variable.
+- Always less than the arithmetic mean
+- For example the ages of children in a primary health care center is given as follows:
+  - $12, 10, 11, 8, 7$
+  - The aritmetic mean is given as $9,6$
+  - The geometric mean is given as $9.4$
+  
+## Harmonic mean
+
+- Reciprocal of the arithmetic mean i.e reciprocal of the average of the reciprocals of the data values.
+- Good at handling extreme values
+- 
