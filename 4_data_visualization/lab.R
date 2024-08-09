@@ -1,43 +1,8 @@
----
-title: "Data Visualization"
-author: "Adejumo Ridwan Suleiman"
-format: revealjs
----
 
-
-## What is Data Visualization?
-
-- Graphical representation of data using charts and plots.
-- Easily communicate information making it easy to understand.
-
-## Types of Data Visualization
-
-- Histogram
-
-- Bar Chart
-
-- Box plots
-
-- Pie Chart
-
-- Scatter plot
-
-- Line Graph
-
-- Frequency Polygon
-
+#------------------------------------------------------
 # Histogram
+#------------------------------------------------------
 
-## Histogram
-
-- Used with discrete or continuous data
-- Shows the underlying distribution of a data
-- The data is split into intervals called *bins*
-- Each bin contains the number of occurrences of scores in the data set contained within that bin.
-
-## Histogram
-
-```{r echo=FALSE}
 # Load required library
 library(ggplot2)
 
@@ -51,20 +16,11 @@ ggplot(ChickWeight, aes(x = weight)) +
        x = "Weight (grams)",
        y = "Frequency") +
   theme_minimal()
-```
 
-
+#----------------------------------------------------
 # Bar Chart
+#------------------------------------------------------
 
-## Bar Chart
-
-- Used with categorical data
-- Bars are either plotted horizontally or vertically
-- Compares various categories
-
-## Bar Chart
-
-```{r echo=FALSE}
 # Load required libraries
 library(dplyr)
 
@@ -86,28 +42,10 @@ ggplot(sleep_summary, aes(x = order, y = avg_sleep, fill = order)) +
        x = "Order",
        y = "Average Total Sleep (hours)") +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
-```
 
-## Difference between histogram and bar chart
-
-| Feature | Histogram | Bar Chart |
-| --- | --- | --- |
-|Data type | Used with numerical data | Used with categorical data |
-| Purpose | Represents the distribution of numerical data | Compares different categories or groups |
-| Bars | Touch each other (no gaps) | Separated by spaces |
-
+#----------------------------------------------------
 # Box Plot
-
-## Box plot
-
-- Also known as box and whisker plot
-- Used to measure the measures of central tendency in a data
-- Used with numerical data
-- Divides a data into 4 parts
-
-## Box Plot
-
-```{r echo=FALSE}
+#------------------------------------------------------
 
 # Load the ToothGrowth dataset (built-in)
 data("ToothGrowth")
@@ -121,26 +59,9 @@ ggplot(ToothGrowth, aes(x = supp, y = len, fill = supp)) +
        fill = "Supplement Type") +
   theme_minimal()
 
-```
-
-
-## Box Plot
-
-![Different parts of a boxplot. Source: [BYJU](https://byjus.com/maths/box-plot/)](images/boxplot.jpg)
-
-
+#--------------------------------------------------
 # Pie Chart
-
-## Pie Chart
-
-- Circular graph divided into slices
-- Used mostly with categorical data
-- Each slice represents the frequency of a particular category in percentage
-- The entire pie represents 100%
-
-## Pie Chart
-
-```{r  echo=FALSE}
+#------------------------------------------------------
 
 # Create a sample medical dataset
 diagnoses <- data.frame(
@@ -161,18 +82,11 @@ ggplot(diagnoses, aes(x = "", y = Count, fill = Condition)) +
   theme(legend.position = "right") +
   geom_text(aes(label = sprintf("%.1f%%", Percentage)), 
             position = position_stack(vjust = 0.5))
-```
 
-# Scatter plot
+#---------------------------------------------------
+# Scatter Plot
+#------------------------------------------------------
 
-## Scatter Plot
-
-- Can be used to compare two continuous variables
-- Used in also determining the relationship between two variables
-
-## Scatter plot
-
-```{r echo=FALSE}
 library(MASS)  # For the birthwt dataset
 
 # Load the birthwt dataset (low birth weight study)
@@ -185,21 +99,12 @@ ggplot(birthwt, aes(x = lwt, y = bwt)) +
        x = "Mother's Weight (pounds)",
        y = "Baby's Birth Weight (grams)") +
   theme_minimal()
-```
 
 
+#------------------------------------------------------
 # Line Graph
+#------------------------------------------------------
 
-## Line Graph
-
-- Represents change in a variable with respect to time.
-- For example, change in the population of a city in the past two decades.
-- Used to represent quantitative data by plotting each variable value with respect to the time of occurence.
-
-
-## Line Graph
-
-```{r echo=FALSE}
 library(zoo)
 
 # Load the AirPassengers dataset
@@ -218,20 +123,10 @@ ggplot(df, aes(x = date, y = passengers)) +
        x = "Date",
        y = "Number of Passengers") +
   theme_minimal()
-```
 
-
+#------------------------------------------------------
 # Frequency Polygon
-
-## Frequency Polygon
-
-- Similar to a histogram
-- Used to visualize the underlying distribution of a continuous variable
-
-
-## Frequency Polygon
-
-```{r echo=FALSE}
+#----------------------------------------------------------
 # Load required libraries
 library(ggplot2)
 
@@ -245,11 +140,7 @@ ggplot(ToothGrowth, aes(x = len)) +
        x = "Tooth Length",
        y = "Frequency") +
   theme_minimal()
-```
 
-## Frequency polygon from histogram
-
-```{r echo=FALSE}
 # Load required libraries
 library(ggplot2)
 
@@ -264,5 +155,3 @@ ggplot(ToothGrowth, aes(x = len)) +
        x = "Tooth Length",
        y = "Density") +
   theme_minimal()
-```
-
