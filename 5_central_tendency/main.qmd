@@ -36,8 +36,8 @@ format: revealjs
 
 ## Example
 
-- The weight of $5$ students in a class is given as $56, 54, 79, 63, \text{and } 51$
-- The average weight is the sum of all the weight divided by the number of students in the class which is $60.6$.
+- The weight of $5$ patients in a hospital is given as $56, 54, 79, 63, \text{and } 51$
+- The average weight is the sum of all the weight divided by the number of patients in the hospital which is $60.6$.
 
 ## Merits of the Mean
 
@@ -68,13 +68,102 @@ format: revealjs
 
 - nth root of the product of all observations in a variable.
 - Always less than the arithmetic mean
-- For example the ages of children in a primary health care center is given as follows:
-  - $12, 10, 11, 8, 7$
-  - The aritmetic mean is given as $9,6$
-  - The geometric mean is given as $9.4$
   
 ## Harmonic mean
 
 - Reciprocal of the arithmetic mean i.e reciprocal of the average of the reciprocals of the data values.
-- Good at handling extreme values
-- 
+- Good at handling extreme values.
+
+## Mean - Example
+
+For example the ages of children in a primary health care center is given as follows:
+- $12, 10, 11, 8, 7$
+- The arithmetic mean is given as $9,6$
+- The geometric mean is given as $9.4$
+- The harmonic mean is given as $9.22$
+
+# Median
+
+## Median 
+
+- The middle number when the data is sorted.
+- Also used as an average in the presence of extreme values.
+- A case when the number of observations is even, and the median values are two, take the average of the two numbers and divide by 2.
+
+
+## Median
+- ![Source: [BYJU](https://byjus.com/maths/median/)](images/median.jpg)
+
+## Median - Example
+
+- The age of women attending ANC were recorded as follows.
+$23, 19, 21, 20, 23, 21, 22, 24, 22, \text{ and 22}
+
+- **Step 1:** Arrange in ascending order.
+
+  $19, 20, 21, 21, 22, 22, 22, 23, 23, 23, 24$
+
+- **Step 2:** Pick the middle observation.
+
+  The middle observation is 22 and 22, hence the median is $\frac{22 + 22}{2} = 22$
+
+# Mode
+
+## Mode
+
+- The most occuring observation in a given set of data.
+- May can either be **Bimodal**, **Trimodal**, or **MultiModal**.
+
+
+## Mode - Example 
+
+- If the temperature of 12 rabbits are $23, 19, 21, 20, 23, 21, 22, 24, 22, \text{ and } 22$.
+- The mode is given as $22$.
+
+# Skewness
+
+## Skewness - Definition
+
+- Measure of the deviation of a given variable from a symmetric distribution.
+- A data is symmetric if the Mean, Median and Mode are all equal.
+
+
+## Skewness - Types of Skewness
+
+**Positive Skewness**
+
+- Higher extreme values.
+- Has a tail on the right
+- Mean > Median > Mode
+
+**Negative Skewness**
+
+- Lower extreme values.
+- Has a tail on the left.
+- Mean < Median < Mode
+
+## Skewness
+
+![Source: [Scribbr](https://www.scribbr.com/statistics/skewness/)](images/skewness.jpg)
+
+
+## Calculating and Interpreting Skewness
+
+$$ Skewness = \frac{\text{Mean}-\text{Median}}{Standard Deviation}$$
+
+**Interpretation**
+
+- Zero, if a perfect Symmetrical distribution.
+- Negative, when negatively skewed or skewed to the left.
+- Positive, when positively skewed or skewed to the right.
+
+## Comparison of Median and Mean
+
+| Median | Mean |
+| --- | --- |
+| Insensitive to extreme values | Sensitive to extreme values |
+| Defines the central value of the data | Defines the midpoint of the data |
+| Used with symmetric distributions | Used with skewed distributions |
+| Affected by external factors | Robust and reliable |
+
+

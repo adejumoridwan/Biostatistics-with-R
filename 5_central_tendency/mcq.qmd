@@ -1,0 +1,85 @@
+Sure! Here are the MCQs with their answers indicated:
+
+### Introduction to Descriptive Statistics
+
+**1.** What is the primary purpose of descriptive statistics?
+   - A) To make predictions about data
+   - B) To summarize and describe the main features of a dataset **(Answer)**
+   - C) To establish relationships between variables
+   - D) To infer population parameters from sample data
+
+**2.** Which of the following is true about the mean?
+   - A) It is always greater than the median
+   - B) It is affected by extreme values (outliers) **(Answer)**
+   - C) It is the most frequently occurring value in a dataset
+   - D) It is not sensitive to changes in data values
+
+**3.** In R, which function is used to calculate the mean of a numeric vector?
+   - A) `mean()` **(Answer)**
+   - B) `median()`
+   - C) `mode()`
+   - D) `summarize()`
+
+### Median
+
+**4.** The median is best described as:
+   - A) The value that occurs most frequently in a dataset
+   - B) The average of all values in a dataset
+   - C) The middle value when a dataset is ordered from least to greatest **(Answer)**
+   - D) The sum of all values divided by the number of values
+
+**5.** If a dataset has an even number of observations, how is the median calculated?
+   - A) It is the mean of the two middle values **(Answer)**
+   - B) It is the mode of the dataset
+   - C) It is the value of the middle observation
+   - D) It cannot be calculated
+
+### Mode
+
+**6.** Which of the following best defines the mode?
+   - A) The average of all the values in a dataset
+   - B) The middle value in a sorted dataset
+   - C) The value that occurs most frequently in a dataset **(Answer)**
+   - D) The range of the dataset
+
+**7.** In a dataset, if no value repeats, what can be said about the mode?
+   - A) The dataset has no mode **(Answer)**
+   - B) The mode is the first value
+   - C) The mode is the mean
+   - D) The mode is the median
+
+### Skewness
+
+**8.** What does positive skewness in a dataset indicate?
+   - A) The tail on the left side is longer or fatter than the right side
+   - B) The tail on the right side is longer or fatter than the left side **(Answer)**
+   - C) The distribution is symmetric
+   - D) The mean and median are equal
+
+**9.** In a positively skewed distribution, how are the mean, median, and mode typically arranged?
+   - A) Mean > Median > Mode **(Answer)**
+   - B) Mode > Median > Mean
+   - C) Median > Mean > Mode
+   - D) Mean = Median = Mode
+
+### Mean and Median Comparison
+
+**10.** Which measure of central tendency is most appropriate to use when a dataset has outliers?
+   - A) Mean
+   - B) Median **(Answer)**
+   - C) Mode
+   - D) Range
+
+**11.** If a dataset is symmetric, what can be said about the mean and median?
+   - A) The mean is greater than the median
+   - B) The median is greater than the mean
+   - C) The mean and median are approximately equal **(Answer)**
+   - D) The mean and median are unrelated
+
+**12.** In R, how would you calculate the median of a numeric vector `x`?
+   - A) `mean(x)`
+   - B) `mode(x)`
+   - C) `median(x)` **(Answer)**
+   - D) `summary(x)`
+
+Feel free to use or modify these questions as needed!

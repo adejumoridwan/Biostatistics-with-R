@@ -1,11 +1,22 @@
-library(ggplot2)
+library(MASS)
 library(psych)
 
 # Arithmetic Mean
-mean(diamonds$price)
+mean(birthwt$age)
 
 # Geometric Mean
-geometric.mean(diamonds$price)
+geometric.mean(birthwt$age)
 
 # Harmonic mean
-harmonic.mean(diamonds$price)
+harmonic.mean(birthwt$age)
+
+library(DescTools)
+
+# Mode
+Mode(birthwt$age)
+
+# Median
+median(birthwt$age)
+
+library(e1071)
+skewness(birthwt$age)
