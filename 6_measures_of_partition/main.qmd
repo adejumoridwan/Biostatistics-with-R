@@ -1,0 +1,67 @@
+---
+title: "Measures of Partition"
+author: "Adejumo Ridwan Suleiman"
+format: revealjs
+---
+
+## Measures of Partition
+
+- Quartiles 
+- Percentiles
+- Deciles
+
+
+
+# Quartiles
+
+## Quartiles
+
+- Divided the data into four equal parts.
+
+- There are three quartile points; Q1, Q2, and Q3.
+
+
+## Quartiles - continued
+
+- First quartile - 25%
+- Second quartile(Median) - 25.1% - 50%
+- Third quartile - 51% - 75%
+- Fourth quartile - 25%
+
+## Quartiles - continued 
+
+- Semi interquartile range is half of the distance between the third and first quartile point. 
+
+- Interquartile range is the difference between the upper and lower quartile of a dataset.
+
+![Source: [MathBitsNotebook](https://mathbitsnotebook.com/JuniorMath/Statistics/SDquartiles.html)](images/quartiles.jpg)
+
+# Percentiles
+
+## Percentiles
+
+- Splits a data into 100.
+- 25th percentile - Q1
+- 50th percentile - Q2(median)
+- 75th percentile - Q3
+
+## Percentiles - continued
+
+![Source: [data36](https://data36.com/statistical-variability-standard-deviation-percentiles-histogram/)](images/percentiles.jpg)
+
+
+# Deciles
+
+## Deciles
+
+- Divides a distribution into ten equal parts
+
+- 2nd decile is Q1
+- 5th decile is the median
+- 7th decile is Q3
+
+
+## Deciles continued
+
+![Source: [Wall Street Mojo](https://www.wallstreetmojo.com/decile-formula/)](images/decile.jpg)
+

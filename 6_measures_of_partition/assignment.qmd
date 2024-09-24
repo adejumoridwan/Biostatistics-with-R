@@ -1,0 +1,125 @@
+Sure! For this case study, we'll use the **`"msleep"` dataset** from the **`ggplot2`** package, which contains data on sleep patterns and other characteristics of various mammals. Although it's not specifically a human health dataset, the data is relevant for health and biological insights regarding sleep. This can serve as a great context for understanding quartiles, deciles, and percentiles.
+
+---
+
+### **Case Study Assignment: Quartile, Decile, and Percentile Analysis Using the msleep Dataset**
+
+**Objective:**  
+In this assignment, you'll apply statistical measures such as quartiles, deciles, and percentiles to analyze mammalian sleep data. You will use R to load, clean, and analyze the dataset, and interpret these statistical measures with respect to sleep patterns (e.g., total sleep time, brain weight).
+
+---
+
+### **Steps and Code:**
+
+#### Step 1: Load the Dataset and Perform Basic Data Cleaning
+
+```r
+# Load the ggplot2 package for access to the msleep dataset
+if (!require("ggplot2")) {
+  install.packages("ggplot2")
+}
+library(ggplot2)
+
+# Load the msleep dataset
+data("msleep")
+
+# View the first few rows of the dataset
+head(msleep)
+
+# Remove rows with missing data for the columns we will use (e.g., total sleep time and brain weight)
+msleep_clean <- na.omit(msleep[, c("sleep_total", "brainwt")])
+
+# Summary of the cleaned dataset
+summary(msleep_clean)
+```
+
+In this dataset:
+- `sleep_total`: Total amount of sleep (in hours per day) for each mammal.
+- `brainwt`: Brain weight (in kilograms).
+
+#### Step 2: Calculate Quartiles for Total Sleep Time
+
+Use the `quantile` function to calculate quartiles for total sleep time (`sleep_total`).
+
+```r
+# Calculate quartiles for total sleep time
+sleep_quartiles <- quantile(msleep_clean$sleep_total, probs = c(0.25, 0.5, 0.75))
+sleep_quartiles
+```
+
+#### Step 3: Calculate Deciles for Total Sleep Time
+
+Now, let's calculate the deciles for total sleep time. Deciles split the data into ten equal parts.
+
+```r
+# Calculate deciles for total sleep time
+sleep_deciles <- quantile(msleep_clean$sleep_total, probs = seq(0.1, 1, by = 0.1))
+sleep_deciles
+```
+
+#### Step 4: Calculate Percentiles for Brain Weight
+
+Percentiles divide the data into 100 equal parts. We'll calculate percentiles for brain weight (`brainwt`).
+
+```r
+# Calculate percentiles for brain weight
+brainwt_percentiles <- quantile(msleep_clean$brainwt, probs = seq(0.01, 1, by = 0.01))
+brainwt_percentiles
+```
+
+#### Step 5: Interpret the Results
+
+- **Sleep Quartiles**: From the total sleep time quartiles, you'll understand how sleep is distributed across the species. For example, if the first quartile (Q1) is 8 hours, it means 25% of the species sleep less than 8 hours, while 75% sleep more.
+
+- **Sleep Deciles**: Deciles provide a more granular breakdown. For instance, the 9th decile might tell you the value below which 90% of the species' sleep times fall.
+
+- **Brain Weight Percentiles**: Brain weight percentiles will give insights into how brain sizes vary across mammals. If the 90th percentile of brain weight is 1.5 kg, it means 90% of species have a brain weight below 1.5 kg.
+
+### **Conclusion:**
+Based on your analysis, write a brief report summarizing your findings, interpreting the quartiles, deciles, and percentiles for total sleep time and brain weight, and discussing potential insights about sleep and brain size among different species.
+
+---
+
+### **Assignment Questions:**
+
+1. **Describe the distribution of total sleep time using quartiles. What does each quartile represent?**
+2. **Explain the difference between quartiles and deciles in the context of total sleep time.**
+3. **What do the percentiles for brain weight tell you about the distribution of brain sizes across species?**
+4. **Why is it useful to calculate percentiles in biological data analysis? Provide a real-world example.**
+5. **Based on your findings, what insights can you draw about the relationship between sleep and brain size in mammals?**
+
+---
+
+### **Deliverables:**
+
+- R script with the code for the analysis (Steps 1–4).
+- A short report (300–500 words) interpreting the results and answering the assignment questions.
+
+---
+
+### Sample Code Summary:
+
+```r
+# Load necessary libraries
+library(ggplot2)
+
+# Load and clean the dataset
+data("msleep")
+msleep_clean <- na.omit(msleep[, c("sleep_total", "brainwt")])
+
+# Calculate quartiles for total sleep time
+sleep_quartiles <- quantile(msleep_clean$sleep_total, probs = c(0.25, 0.5, 0.75))
+
+# Calculate deciles for total sleep time
+sleep_deciles <- quantile(msleep_clean$sleep_total, probs = seq(0.1, 1, by = 0.1))
+
+# Calculate percentiles for brain weight
+brainwt_percentiles <- quantile(msleep_clean$brainwt, probs = seq(0.01, 1, by = 0.01))
+
+# Print the results
+sleep_quartiles
+sleep_deciles
+brainwt_percentiles
+```
+
+Good luck with your analysis!
