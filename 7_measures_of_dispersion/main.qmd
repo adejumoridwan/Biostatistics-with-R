@@ -1,0 +1,98 @@
+---
+title: "Measures of Dispersion"
+author: "Adejumo Ridwan Suleiman"
+format: revealjs
+---
+
+# Range
+
+## Range
+
+- Difference between the highest and lowest value in a set of values.
+
+
+
+![Source: [GeeksforGeeks](https://www.geeksforgeeks.org/range-in-statistics/)](images/range.jpg)
+
+## Range - limitations
+
+- Can be influenced by extreme values
+
+- Relies on only two extreme values
+
+- A weak measure of variation.
+
+
+# Variance
+
+## Variance
+
+- Measures the spread of numbers in a variable.
+
+- Measures the dispersion of numbers from the mean in a dataset
+
+- Square of standard deviations
+
+- Mathematically represented as $\sigma^2$
+
+## Variance - Limitations
+
+- Sensitive to outliers
+
+- Sensitive to unit of measurements 
+
+- Assumption of normality, which is not always true in every dataset.
+
+
+# Standard Deviation
+
+## Standard Deviation
+
+- Square root of variance
+
+- Best measure of variation or dispersion
+
+- Mathematically represented as $\sigma$
+
+## Standard Deviation - Limitations
+
+- Hard to calculate
+
+- Affected by extreme values
+
+- Doesn't reflect the full range of a data
+
+- Can't be used for comparison between two variables measured with different units
+
+
+# Coefficient of Variation
+
+## Coefficient of Variation
+
+- Corrects for differences in dispersion between two variables of different units.
+
+- Ratio of the standard deviation to the mean of a data set, expressed in percentage.
+
+$$
+\text{cv}=\frac{\sigma}{\mu}\cdot\%\\
+\text{cv}=\text{coefficient of variation}\\
+\sigma = \text{standard deviation}\\
+\mu = \text{mean}
+$$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

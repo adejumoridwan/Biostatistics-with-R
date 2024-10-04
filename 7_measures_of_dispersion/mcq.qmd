@@ -1,0 +1,113 @@
+
+
+---
+
+### 1. **Which of the following is a measure of dispersion that considers only the two extreme values in a dataset?**
+
+A) Standard Deviation  
+B) Variance  
+C) Range  
+D) Coefficient of Variation  
+
+**Answer: C) Range**
+
+---
+
+### 2. **The standard deviation is the square root of which of the following?**
+
+A) Mean  
+B) Range  
+C) Variance  
+D) Median  
+
+**Answer: C) Variance**
+
+---
+
+### 3. **Which of the following measures is dimensionless and used to compare variability between datasets with different units?**
+
+A) Standard Deviation  
+B) Coefficient of Variation  
+C) Range  
+D) Variance  
+
+**Answer: B) Coefficient of Variation**
+
+---
+
+### 4. **If all the data points in a dataset are the same, what will the standard deviation be?**
+
+A) 1  
+B) 0  
+C) Equal to the mean  
+D) Positive but small  
+
+**Answer: B) 0**
+
+---
+
+### 5. **The range of a dataset is affected most by which of the following?**
+
+A) The mean  
+B) The median  
+C) The smallest and largest values  
+D) All data points equally  
+
+**Answer: C) The smallest and largest values**
+
+---
+
+### 6. **Which of the following statements is true about variance?**
+
+A) It is always positive.  
+B) It is measured in the same units as the data.  
+C) It can be negative for certain datasets.  
+D) It is a non-parametric measure of spread.  
+
+**Answer: A) It is always positive.**
+
+---
+
+### 7. **What does a high standard deviation indicate about a dataset?**
+
+A) The data points are close to the mean.  
+B) The data points are spread out from the mean.  
+C) The dataset has a large number of values.  
+D) The mean is very small.  
+
+**Answer: B) The data points are spread out from the mean.**
+
+---
+
+### 8. **The coefficient of variation is calculated by dividing the standard deviation by which of the following?**
+
+A) Variance  
+B) Range  
+C) Mean  
+D) Median  
+
+**Answer: C) Mean**
+
+---
+
+### 9. **Which of the following statements is true regarding the relationship between variance and standard deviation?**
+
+A) Variance is the square of the standard deviation.  
+B) Standard deviation is always smaller than variance.  
+C) Standard deviation and variance are equal.  
+D) Variance is the square root of standard deviation.  
+
+**Answer: A) Variance is the square of the standard deviation.**
+
+---
+
+### 10. **If the range of a dataset increases, which of the following is most likely to increase?**
+
+A) Mean  
+B) Standard Deviation  
+C) Mode  
+D) Median  
+
+**Answer: B) Standard Deviation**
+
+--- 
