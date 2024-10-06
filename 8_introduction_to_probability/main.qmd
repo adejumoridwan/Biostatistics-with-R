@@ -6,9 +6,75 @@ format: revealjs
 
 # Why Probability
 
+## Why Probability 
+
+- Make inference from data.
+
+- Check for the significane of our statistic.
+
+## Why Probability
+
+- Imagine a pharmaceutical company has developed a new vaccine to prevent a viral infection.
+
+- Before release it is important to if it is safe and effective.
+
+- Probability makes it easy to quantify the uncertainty of the data.
+
+- Probability let's us know factors that might influence a patients resistance.
+
+- The more factors controlled in the trial, the more accurate the probability estimate is.
 
 
 # Defining Probability
+
+## What is Probability?
+
+- This is a measure of the likelihood or uncertainty of an event. 
+
+- Probability ranges from 0 to 1.
+
+## Ways of Defining Probability.
+
+- Classical Probability
+
+- Empirical Definition
+
+- Subjective Definition
+
+## Classifcal Probability
+
+- This is probability gotten from prior information, where all outcomes are equally likely to occur.
+
+- Examples:
+
+  - Rolling a fair die($\frac{1}{6}$).
+  
+  - Flipping a fair coin($\frac{1}{2}$)
+  
+  
+## Empirical Probability
+
+- This is based on actual observations or experiments.
+
+- Measures the likeliood of an event through trials.
+
+- Examples:
+
+  - Weather Forecasting.
+  
+  - Sports Peformance
+  
+  - Traffic Accidents
+  
+## Subjective Probability
+
+- This is probability based on personal judgement.
+
+- Examples:
+
+  - Medical Diagnosis
+  
+  - Business Decisions
 
 
 # Terms and Definintions
