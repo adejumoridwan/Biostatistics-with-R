@@ -1,0 +1,20 @@
+---
+title: "Introduction to Probability"
+author: "Adejumo Ridwan Suleiman"
+format: revealjs
+---
+
+# Why Probability
+
+
+
+# Defining Probability
+
+
+# Terms and Definintions
+
+
+# Types of Probability
+
+
+# Additions and Multiplication rule of probability
