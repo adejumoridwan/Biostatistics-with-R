@@ -1,0 +1,81 @@
+Here's a case study assignment that integrates the concepts of probability, focused on a medical context. The case study is designed to help you apply your knowledge to real-world scenarios in pharmaceutical research, specifically vaccine efficacy and side effects. The assignment will test your understanding of probability, statistical analysis, and interpretation.
+
+---
+
+### Case Study Assignment: Probability in Vaccine Trials
+
+#### Title: **Assessing Vaccine Efficacy and Safety in a Clinical Trial**
+
+#### Background
+A pharmaceutical company, MedProtect, has developed a new vaccine named **ViraShield** to combat a viral infection. Before releasing the vaccine to the public, they conducted a clinical trial involving 2,000 participants. The goal of the trial was to evaluate the vaccine's efficacy in preventing the infection and its safety profile in terms of side effects.
+
+#### Data Overview
+- **Group 1**: 1,000 participants received the **ViraShield** vaccine.
+- **Group 2**: 1,000 participants received a **placebo** (a non-effective substitute).
+
+Outcomes for each participant were recorded as follows:
+1. **Effectiveness**: Whether the participant got infected with the virus or not.
+2. **Side Effects**: Whether the participant experienced any side effects (classified as mild, moderate, or severe).
+
+### Assignment Questions
+
+#### Part 1: Classical and Empirical Probability
+1. **Classical Probability Analysis**:
+   - Suppose that, based on theoretical expectations, the vaccine has a **70% chance of being effective**. What is the classical probability that a randomly chosen participant from the vaccine group does not get infected?
+   - If you were to extend this analysis to a larger population, how would the probability of vaccine effectiveness change, and why?
+
+2. **Empirical Probability Calculation**:
+   - Based on the trial data, 760 out of the 1,000 participants in the vaccine group did not get infected, while 420 out of the 1,000 in the placebo group did not get infected.
+   - Calculate the empirical probability of the following events:
+     - A participant who received the vaccine does not get infected.
+     - A participant who received the placebo does not get infected.
+
+3. **Interpretation**:
+   - Compare the classical and empirical probabilities from the above questions. What does this tell you about the actual performance of the vaccine in the clinical trial?
+
+#### Part 2: Subjective Probability and Decision-Making
+4. **Subjective Probability**:
+   - Suppose the company's lead researcher, based on their past experience, believes there is a **90% chance that the vaccine will be approved by health authorities** if its efficacy rate is higher than 75%. How does this subjective probability impact the company's decision-making process regarding further investments in the vaccine?
+
+5. **Risk Analysis**:
+   - Assume the regulatory board requires a minimum efficacy rate of 80% for the vaccine to be approved. Given the empirical probabilities calculated, what is the likelihood that the vaccine will meet the board's requirements? Justify your answer.
+
+#### Part 3: Event Analysis and Probability Rules
+6. **Independent and Mutually Exclusive Events**:
+   - In the trial, 200 participants reported mild side effects, 50 reported moderate side effects, and 10 reported severe side effects. Are the occurrences of mild, moderate, and severe side effects mutually exclusive? Why or why not?
+   - If the occurrence of side effects is independent of the vaccine's effectiveness, what is the probability that a participant who experienced a mild side effect also had an effective response to the vaccine?
+
+7. **Conditional Probability**:
+   - Given that a participant did not get infected, what is the probability that they experienced a severe side effect?
+   - Explain how this conditional probability might influence the perception of the vaccine's safety.
+
+#### Part 4: Addition and Multiplication Rules
+8. **Applying the Addition Rule**:
+   - Calculate the probability that a randomly selected participant from the trial either did not get infected or experienced a severe side effect.
+   - If the events are mutually exclusive, explain how the addition rule simplifies the calculation.
+
+9. **Using the Multiplication Rule**:
+   - Suppose that the occurrence of a moderate side effect and effectiveness of the vaccine are independent events. If the probability of the vaccine being effective is 76% and the probability of a moderate side effect is 5%, calculate the joint probability that a participant experiences both.
+   - Explain how the independence of these events affects the overall probability.
+
+#### Part 5: Statistical Inference and Conclusion
+10. **Statistical Significance and Decision Making**:
+    - Based on the calculated probabilities, discuss whether the results of this clinical trial can be considered statistically significant. What other factors should be considered before concluding that the vaccine is effective and safe?
+    - What recommendations would you make to the pharmaceutical company based on your probability analysis?
+
+### Instructions for Submission
+- Provide detailed explanations for each answer.
+- Use R or another statistical software to perform any necessary calculations.
+- Include visualizations (such as bar charts or probability distribution plots) where relevant to support your analysis.
+- Discuss the limitations of the probability models used and suggest any improvements.
+
+### Grading Criteria
+- **Accuracy** of probability calculations (30%)
+- **Clarity** of explanations and reasoning (25%)
+- **Use of appropriate statistical techniques** and software (20%)
+- **Interpretation** and presentation of results (15%)
+- **Recommendations and conclusion** (10%)
+
+---
+
+This assignment will help students understand how to apply probability concepts in medical scenarios, emphasizing the importance of data-driven decision-making in clinical trials. It encourages not just calculations but also critical thinking about the results and their implications.

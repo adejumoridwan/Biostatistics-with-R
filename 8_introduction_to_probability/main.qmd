@@ -6,81 +6,145 @@ format: revealjs
 
 # Why Probability
 
-## Why Probability 
+## Why Probability
 
-- Make inference from data.
+-   Make inference from data.
 
-- Check for the significane of our statistic.
+-   Check for the significane of our statistic.
 
 ## Why Probability
 
-- Imagine a pharmaceutical company has developed a new vaccine to prevent a viral infection.
+-   Imagine a pharmaceutical company has developed a new vaccine to prevent a viral infection.
 
-- Before release it is important to if it is safe and effective.
+-   Before release it is important to if it is safe and effective.
 
-- Probability makes it easy to quantify the uncertainty of the data.
+-   Probability makes it easy to quantify the uncertainty of the data.
 
-- Probability let's us know factors that might influence a patients resistance.
+-   Probability let's us know factors that might influence a patients resistance.
 
-- The more factors controlled in the trial, the more accurate the probability estimate is.
-
+-   The more factors controlled in the trial, the more accurate the probability estimate is.
 
 # Defining Probability
 
 ## What is Probability?
 
-- This is a measure of the likelihood or uncertainty of an event. 
+-   This is a measure of the likelihood or uncertainty of an event.
 
-- Probability ranges from 0 to 1.
+-   Probability ranges from 0 to 1.
 
 ## Ways of Defining Probability.
 
-- Classical Probability
+-   Classical Probability
 
-- Empirical Definition
+-   Empirical Definition
 
-- Subjective Definition
+-   Subjective Definition
 
 ## Classifcal Probability
 
-- This is probability gotten from prior information, where all outcomes are equally likely to occur.
+-   This is probability gotten from prior information, where all outcomes are equally likely to occur.
 
-- Examples:
+-   Examples:
 
-  - Rolling a fair die($\frac{1}{6}$).
-  
-  - Flipping a fair coin($\frac{1}{2}$)
-  
-  
+    -   Rolling a fair die($\frac{1}{6}$).
+
+    -   Flipping a fair coin($\frac{1}{2}$)
+
 ## Empirical Probability
 
-- This is based on actual observations or experiments.
+-   This is based on actual observations or experiments.
 
-- Measures the likeliood of an event through trials.
+-   
 
-- Examples:
+    ## Measures the likeliood of an event through trials.
 
-  - Weather Forecasting.
-  
-  - Sports Peformance
-  
-  - Traffic Accidents
-  
+-   Examples:
+
+    -   Weather Forecasting.
+
+    -   Sports Peformance
+
+    -   Traffic Accidents
+
 ## Subjective Probability
 
-- This is probability based on personal judgement.
+-   This is probability based on personal judgement.
 
-- Examples:
+-   Examples:
 
-  - Medical Diagnosis
-  
-  - Business Decisions
+    -   Medical Diagnosis
 
+    -   Business Decisions
 
 # Terms and Definintions
+
+## Terms and Definitions
+
+- **Experiment** - Any process which when repeated generates a set of observed results.
+
+- **Trial** - Act of conducting an experiment.
+
+- **Outcome** - The result of a trial.
+
+- **Sample Space** - Totality of all possible outcoesn of an experiment.
+
+- **Equally Likely** - All outcomes of an experiment having the same chance of occurence.
+
+## Terms and Definitions - Events
+
+- **Event** - Set of outcomes of an experiment defined by a given rule.
+
+  - **Simple Event** - Result of an experiment that results to only one outcome of interest.
+  
+  - **Compound Events** - More than one possible outcome of an event.
+  
+  - **Mutually Exclusive Events** - Two events A and B are mutuall exclusive if they cannot occur together. 
+  
+  - **Independent Events** - Two events are independent if the occurence of one does not affects the occurence of the other event. 
+  
+## Terms and Definitions - Probability Values
+
+- 0 - means an event did not take place.
+
+- 1 - means the event is sure to take place
+
+![Source: [Medium](https://medium.com/analytics-vidhya/introduction-to-probability-616a50776ff8)](images/prob.jpg)
+
+## Terms and Definitions - Complement of an event 
+
+- This is an event that occurs when the other event fails.
+
+- If the probability of surviving an epidemic is 0.65, then the probability of dying from the epidemic is $1 - 0.65 = 0.35$
+
+- ## Terms and Definitions - Notations
+
+- Intersection (and) - $A \bigcap B$
+
+- Union (or) - $A \bigcup B$
 
 
 # Types of Probability
 
+## Types of Probability
 
-# Additions and Multiplication rule of probability
+- Joint Probability of an event is $P(A \bigcap B)$. 
+  - If  $P(A \bigcap B)=0$, A and B are mutually exclusive.
+
+- Conditional probability of an event A is given as.
+
+$$
+P(A/B) = \frac{P(A\bigcap B)}{P(B)}
+$$
+  - If $P(A \bigcap B)=0$, the two events are mutually exclusive.
+  - If $P(A/B)=P(A)$, if the events are independent.
+  - $P(A)$ and $P(B)$ are known as the marginal probabilities of an event A and event B.
+  
+# Additions and Multiplication Rule of Probability
+
+## Additions and Multiplication Rule of Probability
+
+$$
+P(A \text{ or } B)=P(A)+P(B)-P(A \text{ and } B) \\
+P(A \bigcup B)=P(A)+P(B)-P(A \bigcap B)
+$$
+- When the events are mutually exclusive, $P(A \text{ and } B)=0$
