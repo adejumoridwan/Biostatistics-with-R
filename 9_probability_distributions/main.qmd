@@ -1,0 +1,24 @@
+---
+title: "Introduction to Probability"
+author: "Adejumo Ridwan Suleiman"
+format: revealjs
+---
+
+# What is a Probability Distribution?
+
+
+
+# Terms and Terminologies
+
+
+# Types of Probability Distribution
+
+
+# Bernoulli Distribution
+
+
+# Poisson Distribution
+
+
+# Normal Distribution
+
