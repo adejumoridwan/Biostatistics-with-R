@@ -23,8 +23,31 @@ In a family of 4 children at a community, what is the distribution of the number
 
 # Terms and Terminologies
 
+## Terms and Terminologies
+
+- **Random Variable**: A variable  represents outcomes of a random process, that can either be discrete or continous.
+
+- **Probaility Distributions**: Describes how probability is distributed over possible outcomes.
+
+- **Probability Mass Function**: This is the given probability that a discrete random variable is exaclty equal to some value, and is used with discrete random variables
+
+- **Probability Density Function**: This is the given probability of a random variable falling within a specific range of values, rather than a singl value. It is used for continous random variables.
+
+- **Cumulative Distribution Function**: This is the probability tthat a random variable takes a value less that or equal to a certain value. It is the cumlative sum of probabilities for discrete variables and the integral of the PDF for contnous variables.
+
+ - **Expected Vallue**: This is the long run average o outtcomes of a random varrible. Whih is also the average of all possible valuess that the random varible can take.
 
 # Types of Probability Distribution
+
+## Discrete Probability Distributtions
+
+- Bernoulli Distribution
+- Binomial Distribution
+
+
+## Contnous Probability Distributions
+
+
 
 
 # Bernoulli Distribution
