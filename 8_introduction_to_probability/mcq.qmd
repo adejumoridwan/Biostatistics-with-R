@@ -1,0 +1,107 @@
+Here are ten multiple-choice questions (MCQs) related to the concepts of probability, focusing on a medical and pharmaceutical context. Each question has one correct answer, with explanations provided afterward.
+
+### Multiple-Choice Questions
+
+#### Question 1:
+A pharmaceutical company claims that the probability of their vaccine preventing infection is 80%. What type of probability is this?
+- A) Empirical Probability
+- B) Classical Probability
+- C) Subjective Probability
+- D) Conditional Probability
+
+**Correct Answer:** A) Empirical Probability
+
+#### Question 2:
+If two events, A and B, are mutually exclusive in a clinical trial, what is the probability of both events occurring simultaneously?
+- A) 0
+- B) 0.5
+- C) 1
+- D) Depends on the probability of each event
+
+**Correct Answer:** A) 0
+
+#### Question 3:
+A patient has a 70% chance of not developing a side effect from a new medication. What is the probability that the patient does develop a side effect?
+- A) 0.7
+- B) 0.3
+- C) 1.0
+- D) 0.9
+
+**Correct Answer:** B) 0.3
+
+#### Question 4:
+In a clinical trial, 30% of patients report mild side effects, and 10% report severe side effects. Assuming these events are independent, what is the probability that a patient experiences both mild and severe side effects?
+- A) 0.03
+- B) 0.2
+- C) 0.04
+- D) 0.07
+
+**Correct Answer:** A) 0.03
+
+#### Question 5:
+Which of the following statements best describes a **subjective probability**?
+- A) Probability based on past data and evidence.
+- B) Probability derived from theoretical principles.
+- C) Probability based on an individual's personal belief or opinion.
+- D) Probability calculated from equally likely outcomes.
+
+**Correct Answer:** C) Probability based on an individual's personal belief or opinion.
+
+#### Question 6:
+In a study, 40% of patients experienced a mild side effect after taking a medication. If a patient experienced a side effect, what is the probability that it was not mild?
+- A) 0.4
+- B) 0.6
+- C) 0.2
+- D) 0.8
+
+**Correct Answer:** B) 0.6
+
+#### Question 7:
+The probability of a patient testing positive for a virus, given that they have already shown symptoms, is called:
+- A) Joint Probability
+- B) Marginal Probability
+- C) Conditional Probability
+- D) Complementary Probability
+
+**Correct Answer:** C) Conditional Probability
+
+#### Question 8:
+If the probability of a drug being effective is 0.9 and the probability of a patient developing a side effect is 0.1, assuming independence, what is the probability of both the drug being effective and the patient developing a side effect?
+- A) 0.8
+- B) 0.1
+- C) 0.09
+- D) 0.81
+
+**Correct Answer:** C) 0.09
+
+#### Question 9:
+Which of the following best represents the **addition rule** for the probability of two events, A and B?
+- A) \(P(A \text{ or } B) = P(A) + P(B)\)
+- B) \(P(A \text{ or } B) = P(A) + P(B) - P(A \text{ and } B)\)
+- C) \(P(A \text{ and } B) = P(A) + P(B)\)
+- D) \(P(A) = P(B) - P(A \text{ and } B)\)
+
+**Correct Answer:** B) \(P(A \text{ or } B) = P(A) + P(B) - P(A \text{ and } B)\)
+
+#### Question 10:
+In a vaccine trial, if the probability of no side effect is 0.8, what is the probability of having at least one side effect?
+- A) 0.2
+- B) 0.4
+- C) 0.8
+- D) 1.0
+
+**Correct Answer:** A) 0.2
+
+### Explanation of Correct Answers:
+1. **Empirical Probability** is based on observed data from experiments or trials.
+2. **Mutually exclusive events** cannot happen at the same time, so the probability of both occurring is zero.
+3. The **complement** rule states that the probability of an event not occurring is \( 1 - P(\text{event}) \).
+4. For **independent events**, the probability of both occurring is the product of their individual probabilities.
+5. **Subjective probability** is based on personal judgment rather than objective data.
+6. The complement of a **mild side effect** happening is calculated as \( 1 - P(\text{mild}) \).
+7. **Conditional probability** considers the probability of an event given another event has already occurred.
+8. **Independent probabilities** multiply, so the joint probability is \( 0.9 \times 0.1 = 0.09 \).
+9. The **addition rule** accounts for overlap when adding probabilities.
+10. The complement rule gives the probability of **at least one side effect** as \( 1 - P(\text{no side effect}) \).
+
+This set of questions is designed to reinforce understanding of probability concepts in the context of medical trials and decision-making.
