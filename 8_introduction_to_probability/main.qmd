@@ -4,7 +4,9 @@ author: "Adejumo Ridwan Suleiman"
 format: revealjs
 ---
 
-# Why Probability
+# Why Probability?
+
+## Why Proability
 
 
 
