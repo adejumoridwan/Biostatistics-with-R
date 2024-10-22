@@ -6,6 +6,19 @@ format: revealjs
 
 # What is a Probability Distribution?
 
+## What is a Probability Distribution?
+
+- Distribution of the probability of all possible outcomes of a random variable
+
+- Arrangement of the events and their corresponding probabilities in a tabular form
+
+## What is a Probability Distribution? - Example
+
+In a family of 4 children at a community, what is the distribution of the number of boys?
+
+| X | 0 | 1 | 2 | 3 | 4 |
+| --- | --- | --- | --- | --- | --- |
+| $P(x)$ | 0.413 | 0.236 | 0.211 | 0.090 | 0.05 |
 
 
 # Terms and Terminologies
