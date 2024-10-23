@@ -64,7 +64,10 @@ In a family of 4 children at a community, what is the distribution of the number
 
 - If you have only two possible outcomes in $n$ independent number of trials, then the probability of exactly $X$ successes.
 
-$P(X=x) = {n\choose x}p^x(1-p)^{n-x}$
+$$
+P(X=x) = {n\choose x}p^x(1-p)^{n-x} \\
+X = 1,2,3,\cdots, n
+$$
 
 - The total number of successes $X$ is a binomial variable with parameters $n$ and $p$.
 
@@ -83,12 +86,112 @@ $P(X=x) = {n\choose x}p^x(1-p)^{n-x}$
 
 $$
 \mu = np \\
-\sigma = np(1-p)
+\sigma = np(1-p) 
 $$
+
+## Example
+
+- A drug is known to have a 90% success rate in curing a disease. A doctor treats 20 patients and wants to know the probability that exactly 18 patients will be cured.
+
+- Suppose the proability of a positive result for a genetic disorder is 0.1, and 15 individuals are tested. What is the probability that exactly 3 individudals test positive?
 
 
 # Poisson Distribution
 
+## Poisson Distribution
+
+- Distribution of a given variable $X$ with parameter $\lambda$, the average number of occurrences of an event in a given space, time or volume.
+
+- Discrete events are observed in a continous interval o time, space and volume.
+
+- Occurence of events is random (space or time)
+
+- Probability of occurence very small
+
+- Trial size is large a
+
+- Events are rare
+
+## Poisson Distributtion - Formular
+
+
+
+## Poisson Distribution 
+
+- Used for rare events
+
+
+- Used when the distributioon are counts
+
+
+- The mean and variance are the same, that is $\lambda = \sigma^2$
+
+
+## Poisson Distribution - Example
+
+- If on average 4 patients experience a heart attach in a hospital per day, the Poisson distribution can model the probability of having exactly 6 heart attachks in a given day.
+
+- On average, a hospital records 2 cases of hospital-acquired infections per week. What is the probability that there will be 5 such infections in a particular week?
+
 
 # Normal Distribution
 
+## Normal Distribution 
+
+- Also known as **Gaussian Distribution**
+
+- It is symmetric about its mean, median and mode
+
+- It is bell shaped
+
+## Normal Distribution
+
+add image
+
+## Parameters of the normal distribution
+
+- mean ($\mu$)
+
+- sigma ($\sigma$)
+
+## Properties 
+
+- It's bell shaped
+
+- Its symmetrical about the mean value
+
+- Determined by the mean and variance
+
+- It's mean,, median, and mode are equal
+
+- Total area under the curve is 1 (100%)
+
+- 68% of total observation approximately lie within 1SD (left and right) of the mean value
+
+- 95% of total observation approximately lie within 1.96SD (lefft and right) of the mean value
+ 
+- Over 99% of total observation approximatley lie within 2..576SD (left and rightt) of the mean value.
+
+## Normal disribution 
+
+add image
+
+## Uses of Normal Disribution
+
+- When n is large, the binomial distribution approximates tto a normal distribution.
+
+- It is the foundation of other distributions (e.g chi-square, F-distribution, T-distribution, etc)
+
+## Standard Normal Distribution
+
+- Normal distribution with mean 0 and standard deviation 1.
+
+add image
+
+## Transforming o sandard normal distribution
+
+- Standardizing involves subtracting each observation from the mean and diving by the standard deviation
+
+- This proces is also known as computing the z-score
+
+- $z = \frac{x-\mu}{\sigma}
