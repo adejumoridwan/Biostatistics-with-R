@@ -16,7 +16,7 @@ format: revealjs
 
 In a family of 4 children at a community, what is the distribution of the number of boys?
 
-| X | 0 | 1 | 2 | 3 | 4 |
+| $X$ | 0 | 1 | 2 | 3 | 4 |
 | --- | --- | --- | --- | --- | --- |
 | $P(x)$ | 0.413 | 0.236 | 0.211 | 0.090 | 0.05 |
 
@@ -42,15 +42,49 @@ In a family of 4 children at a community, what is the distribution of the number
 ## Discrete Probability Distributtions
 
 - Bernoulli Distribution
-- Binomial Distribution
+- **Binomial Distribution**
+- **Poisson Distribution**
+- Geometric Distribution
+- Negative Binomial Distribution
+
 
 
 ## Contnous Probability Distributions
 
+- **Normal (Gaussian) Distribution**
+- Uniform Distribution
+- Exponential Distribution
+- Gamma Distribution
+- Beta Distribution
 
 
+# Binomial Distribution
 
-# Bernoulli Distribution
+## Definition
+
+- If you have only two possible outcomes in $n$ independent number of trials, then the probability of exactly $X$ successes.
+
+$P(X=x) = {n\choose x}p^x(1-p)^{n-x}$
+
+- The total number of successes $X$ is a binomial variable with parameters $n$ and $p$.
+
+  - where $n$ is fixed number of trials and
+  - each trial results in a "success" with profitability $p$ and a "failure" with probability $(1-p=1)$.
+  
+## Properties
+
+- Trial has only two possibl outcomes.
+- Trials repeated "n" times.
+- Successive trials are independent.
+- Probability of success is constant from trial to trial.
+- The random variable $X$ is the number of successes in the $n$ trials.
+
+## Mean and Variance
+
+$$
+\mu = np \\
+\sigma = np(1-p)
+$$
 
 
 # Poisson Distribution
