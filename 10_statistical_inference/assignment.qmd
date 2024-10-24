@@ -1,0 +1,203 @@
+Here's a case study assignment using the nhanes dataset from the NHANES package, which contains data from the National Health and Nutrition Examination Survey. The assignment will cover the lesson topics: statistical inference, point estimation, sampling distribution, standard error, and confidence intervals.
+
+Case Study Assignment: Investigating Blood Pressure Levels in Adults
+
+
+---
+
+Objective:
+
+This case study aims to explore statistical inference by analyzing the systolic blood pressure (SBP) levels of adults aged 18 and older in the NHANES dataset. You will perform point estimation, calculate standard errors, construct confidence intervals, and visualize sampling distributions.
+
+Dataset:
+
+We will use the NHANES dataset available in the NHANES package in R.
+
+Instructions:
+
+1. Load the Dataset and Preprocess the Data
+
+Use the NHANES dataset from the NHANES package.
+
+Filter the dataset to include only adults aged 18 years and older.
+
+Focus on the BPSysAve column, which records the average systolic blood pressure.
+
+
+
+2. Descriptive Statistics
+
+Calculate the population parameters (mean and standard deviation) for the systolic blood pressure of adults.
+
+Create a histogram to visualize the distribution of systolic blood pressure in the adult population.
+
+
+
+3. Random Sampling
+
+Take a random sample of size 100 from the adult population.
+
+Calculate the sample mean and sample standard deviation of systolic blood pressure.
+
+
+
+4. Point Estimation
+
+Use the sample mean as a point estimate for the population mean systolic blood pressure.
+
+Discuss the concept of point estimation and why it might not equal the population mean exactly.
+
+
+
+5. Sampling Distribution and Central Limit Theorem
+
+Generate 1000 random samples (with replacement) of size 50 from the dataset.
+
+Calculate the mean for each of the 1000 samples.
+
+Plot the sampling distribution of the sample means.
+
+Discuss the Central Limit Theorem and its implications on the sampling distribution.
+
+
+
+6. Standard Error
+
+Calculate the standard error of the sample mean.
+
+Discuss how the standard error helps in understanding the precision of the point estimate.
+
+
+
+7. Confidence Interval
+
+Calculate a 95% confidence interval for the population mean based on the sample.
+
+Interpret the confidence interval and explain what it means in the context of systolic blood pressure levels.
+
+
+
+8. Comparison of Means
+
+Suppose we are interested in comparing systolic blood pressure levels between men and women.
+
+Calculate the means for both groups and construct confidence intervals for each group.
+
+Use statistical inference to discuss whether there is a significant difference between the two groups.
+
+
+
+
+
+---
+
+Solution Code:
+
+# Load necessary libraries
+library(NHANES)
+library(ggplot2)
+library(dplyr)
+
+# 1. Load and Preprocess the Data
+data(NHANES)
+adult_data <- NHANES %>% 
+  filter(Age >= 18) %>% 
+  select(Age, Gender, BPSysAve) %>% 
+  na.omit()
+
+# 2. Descriptive Statistics
+# Calculate population mean and standard deviation for SBP (systolic blood pressure)
+population_mean <- mean(adult_data$BPSysAve)
+population_sd <- sd(adult_data$BPSysAve)
+cat("Population Mean SBP: ", population_mean, "\n")
+cat("Population Standard Deviation SBP: ", population_sd, "\n")
+
+# Plot the population distribution
+ggplot(adult_data, aes(x = BPSysAve)) +
+  geom_histogram(binwidth = 5, fill = "lightblue", color = "black", alpha = 0.7) +
+  ggtitle("Systolic Blood Pressure Distribution in Adults") +
+  xlab("Systolic Blood Pressure (mmHg)") + ylab("Frequency") +
+  theme_minimal()
+
+# 3. Random Sampling
+set.seed(123)
+sample_data <- adult_data %>% sample_n(100)
+
+# Calculate sample mean and standard deviation
+sample_mean <- mean(sample_data$BPSysAve)
+sample_sd <- sd(sample_data$BPSysAve)
+cat("Sample Mean SBP: ", sample_mean, "\n")
+cat("Sample Standard Deviation SBP: ", sample_sd, "\n")
+
+# 4. Point Estimation
+# Use the sample mean as the point estimate for the population mean
+cat("Point Estimate of Population Mean SBP (Sample Mean): ", sample_mean, "\n")
+
+# 5. Sampling Distribution and Central Limit Theorem
+set.seed(123)
+sample_means <- replicate(1000, mean(sample(adult_data$BPSysAve, 50, replace = TRUE)))
+
+# Plot the sampling distribution of sample means
+ggplot(data.frame(sample_means), aes(x = sample_means)) +
+  geom_histogram(binwidth = 1, fill = "coral", color = "black", alpha = 0.7) +
+  ggtitle("Sampling Distribution of Sample Means (n = 50)") +
+  xlab("Sample Means") + ylab("Frequency") +
+  theme_minimal()
+
+# 6. Standard Error
+# Calculate the standard error of the sample mean
+SE <- function(x) {
+  return(sd(x) / sqrt(length(x)))
+}
+sample_se <- SE(sample_data$BPSysAve)
+cat("Standard Error of the Sample Mean: ", sample_se, "\n")
+
+# 7. Confidence Interval
+# Calculate a 95% confidence interval for the population mean based on the sample
+z_score <- 1.96  # For 95% confidence level
+margin_of_error <- z_score * sample_se
+conf_interval <- c(sample_mean - margin_of_error, sample_mean + margin_of_error)
+
+cat("95% Confidence Interval for the Sample Mean SBP: [", conf_interval[1], ", ", conf_interval[2], "]\n")
+
+# 8. Comparison of Means between Genders
+# Calculate means and confidence intervals for men and women
+gender_means <- adult_data %>% group_by(Gender) %>% summarise(mean_sbp = mean(BPSysAve), sd_sbp = sd(BPSysAve), n = n())
+gender_means <- gender_means %>% mutate(SE = sd_sbp / sqrt(n), 
+                                        margin_error = 1.96 * SE,
+                                        lower_ci = mean_sbp - margin_error,
+                                        upper_ci = mean_sbp + margin_error)
+
+print(gender_means)
+
+# Plot confidence intervals for male and female groups
+ggplot(gender_means, aes(x = Gender, y = mean_sbp, ymin = lower_ci, ymax = upper_ci)) +
+  geom_point(size = 3) +
+  geom_errorbar(width = 0.2) +
+  ggtitle("Mean Systolic Blood Pressure with 95% Confidence Intervals by Gender") +
+  xlab("Gender") + ylab("Mean SBP (mmHg)") +
+  theme_minimal()
+
+Assignment Submission:
+
+Submit the following:
+
+1. The R code used to complete the assignment.
+
+
+2. A report summarizing your findings, including:
+
+Descriptive statistics of systolic blood pressure.
+
+Interpretation of the point estimate, sampling distribution, and confidence interval.
+
+Discussion of gender differences in systolic blood pressure and the results of your statistical inference.
+
+
+
+
+
+---
+
+This case study provides a practical application of the lesson topics using real-world medical data.
+
