@@ -1,0 +1,23 @@
+---
+title: "Statistical Inference"
+author: "Adejumo Ridwan Suleiman"
+format: revealjs
+---
+
+# What is Statistical Inference?
+
+
+# Estimation
+
+
+# Central Limit Theorem
+
+
+# Properties of Sampliing Distribution
+
+
+# Standard Error of Mean and Proportion
+
+
+# Confidence Interval
+
