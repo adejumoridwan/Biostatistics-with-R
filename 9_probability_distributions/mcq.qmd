@@ -1,0 +1,124 @@
+Multiple Choice Questions (MCQs) on Probability Distributions and Standardization in Medical Research
+
+1. What is a random variable in the context of medical research?
+
+a) A known constant value
+b) A variable that represents outcomes of a random process
+c) A variable that always remains constant
+d) A variable that cannot be measured
+
+Answer: b) A variable that represents outcomes of a random process
+
+
+---
+
+2. Which of the following distributions is best suited for modeling the number of patients arriving at an emergency room per hour?
+
+a) Binomial distribution
+b) Poisson distribution
+c) Normal distribution
+d) Uniform distribution
+
+Answer: b) Poisson distribution
+
+
+---
+
+3. In a clinical trial, the probability of a new drug curing a disease is 0.8. If 10 patients are treated, which distribution would you use to model the number of cures?
+
+a) Normal distribution
+b) Exponential distribution
+c) Binomial distribution
+d) Gamma distribution
+
+Answer: c) Binomial distribution
+
+
+---
+
+4. Which of the following is a property of a binomial distribution?
+
+a) The trials are dependent
+b) Each trial has more than two possible outcomes
+c) The probability of success is the same in each trial
+d) It models continuous data
+
+Answer: c) The probability of success is the same in each trial
+
+
+---
+
+5. A hospital records an average of 6 heart attacks per day. What distribution can be used to model the probability of exactly 4 heart attacks occurring in a day?
+
+a) Normal distribution
+b) Poisson distribution
+c) Bernoulli distribution
+d) Binomial distribution
+
+Answer: b) Poisson distribution
+
+
+---
+
+6. Which of the following properties applies to the normal distribution?
+
+a) It is skewed to the right
+b) The mean, median, and mode are different
+c) It is symmetric around the mean
+d) It only applies to discrete data
+
+Answer: c) It is symmetric around the mean
+
+
+---
+
+7. In a normally distributed population with a mean of 100 and a standard deviation of 15, what is the z-score for an individual with a value of 130?
+
+a) 1.5
+b) 2
+c) -1.5
+d) -2
+
+Answer: a) 2
+
+
+---
+
+8. What does the z-score represent in medical data analysis?
+
+a) The raw value of a variable
+b) The probability of a success
+c) The number of standard deviations a data point is from the mean
+d) The sum of probabilities
+
+Answer: c) The number of standard deviations a data point is from the mean
+
+
+---
+
+9. A dataset shows that birth weights follow a normal distribution with a mean of 3.2 kg and a standard deviation of 0.6 kg. What percentage of birth weights are expected to fall within 2.0 kg and 4.4 kg?
+
+a) 68%
+b) 95%
+c) 99%
+d) 50%
+
+Answer: b) 95%
+
+
+---
+
+10. In a binomial distribution, if the probability of success is  and the number of trials is , what is the expected value of the number of successes?
+
+a) 
+b) 
+c) 
+d) 
+
+Answer: c) 
+
+
+---
+
+These MCQs cover a wide range of topics, including the application of probability distributions, binomial and Poisson distributions, and standardization using z-scores in medical data analysis.
+

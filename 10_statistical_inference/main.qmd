@@ -1,0 +1,166 @@
+---
+title: "Statistical Inference"
+author: "Adejumo Ridwan Suleiman"
+format: revealjs
+---
+
+# What is Statistical Inference?
+
+## Definition 
+
+This is the process of making conclusions about a population based on information derived from the sample of that population
+
+add image
+
+## Properties of a good sample
+
+- When the sample is homogeous
+
+- When the sample is representative
+
+- When the sample is choose as random
+
+## Categories of Statistical Inference
+
+- **Estimation:** Interest in estimating the value of a parameter, for example response rate of a cancer investigative drug.
+
+- **Hypothesis testing**: Compare the parameters for two samples using statistical tests of significance, for example investigating whether a particular racial group have higher blood sugar level on averge when compared to another racial group.
+
+## Definition of Terms
+
+- **Parameter:** This is a value that describes the whole population
+
+- **Statistic:** This is a value that describes the sample.
+
+
+# Point Estimate
+
+## Estimation
+
+- One of the uses of biostatistics in health is to investigate certain characteristics of a population.
+
+- Charactereistics of a population are either:
+    - Quantitative (average blood sugal level)\
+    - Qualitative (proportion of adult men who are hypertensive)
+
+## Types of Estimate
+
+- Point estimate
+
+- Interval estimate
+
+## Point Estimate
+
+- Single numerical value used to estimate the corresponding population parameter
+
+- Examples:
+
+    - sample mean($x\bar$) is a point estimate for the population mean($\mu$)
+
+    - sample proportion is a point estimate for the population proportion
+
+    - sample deviation($s$) is a point estimate for the populatioon standard deviation($\sigma$).
+
+## Sampling Distribution
+
+- Point estimate might not always equal to population parameter
+
+- Different samples generated from a population, will give different point estimate
+
+- This distribution of point estimates generated from a given population is called sampling distribution
+
+## Properties of Sampling Distribution
+
+**Central Limit Theorem** states that:
+
+Regardless the distribution of a variable in the population, the sampling distribution of a statistic is always approximately normally distributed.
+
+- Sampling distribution is normally distributed with parameters population mean($\mu$) and standard error($\frac{\sigma}{\sqrt{n}})
+
+- Mean of sampling distribution = true population mean
+
+- Standard deviation of sampling distribution is refered to as standard error
+
+- The standard deviation of these sample means will be approximately equal to the standard error calculated from a single sample.
+
+## Sampling distrutiion
+
+add image
+
+## Standard Error
+
+- Measures the reliability and precision of an estimate
+
+$$
+SE = \frac{\sigma}{\sqrt{n}}
+$$
+add image
+
+## Standard Error for mean
+
+$$
+SE(X\bar) = \frac{s}{\sqrt{n}}
+$$
+
+## Standard Error of the Proportion
+
+$$
+SE(p) = \sqrt{\frac{p(1-p)}{n}}
+$$
+
+## Standard deviation vs standard error
+
+| Standard deviation | Standard Error |\
+| --- | --- |
+| Used with individual measurements | Used with deviation of a statistic |
+| Describes variation or dispersion in the dataset | Describes the precision of the sample mean estimate |
+| Does not change significantly with sample size | Decreases as sample size increases |
+
+
+# Interval Estimate
+
+- Combination of the point estimate and its standard error
+
+- The two numerical values are referred to as confidence interval
+
+## Confidence Interval (C.I)
+
+- *$\texxt{statistic}\pm{\text{reliability coefficient}\cdot{S.E(statistic)}}$
+
+- $\text{reliability coefficient}\cdot\text{S.E(statistic)}=\text{precision of estimaate or margin of error}$
+
+image of CI
+
+## Reliability coefficient
+
+- Depends on:
+    - Desired degree of confidence (95% confidence level)
+    - Normality of the data distribution
+    - Knowledge of population variance
+    - Sample size
+
+## Interpreting Confidence Intervals
+
+**Comparing mean values or proportions**
+
+- Confidence intervals containing zero implies data is consistent with Null Hypothesis
+
+**For Relative Risks or Odds Ratio**
+
+- Confidence intervals containingg 1 implies risk factor not statistically significant
+
+**Random sampling error**
+
+- Confidence interval only accounts for random sapling error not other systematic sources of error or bias
+
+image of confidence interval
+
+## Advantages of CI
+
+- Gives range of plausible vlaues for the population
+
+- Conveys information on the magnitude of differences, let's say systolic blood pressure values between male and female patients
+
+- Explains the level of exposure a subject is affected by
+
+
