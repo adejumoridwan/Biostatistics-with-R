@@ -35,7 +35,7 @@ In a family of 4 children at a community, what is the distribution of the number
 
 - **Cumulative Distribution Function**: This is the probability tthat a random variable takes a value less that or equal to a certain value. It is the cumlative sum of probabilities for discrete variables and the integral of the PDF for contnous variables.
 
- - **Expected Vallue**: This is the long run average o outtcomes of a random varrible. Whih is also the average of all possible valuess that the random varible can take.
+ - **Expected Vallue**: This is the long run average o outtcomes of a random varriable. Which is also the average of all possible valuess that the random variable can take.
 
 # Types of Probability Distribution
 
@@ -46,7 +46,6 @@ In a family of 4 children at a community, what is the distribution of the number
 - **Poisson Distribution**
 - Geometric Distribution
 - Negative Binomial Distribution
-
 
 
 ## Contnous Probability Distributions
@@ -73,7 +72,7 @@ $P(X=x) = {n\choose x}p^x(1-p)^{n-x}$
   
 ## Properties
 
-- Trial has only two possibl outcomes.
+- Trial has only two possible outcomes.
 - Trials repeated "n" times.
 - Successive trials are independent.
 - Probability of success is constant from trial to trial.
