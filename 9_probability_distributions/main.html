@@ -340,20 +340,20 @@ Adejumo Ridwan Suleiman
 <h1>What is a Probability Distribution?</h1>
 
 </section>
-<section id="what-is-a-probability-distribution-1" class="slide level2">
-<h2>What is a Probability Distribution?</h2>
+<section id="definition" class="slide level2">
+<h2>Definition</h2>
 <ul>
 <li><p>Distribution of the probability of all possible outcomes of a random variable</p></li>
 <li><p>Arrangement of the events and their corresponding probabilities in a tabular form</p></li>
 </ul>
 </section>
-<section id="what-is-a-probability-distribution---example" class="slide level2">
-<h2>What is a Probability Distribution? - Example</h2>
+<section id="example" class="slide level2">
+<h2>Example</h2>
 <p>In a family of 4 children at a community, what is the distribution of the number of boys?</p>
 <table>
 <thead>
 <tr class="header">
-<th>X</th>
+<th><span class="math inline">\(X\)</span></th>
 <th>0</th>
 <th>1</th>
 <th>2</th>
@@ -378,15 +378,20 @@ Adejumo Ridwan Suleiman
 <h1>Terms and Terminologies</h1>
 
 </section>
-<section id="terms-and-terminologies-1" class="slide level2">
-<h2>Terms and Terminologies</h2>
+<section id="section" class="slide level2">
+<h2></h2>
 <ul>
 <li><p><strong>Random Variable</strong>: A variable represents outcomes of a random process, that can either be discrete or continous.</p></li>
-<li><p><strong>Probaility Distributions</strong>: Describes how probability is distributed over possible outcomes.</p></li>
-<li><p><strong>Probability Mass Function</strong>: This is the given probability that a discrete random variable is exaclty equal to some value, and is used with discrete random variables</p></li>
-<li><p><strong>Probability Density Function</strong>: This is the given probability of a random variable falling within a specific range of values, rather than a singl value. It is used for continous random variables.</p></li>
-<li><p><strong>Cumulative Distribution Function</strong>: This is the probability tthat a random variable takes a value less that or equal to a certain value. It is the cumlative sum of probabilities for discrete variables and the integral of the PDF for contnous variables.</p></li>
-<li><p><strong>Expected Vallue</strong>: This is the long run average o outtcomes of a random varrible. Whih is also the average of all possible valuess that the random varible can take.</p></li>
+<li><p><strong>Probability Distributions</strong>: Describes how probability is distributed over possible outcomes.</p></li>
+<li><p><strong>Probability Mass Function</strong>: This is the given probability that a discrete random variable is exactly equal to some value, and is used with discrete random variables</p></li>
+</ul>
+</section>
+<section id="section-1" class="slide level2">
+<h2></h2>
+<ul>
+<li><p><strong>Probability Density Function</strong>: This is the given probability of a random variable falling within a specific range of values, rather than a single value. It is used for continuous random variables.</p></li>
+<li><p><strong>Cumulative Distribution Function</strong>: This is the probability that a random variable takes a value less that or equal to a certain value. It is the cumulative sum of probabilities for discrete variables and the integral of the PDF for continuous variables.</p></li>
+<li><p><strong>Expected Value</strong>: This is the long run average of outcomes of a random variable. Which is also the average of all possible values that the random variable can take.</p></li>
 </ul>
 </section></section>
 <section>
@@ -394,32 +399,175 @@ Adejumo Ridwan Suleiman
 <h1>Types of Probability Distribution</h1>
 
 </section>
-<section id="discrete-probability-distributtions" class="slide level2">
-<h2>Discrete Probability Distributtions</h2>
+<section id="discrete-probability-distributions" class="slide level2">
+<h2>Discrete Probability Distributions</h2>
 <ul>
 <li>Bernoulli Distribution</li>
-<li>Binomial Distribution</li>
+<li><strong>Binomial Distribution</strong></li>
+<li><strong>Poisson Distribution</strong></li>
+<li>Geometric Distribution</li>
+<li>Negative Binomial Distribution</li>
 </ul>
 </section>
-<section id="contnous-probability-distributions" class="slide level2">
-<h2>Contnous Probability Distributions</h2>
+<section id="continuous-probability-distributions" class="slide level2">
+<h2>Continuous Probability Distributions</h2>
+<ul>
+<li><strong>Normal (Gaussian) Distribution</strong></li>
+<li>Uniform Distribution</li>
+<li>Exponential Distribution</li>
+<li>Gamma Distribution</li>
+<li>Beta Distribution</li>
+</ul>
 </section></section>
-<section id="bernoulli-distribution" class="title-slide slide level1 center">
-<h1>Bernoulli Distribution</h1>
+<section>
+<section id="binomial-distribution" class="title-slide slide level1 center">
+<h1>Binomial Distribution</h1>
 
 </section>
-
+<section id="definition-1" class="slide level2">
+<h2>Definition</h2>
+<ul>
+<li>If you have only two possible outcomes in <span class="math inline">\(n\)</span> independent number of trials, then the probability of exactly <span class="math inline">\(X\)</span> successes.</li>
+</ul>
+<p><span class="math display">\[
+P(X=x) = {n\choose x}p^x(1-p)^{n-x} \\
+X = 1,2,3,\cdots, n
+\]</span></p>
+<ul>
+<li><p>The total number of successes <span class="math inline">\(X\)</span> is a binomial variable with parameters <span class="math inline">\(n\)</span> and <span class="math inline">\(p\)</span>.</p>
+<ul>
+<li>where <span class="math inline">\(n\)</span> is fixed number of trials and</li>
+<li>each trial results in a “success” with probability <span class="math inline">\(p\)</span> and a “failure” with probability <span class="math inline">\((1-p=1)\)</span>.</li>
+</ul></li>
+</ul>
+</section>
+<section id="properties" class="slide level2">
+<h2>Properties</h2>
+<ul>
+<li>Trial has only two possible outcomes.</li>
+<li>Trials repeated “n” times.</li>
+<li>Successive trials are independent.</li>
+<li>Probability of success is constant from trial to trial.</li>
+<li>The random variable <span class="math inline">\(X\)</span> is the number of successes in the <span class="math inline">\(n\)</span> trials.</li>
+</ul>
+</section>
+<section id="mean-and-variance" class="slide level2">
+<h2>Mean and Variance</h2>
+<p><span class="math display">\[
+\mu = np \\
+\sigma = np(1-p)
+\]</span></p>
+</section>
+<section id="example-1" class="slide level2">
+<h2>Example</h2>
+<ul>
+<li><p>A drug is known to have a 90% success rate in curing a disease. A doctor treats 20 patients and wants to know the probability that exactly 18 patients will be cured.</p></li>
+<li><p>Suppose the proability of a positive result for a genetic disorder is 0.1, and 15 individuals are tested. What is the probability that exactly 3 individudals test positive?</p></li>
+</ul>
+</section></section>
+<section>
 <section id="poisson-distribution" class="title-slide slide level1 center">
 <h1>Poisson Distribution</h1>
 
 </section>
-
+<section id="poisson-distribution-1" class="slide level2">
+<h2>Poisson Distribution</h2>
+<ul>
+<li><p>Distribution of a given variable <span class="math inline">\(X\)</span> with parameter <span class="math inline">\(\lambda\)</span>, the average number of occurrences of an event in a given space, time or volume.</p></li>
+<li><p>Discrete events are observed in a continous interval o time, space and volume.</p></li>
+<li><p>Occurence of events is random (space or time)</p></li>
+<li><p>Probability of occurence very small</p></li>
+<li><p>Trial size is large a</p></li>
+<li><p>Events are rare</p></li>
+</ul>
+</section>
+<section id="poisson-distributtion---formular" class="slide level2">
+<h2>Poisson Distributtion - Formular</h2>
+<p><span class="math display">\[
+f(x) = P(X=x) = \frac{e^{-\lambda}\lambda^x}{x!}
+\]</span></p>
+</section>
+<section id="poisson-distribution-2" class="slide level2">
+<h2>Poisson Distribution</h2>
+<ul>
+<li><p>Used for rare events</p></li>
+<li><p>Used when the distribution are counts</p></li>
+<li><p>The mean and variance are the same, that is <span class="math inline">\(\lambda = \sigma^2\)</span></p></li>
+</ul>
+</section>
+<section id="poisson-distribution---example" class="slide level2">
+<h2>Poisson Distribution - Example</h2>
+<ul>
+<li><p>If on average 4 patients experience a heart attach in a hospital per day, the Poisson distribution can model the probability of having exactly 6 heart attacks in a given day.</p></li>
+<li><p>On average, a hospital records 2 cases of hospital-acquired infections per week. What is the probability that there will be 5 such infections in a particular week?</p></li>
+</ul>
+</section></section>
+<section>
 <section id="normal-distribution" class="title-slide slide level1 center">
 <h1>Normal Distribution</h1>
+
+</section>
+<section id="normal-distribution-1" class="slide level2">
+<h2>Normal Distribution</h2>
+<ul>
+<li><p>Also known as <strong>Gaussian Distribution</strong></p></li>
+<li><p>It is symmetric about its mean, median and mode</p></li>
+<li><p>It is bell shaped</p></li>
+</ul>
+</section>
+<section id="normal-distribution-2" class="slide level2">
+<h2>Normal Distribution</h2>
+
+<img data-src="images/normal_distribution.png" class="r-stretch quarto-figure-center"><p class="caption">Source: <a href="https://www.scribbr.com/statistics/normal-distribution/">Scribbr</a></p></section>
+<section id="parameters-of-the-normal-distribution" class="slide level2">
+<h2>Parameters of the normal distribution</h2>
+<ul>
+<li><p>mean (<span class="math inline">\(\mu\)</span>)</p></li>
+<li><p>sigma (<span class="math inline">\(\sigma\)</span>)</p></li>
+</ul>
+</section>
+<section id="properties-1" class="slide level2">
+<h2>Properties</h2>
+<ul>
+<li><p>It’s bell shaped</p></li>
+<li><p>Its symmetrical about the mean value</p></li>
+<li><p>Determined by the mean and variance</p></li>
+<li><p>It’s mean,, median, and mode are equal</p></li>
+<li><p>Total area under the curve is 1 (100%)</p></li>
+<li><p>68% of total observation approximately lie within 1SD (left and right) of the mean value</p></li>
+<li><p>95% of total observation approximately lie within 1.96SD (lefft and right) of the mean value</p></li>
+<li><p>Over 99% of total observation approximatley lie within 2..576SD (left and rightt) of the mean value.</p></li>
+</ul>
+</section>
+<section id="normal-disribution" class="slide level2">
+<h2>Normal disribution</h2>
+<p>add image</p>
+</section>
+<section id="uses-of-normal-disribution" class="slide level2">
+<h2>Uses of Normal Disribution</h2>
+<ul>
+<li><p>When n is large, the binomial distribution approximates tto a normal distribution.</p></li>
+<li><p>It is the foundation of other distributions (e.g chi-square, F-distribution, T-distribution, etc)</p></li>
+</ul>
+</section>
+<section id="standard-normal-distribution" class="slide level2">
+<h2>Standard Normal Distribution</h2>
+<ul>
+<li>Normal distribution with mean 0 and standard deviation 1.</li>
+</ul>
+<p>add image</p>
+</section>
+<section id="transforming-o-sandard-normal-distribution" class="slide level2">
+<h2>Transforming o sandard normal distribution</h2>
+<ul>
+<li><p>Standardizing involves subtracting each observation from the mean and diving by the standard deviation</p></li>
+<li><p>This proces is also known as computing the z-score</p></li>
+<li><p><span class="math inline">\(z = \frac{x-\mu}{\sigma}\)</span></p></li>
+</ul>
 <div class="footer footer-default">
 
 </div>
-</section>
+</section></section>
     </div>
   </div>
 

@@ -6,13 +6,13 @@ format: revealjs
 
 # What is a Probability Distribution?
 
-## What is a Probability Distribution?
+## Definition
 
 - Distribution of the probability of all possible outcomes of a random variable
 
 - Arrangement of the events and their corresponding probabilities in a tabular form
 
-## What is a Probability Distribution? - Example
+## Example
 
 In a family of 4 children at a community, what is the distribution of the number of boys?
 
@@ -23,23 +23,25 @@ In a family of 4 children at a community, what is the distribution of the number
 
 # Terms and Terminologies
 
-## Terms and Terminologies
+## 
 
 - **Random Variable**: A variable  represents outcomes of a random process, that can either be discrete or continous.
 
-- **Probaility Distributions**: Describes how probability is distributed over possible outcomes.
+- **Probability Distributions**: Describes how probability is distributed over possible outcomes.
 
-- **Probability Mass Function**: This is the given probability that a discrete random variable is exaclty equal to some value, and is used with discrete random variables
+- **Probability Mass Function**: This is the given probability that a discrete random variable is exactly equal to some value, and is used with discrete random variables
 
-- **Probability Density Function**: This is the given probability of a random variable falling within a specific range of values, rather than a singl value. It is used for continous random variables.
+## 
 
-- **Cumulative Distribution Function**: This is the probability tthat a random variable takes a value less that or equal to a certain value. It is the cumlative sum of probabilities for discrete variables and the integral of the PDF for contnous variables.
+- **Probability Density Function**: This is the given probability of a random variable falling within a specific range of values, rather than a single value. It is used for continuous random variables.
 
- - **Expected Vallue**: This is the long run average o outtcomes of a random varriable. Which is also the average of all possible valuess that the random variable can take.
+- **Cumulative Distribution Function**: This is the probability that a random variable takes a value less that or equal to a certain value. It is the cumulative sum of probabilities for discrete variables and the integral of the PDF for continuous variables.
+
+ - **Expected Value**: This is the long run average of outcomes of a random variable. Which is also the average of all possible values that the random variable can take.
 
 # Types of Probability Distribution
 
-## Discrete Probability Distributtions
+## Discrete Probability Distributions
 
 - Bernoulli Distribution
 - **Binomial Distribution**
@@ -48,7 +50,7 @@ In a family of 4 children at a community, what is the distribution of the number
 - Negative Binomial Distribution
 
 
-## Contnous Probability Distributions
+## Continuous Probability Distributions
 
 - **Normal (Gaussian) Distribution**
 - Uniform Distribution
@@ -71,7 +73,7 @@ $$
 - The total number of successes $X$ is a binomial variable with parameters $n$ and $p$.
 
   - where $n$ is fixed number of trials and
-  - each trial results in a "success" with profitability $p$ and a "failure" with probability $(1-p=1)$.
+  - each trial results in a "success" with probability $p$ and a "failure" with probability $(1-p=1)$.
   
 ## Properties
 
@@ -113,6 +115,9 @@ $$
 
 ## Poisson Distributtion - Formular
 
+$$
+f(x) = P(X=x) = \frac{e^{-\lambda}\lambda^x}{x!}
+$$
 
 
 ## Poisson Distribution 
@@ -120,7 +125,7 @@ $$
 - Used for rare events
 
 
-- Used when the distributioon are counts
+- Used when the distribution are counts
 
 
 - The mean and variance are the same, that is $\lambda = \sigma^2$
@@ -128,7 +133,7 @@ $$
 
 ## Poisson Distribution - Example
 
-- If on average 4 patients experience a heart attach in a hospital per day, the Poisson distribution can model the probability of having exactly 6 heart attachks in a given day.
+- If on average 4 patients experience a heart attach in a hospital per day, the Poisson distribution can model the probability of having exactly 6 heart attacks in a given day.
 
 - On average, a hospital records 2 cases of hospital-acquired infections per week. What is the probability that there will be 5 such infections in a particular week?
 
@@ -145,7 +150,7 @@ $$
 
 ## Normal Distribution
 
-add image
+![Source: [Scribbr](https://www.scribbr.com/statistics/normal-distribution/)](images/normal_distribution.png)
 
 ## Parameters of the normal distribution
 
@@ -193,4 +198,4 @@ add image
 
 - This proces is also known as computing the z-score
 
-- $z = \frac{x-\mu}{\sigma}
+- $z = \frac{x-\mu}{\sigma}$
