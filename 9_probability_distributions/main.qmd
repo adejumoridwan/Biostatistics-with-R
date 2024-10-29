@@ -103,35 +103,33 @@ $$
 
 - Distribution of a given variable $X$ with parameter $\lambda$, the average number of occurrences of an event in a given space, time or volume.
 
-- Discrete events are observed in a continous interval o time, space and volume.
+- Discrete events are observed in a continuous interval o time, space and volume.
 
-- Occurence of events is random (space or time)
+- Occurrence of events is random (space or time)
 
-- Probability of occurence very small
+- Probability of occurrence very small
 
-- Trial size is large a
+- Trial size is large
 
 - Events are rare
 
-## Poisson Distributtion - Formular
+## Formular
 
 $$
 f(x) = P(X=x) = \frac{e^{-\lambda}\lambda^x}{x!}
 $$
 
 
-## Poisson Distribution 
+## Properties 
 
 - Used for rare events
 
-
 - Used when the distribution are counts
-
 
 - The mean and variance are the same, that is $\lambda = \sigma^2$
 
 
-## Poisson Distribution - Example
+## Example
 
 - If on average 4 patients experience a heart attach in a hospital per day, the Poisson distribution can model the probability of having exactly 6 heart attacks in a given day.
 
@@ -148,9 +146,6 @@ $$
 
 - It is bell shaped
 
-## Normal Distribution
-
-![Source: [Scribbr](https://www.scribbr.com/statistics/normal-distribution/)](images/normal_distribution.png)
 
 ## Parameters of the normal distribution
 
@@ -162,7 +157,7 @@ $$
 
 - It's bell shaped
 
-- Its symmetrical about the mean value
+- It's symmetrical about the mean value
 
 - Determined by the mean and variance
 
@@ -172,17 +167,17 @@ $$
 
 - 68% of total observation approximately lie within 1SD (left and right) of the mean value
 
-- 95% of total observation approximately lie within 1.96SD (lefft and right) of the mean value
+- 95% of total observation approximately lie within 1.96SD (left and right) of the mean value
  
-- Over 99% of total observation approximatley lie within 2..576SD (left and rightt) of the mean value.
+- Over 99% of total observation approximately lie within 2..576SD (left and right) of the mean value.
 
-## Normal disribution 
+## Normal Distribution
 
-add image
+![Source: [Scribbr](https://www.scribbr.com/statistics/normal-distribution/)](images/normal_distribution.png)
 
 ## Uses of Normal Disribution
 
-- When n is large, the binomial distribution approximates tto a normal distribution.
+- When n is large, the binomial distribution approximates to a normal distribution.
 
 - It is the foundation of other distributions (e.g chi-square, F-distribution, T-distribution, etc)
 
@@ -190,12 +185,14 @@ add image
 
 - Normal distribution with mean 0 and standard deviation 1.
 
-add image
+![Source: [Outlier](https://articles.outlier.org/normal-distribution-curve-definition)](images/snd.png)
 
-## Transforming o sandard normal distribution
+## Transforming of Standard normal distribution
 
-- Standardizing involves subtracting each observation from the mean and diving by the standard deviation
+- Standardizing involves subtracting each observation from the mean and diving by the standard deviation.
 
-- This proces is also known as computing the z-score
+- This process is also known as computing the z-score.
 
-- $z = \frac{x-\mu}{\sigma}$
+$$
+z = \frac{x-\mu}{\sigma}
+$$
