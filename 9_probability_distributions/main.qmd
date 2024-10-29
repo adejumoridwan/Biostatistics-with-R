@@ -94,7 +94,7 @@ $$
 
 - A drug is known to have a 90% success rate in curing a disease. A doctor treats 20 patients and wants to know the probability that exactly 18 patients will be cured.
 
-- Suppose the proability of a positive result for a genetic disorder is 0.1, and 15 individuals are tested. What is the probability that exactly 3 individudals test positive?
+- Suppose the probability of a positive result for a genetic disorder is 0.1, and 15 individuals are tested. What is the probability that exactly 3 individuals test positive?
 
 
 # Poisson Distribution
@@ -103,7 +103,7 @@ $$
 
 - Distribution of a given variable $X$ with parameter $\lambda$, the average number of occurrences of an event in a given space, time or volume.
 
-- Discrete events are observed in a continuous interval o time, space and volume.
+- Discrete events are observed in a continuous interval of time, space and volume.
 
 - Occurrence of events is random (space or time)
 

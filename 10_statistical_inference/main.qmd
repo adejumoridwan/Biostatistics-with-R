@@ -10,21 +10,21 @@ format: revealjs
 
 This is the process of making conclusions about a population based on information derived from the sample of that population
 
-add image
+![Source: [Medium](https://medium.com/@saima.sayyed/what-is-inferential-statistics-3f113e2f5624)](images/statistical_inference.png)
 
 ## Properties of a good sample
 
-- When the sample is homogeous
+- When the sample is homogeneous
 
 - When the sample is representative
 
-- When the sample is choose as random
+- When the sample is choosen at random
 
 ## Categories of Statistical Inference
 
 - **Estimation:** Interest in estimating the value of a parameter, for example response rate of a cancer investigative drug.
 
-- **Hypothesis testing**: Compare the parameters for two samples using statistical tests of significance, for example investigating whether a particular racial group have higher blood sugar level on averge when compared to another racial group.
+- **Hypothesis testing**: Compare the parameters for two samples using statistical tests of significance, for example investigating whether a particular racial group have higher blood sugar level on average when compared to another racial group.
 
 ## Definition of Terms
 
@@ -40,8 +40,8 @@ add image
 - One of the uses of biostatistics in health is to investigate certain characteristics of a population.
 
 - Charactereistics of a population are either:
-    - Quantitative (average blood sugal level)\
-    - Qualitative (proportion of adult men who are hypertensive)
+    - **Quantitative** (average blood sugar level)
+    - **Qualitative** (proportion of adult men who are hypertensive)
 
 ## Types of Estimate
 
@@ -55,37 +55,37 @@ add image
 
 - Examples:
 
-    - sample mean($x\bar$) is a point estimate for the population mean($\mu$)
+    - **sample mean($\bar{x}$)** is a point estimate for the **population mean($\mu$)**.
 
-    - sample proportion is a point estimate for the population proportion
+    - **sample proportion** is a point estimate for the **population proportion**.
 
-    - sample deviation($s$) is a point estimate for the populatioon standard deviation($\sigma$).
+    - **sample deviation($s$)** is a point estimate for the **population standard deviation($\sigma$)**.
 
 ## Sampling Distribution
 
-- Point estimate might not always equal to population parameter
+- Point estimate might not always equal to population parameter.
 
-- Different samples generated from a population, will give different point estimate
+- Different samples generated from a population, will give different point estimate.
 
-- This distribution of point estimates generated from a given population is called sampling distribution
+- This distribution of point estimates generated from a given population is called sampling distribution.
 
-## Properties of Sampling Distribution
+## Central Limit Theorem
 
 **Central Limit Theorem** states that:
 
-Regardless the distribution of a variable in the population, the sampling distribution of a statistic is always approximately normally distributed.
+*Regardless the distribution of a variable in the population, the sampling distribution of a statistic is always approximately normally distributed.*
 
-- Sampling distribution is normally distributed with parameters population mean($\mu$) and standard error($\frac{\sigma}{\sqrt{n}})
+- Sampling distribution is normally distributed with parameters **population mean($\mu$)** and **standard error($\frac{\sigma}{\sqrt{n}})**.
 
 - Mean of sampling distribution = true population mean
 
-- Standard deviation of sampling distribution is refered to as standard error
+- Standard deviation of sampling distribution is referred to as standard error
 
 - The standard deviation of these sample means will be approximately equal to the standard error calculated from a single sample.
 
-## Sampling distrutiion
+## Sampling distribution
 
-add image
+![Source. [Medium](https://medium.com/@seema.singh/central-limit-theorem-simplified-46ddefeb13f3)](images/clt.png)
 
 ## Standard Error
 
@@ -94,12 +94,12 @@ add image
 $$
 SE = \frac{\sigma}{\sqrt{n}}
 $$
-add image
 
-## Standard Error for mean
+
+## Standard error for mean
 
 $$
-SE(X\bar) = \frac{s}{\sqrt{n}}
+SE(\bar{X}) = \frac{s}{\sqrt{n}}
 $$
 
 ## Standard Error of the Proportion
@@ -110,7 +110,7 @@ $$
 
 ## Standard deviation vs standard error
 
-| Standard deviation | Standard Error |\
+| Standard deviation | Standard Error |
 | --- | --- |
 | Used with individual measurements | Used with deviation of a statistic |
 | Describes variation or dispersion in the dataset | Describes the precision of the sample mean estimate |
@@ -119,17 +119,21 @@ $$
 
 # Interval Estimate
 
+## Interval Estimate
+
 - Combination of the point estimate and its standard error
 
 - The two numerical values are referred to as confidence interval
 
 ## Confidence Interval (C.I)
 
-- *$\texxt{statistic}\pm{\text{reliability coefficient}\cdot{S.E(statistic)}}$
+- $\text{statistic}\pm{\text{reliability coefficient}\cdot{S.E(statistic)}}$
 
 - $\text{reliability coefficient}\cdot\text{S.E(statistic)}=\text{precision of estimaate or margin of error}$
 
-image of CI
+## Confidence Interval (C.I)
+
+![Source. [MathBlog](https://mathblog.com/statistics/definitions/confidence-interval/95-ci/)](images/ci.png)
 
 ## Reliability coefficient
 
@@ -143,24 +147,23 @@ image of CI
 
 **Comparing mean values or proportions**
 
-- Confidence intervals containing zero implies data is consistent with Null Hypothesis
+- Confidence intervals containing 0 implies data is consistent with Null Hypothesis.
 
 **For Relative Risks or Odds Ratio**
 
-- Confidence intervals containingg 1 implies risk factor not statistically significant
+- Confidence intervals containing 1 implies risk factor not statistically significant.
 
 **Random sampling error**
 
-- Confidence interval only accounts for random sapling error not other systematic sources of error or bias
+- Confidence interval only accounts for random sapling error not other systematic sources of error or bias.
 
-image of confidence interval
 
 ## Advantages of CI
 
-- Gives range of plausible vlaues for the population
+- Gives range of plausible values for the population.
 
-- Conveys information on the magnitude of differences, let's say systolic blood pressure values between male and female patients
+- Conveys information on the magnitude of differences, let's say systolic blood pressure values between male and female patients.
 
-- Explains the level of exposure a subject is affected by
+- Explains the level of exposure a subject is affected by.
 
 

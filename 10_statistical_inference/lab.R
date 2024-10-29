@@ -1,4 +1,3 @@
-Here is the R code to illustrate the lessons from the document:
 
 # Load necessary libraries
 library(ggplot2)
@@ -81,24 +80,4 @@ ci_plot <- ggplot(data = data.frame(sample_data), aes(x = sample_data)) +
 
 # Display the confidence interval plot
 print(ci_plot)
-
-Explanation:
-
-1. Population and Sample Visualization: The population_plot shows the full population's distribution, while the sample_plot shows the distribution of a random sample from that population.
-
-
-2. Point Estimate: The code calculates the mean of the sample as a point estimate for the population mean.
-
-
-3. Sampling Distribution: This simulates the distribution of sample means from multiple random samples to demonstrate the Central Limit Theorem.
-
-
-4. Standard Error: The function SE computes the standard error of the sample mean.
-
-
-5. Confidence Interval: A 95% confidence interval for the sample mean is calculated and visualized.
-
-
-
-You can insert relevant images for the "add image" parts in your slide presentation where required.
 
