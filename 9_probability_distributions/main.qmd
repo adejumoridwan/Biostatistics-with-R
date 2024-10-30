@@ -6,13 +6,13 @@ format: revealjs
 
 # What is a Probability Distribution?
 
-## What is a Probability Distribution?
+## Definition
 
 - Distribution of the probability of all possible outcomes of a random variable
 
 - Arrangement of the events and their corresponding probabilities in a tabular form
 
-## What is a Probability Distribution? - Example
+## Example
 
 In a family of 4 children at a community, what is the distribution of the number of boys?
 
@@ -23,23 +23,25 @@ In a family of 4 children at a community, what is the distribution of the number
 
 # Terms and Terminologies
 
-## Terms and Terminologies
+## 
 
 - **Random Variable**: A variable  represents outcomes of a random process, that can either be discrete or continous.
 
-- **Probaility Distributions**: Describes how probability is distributed over possible outcomes.
+- **Probability Distributions**: Describes how probability is distributed over possible outcomes.
 
-- **Probability Mass Function**: This is the given probability that a discrete random variable is exaclty equal to some value, and is used with discrete random variables
+- **Probability Mass Function**: This is the given probability that a discrete random variable is exactly equal to some value, and is used with discrete random variables
 
-- **Probability Density Function**: This is the given probability of a random variable falling within a specific range of values, rather than a singl value. It is used for continous random variables.
+## 
 
-- **Cumulative Distribution Function**: This is the probability tthat a random variable takes a value less that or equal to a certain value. It is the cumlative sum of probabilities for discrete variables and the integral of the PDF for contnous variables.
+- **Probability Density Function**: This is the given probability of a random variable falling within a specific range of values, rather than a single value. It is used for continuous random variables.
 
- - **Expected Vallue**: This is the long run average o outtcomes of a random varrible. Whih is also the average of all possible valuess that the random varible can take.
+- **Cumulative Distribution Function**: This is the probability that a random variable takes a value less that or equal to a certain value. It is the cumulative sum of probabilities for discrete variables and the integral of the PDF for continuous variables.
+
+ - **Expected Value**: This is the long run average of outcomes of a random variable. Which is also the average of all possible values that the random variable can take.
 
 # Types of Probability Distribution
 
-## Discrete Probability Distributtions
+## Discrete Probability Distributions
 
 - Bernoulli Distribution
 - **Binomial Distribution**
@@ -48,8 +50,7 @@ In a family of 4 children at a community, what is the distribution of the number
 - Negative Binomial Distribution
 
 
-
-## Contnous Probability Distributions
+## Continuous Probability Distributions
 
 - **Normal (Gaussian) Distribution**
 - Uniform Distribution
@@ -72,11 +73,11 @@ $$
 - The total number of successes $X$ is a binomial variable with parameters $n$ and $p$.
 
   - where $n$ is fixed number of trials and
-  - each trial results in a "success" with profitability $p$ and a "failure" with probability $(1-p=1)$.
+  - each trial results in a "success" with probability $p$ and a "failure" with probability $(1-p=1)$.
   
 ## Properties
 
-- Trial has only two possibl outcomes.
+- Trial has only two possible outcomes.
 - Trials repeated "n" times.
 - Successive trials are independent.
 - Probability of success is constant from trial to trial.
@@ -93,7 +94,7 @@ $$
 
 - A drug is known to have a 90% success rate in curing a disease. A doctor treats 20 patients and wants to know the probability that exactly 18 patients will be cured.
 
-- Suppose the proability of a positive result for a genetic disorder is 0.1, and 15 individuals are tested. What is the probability that exactly 3 individudals test positive?
+- Suppose the probability of a positive result for a genetic disorder is 0.1, and 15 individuals are tested. What is the probability that exactly 3 individuals test positive?
 
 
 # Poisson Distribution
@@ -102,34 +103,35 @@ $$
 
 - Distribution of a given variable $X$ with parameter $\lambda$, the average number of occurrences of an event in a given space, time or volume.
 
-- Discrete events are observed in a continous interval o time, space and volume.
+- Discrete events are observed in a continuous interval of time, space and volume.
 
-- Occurence of events is random (space or time)
+- Occurrence of events is random (space or time)
 
-- Probability of occurence very small
+- Probability of occurrence very small
 
-- Trial size is large a
+- Trial size is large
 
 - Events are rare
 
-## Poisson Distributtion - Formular
+## Formular
+
+$$
+f(x) = P(X=x) = \frac{e^{-\lambda}\lambda^x}{x!}
+$$
 
 
-
-## Poisson Distribution 
+## Properties 
 
 - Used for rare events
 
-
-- Used when the distributioon are counts
-
+- Used when the distribution are counts
 
 - The mean and variance are the same, that is $\lambda = \sigma^2$
 
 
-## Poisson Distribution - Example
+## Example
 
-- If on average 4 patients experience a heart attach in a hospital per day, the Poisson distribution can model the probability of having exactly 6 heart attachks in a given day.
+- If on average 4 patients experience a heart attach in a hospital per day, the Poisson distribution can model the probability of having exactly 6 heart attacks in a given day.
 
 - On average, a hospital records 2 cases of hospital-acquired infections per week. What is the probability that there will be 5 such infections in a particular week?
 
@@ -144,9 +146,6 @@ $$
 
 - It is bell shaped
 
-## Normal Distribution
-
-add image
 
 ## Parameters of the normal distribution
 
@@ -158,7 +157,7 @@ add image
 
 - It's bell shaped
 
-- Its symmetrical about the mean value
+- It's symmetrical about the mean value
 
 - Determined by the mean and variance
 
@@ -168,17 +167,17 @@ add image
 
 - 68% of total observation approximately lie within 1SD (left and right) of the mean value
 
-- 95% of total observation approximately lie within 1.96SD (lefft and right) of the mean value
+- 95% of total observation approximately lie within 1.96SD (left and right) of the mean value
  
-- Over 99% of total observation approximatley lie within 2..576SD (left and rightt) of the mean value.
+- Over 99% of total observation approximately lie within 2..576SD (left and right) of the mean value.
 
-## Normal disribution 
+## Normal Distribution
 
-add image
+![Source: [Scribbr](https://www.scribbr.com/statistics/normal-distribution/)](images/normal_distribution.png)
 
 ## Uses of Normal Disribution
 
-- When n is large, the binomial distribution approximates tto a normal distribution.
+- When n is large, the binomial distribution approximates to a normal distribution.
 
 - It is the foundation of other distributions (e.g chi-square, F-distribution, T-distribution, etc)
 
@@ -186,12 +185,14 @@ add image
 
 - Normal distribution with mean 0 and standard deviation 1.
 
-add image
+![Source: [Outlier](https://articles.outlier.org/normal-distribution-curve-definition)](images/snd.png)
 
-## Transforming o sandard normal distribution
+## Transforming of Standard normal distribution
 
-- Standardizing involves subtracting each observation from the mean and diving by the standard deviation
+- Standardizing involves subtracting each observation from the mean and diving by the standard deviation.
 
-- This proces is also known as computing the z-score
+- This process is also known as computing the z-score.
 
-- $z = \frac{x-\mu}{\sigma}
+$$
+z = \frac{x-\mu}{\sigma}
+$$

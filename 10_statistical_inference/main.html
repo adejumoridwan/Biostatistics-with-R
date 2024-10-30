@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.2.280">
 
   <meta name="author" content="Adejumo Ridwan Suleiman">
-  <title>Introduction to Probability</title>
+  <title>Statistical Inference</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -324,7 +324,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Introduction to Probability</h1>
+  <h1 class="title">Statistical Inference</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -336,232 +336,202 @@ Adejumo Ridwan Suleiman
 
 </section>
 <section>
-<section id="what-is-a-probability-distribution" class="title-slide slide level1 center">
-<h1>What is a Probability Distribution?</h1>
+<section id="what-is-statistical-inference" class="title-slide slide level1 center">
+<h1>What is Statistical Inference?</h1>
 
 </section>
 <section id="definition" class="slide level2">
 <h2>Definition</h2>
+<p>This is the process of making conclusions about a population based on information derived from the sample of that population</p>
+
+<img data-src="images/statistical_inference.png" class="r-stretch quarto-figure-center"><p class="caption">Source: <a href="https://medium.com/@saima.sayyed/what-is-inferential-statistics-3f113e2f5624">Medium</a></p></section>
+<section id="properties-of-a-good-sample" class="slide level2">
+<h2>Properties of a good sample</h2>
 <ul>
-<li><p>Distribution of the probability of all possible outcomes of a random variable</p></li>
-<li><p>Arrangement of the events and their corresponding probabilities in a tabular form</p></li>
+<li><p>When the sample is homogeneous</p></li>
+<li><p>When the sample is representative</p></li>
+<li><p>When the sample is choosen at random</p></li>
 </ul>
 </section>
-<section id="example" class="slide level2">
-<h2>Example</h2>
-<p>In a family of 4 children at a community, what is the distribution of the number of boys?</p>
+<section id="categories-of-statistical-inference" class="slide level2">
+<h2>Categories of Statistical Inference</h2>
+<ul>
+<li><p><strong>Estimation:</strong> Interest in estimating the value of a parameter, for example response rate of a cancer investigative drug.</p></li>
+<li><p><strong>Hypothesis testing</strong>: Compare the parameters for two samples using statistical tests of significance, for example investigating whether a particular racial group have higher blood sugar level on average when compared to another racial group.</p></li>
+</ul>
+</section>
+<section id="definition-of-terms" class="slide level2">
+<h2>Definition of Terms</h2>
+<ul>
+<li><p><strong>Parameter:</strong> This is a value that describes the whole population</p></li>
+<li><p><strong>Statistic:</strong> This is a value that describes the sample.</p></li>
+</ul>
+</section></section>
+<section>
+<section id="point-estimate" class="title-slide slide level1 center">
+<h1>Point Estimate</h1>
+
+</section>
+<section id="estimation" class="slide level2">
+<h2>Estimation</h2>
+<ul>
+<li><p>One of the uses of biostatistics in health is to investigate certain characteristics of a population.</p></li>
+<li><p>Charactereistics of a population are either:</p>
+<ul>
+<li><strong>Quantitative</strong> (average blood sugar level)</li>
+<li><strong>Qualitative</strong> (proportion of adult men who are hypertensive)</li>
+</ul></li>
+</ul>
+</section>
+<section id="types-of-estimate" class="slide level2">
+<h2>Types of Estimate</h2>
+<ul>
+<li><p>Point estimate</p></li>
+<li><p>Interval estimate</p></li>
+</ul>
+</section>
+<section id="point-estimate-1" class="slide level2">
+<h2>Point Estimate</h2>
+<ul>
+<li><p>Single numerical value used to estimate the corresponding population parameter</p></li>
+<li><p>Examples:</p>
+<ul>
+<li><p><strong>sample mean(<span class="math inline">\(\bar{x}\)</span>)</strong> is a point estimate for the <strong>population mean(<span class="math inline">\(\mu\)</span>)</strong>.</p></li>
+<li><p><strong>sample proportion</strong> is a point estimate for the <strong>population proportion</strong>.</p></li>
+<li><p><strong>sample deviation(<span class="math inline">\(s\)</span>)</strong> is a point estimate for the <strong>population standard deviation(<span class="math inline">\(\sigma\)</span>)</strong>.</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="sampling-distribution" class="slide level2">
+<h2>Sampling Distribution</h2>
+<ul>
+<li><p>Point estimate might not always equal to population parameter.</p></li>
+<li><p>Different samples generated from a population, will give different point estimate.</p></li>
+<li><p>This distribution of point estimates generated from a given population is called sampling distribution.</p></li>
+</ul>
+</section>
+<section id="central-limit-theorem" class="slide level2">
+<h2>Central Limit Theorem</h2>
+<p><strong>Central Limit Theorem</strong> states that:</p>
+<p><em>Regardless the distribution of a variable in the population, the sampling distribution of a statistic is always approximately normally distributed.</em></p>
+<ul>
+<li><p>Sampling distribution is normally distributed with parameters <strong>population mean(<span class="math inline">\(\mu\)</span>)</strong> and <strong>standard error($)</strong>.</p></li>
+<li><p>Mean of sampling distribution = true population mean</p></li>
+<li><p>Standard deviation of sampling distribution is referred to as standard error</p></li>
+<li><p>The standard deviation of these sample means will be approximately equal to the standard error calculated from a single sample.</p></li>
+</ul>
+</section>
+<section id="sampling-distribution-1" class="slide level2">
+<h2>Sampling distribution</h2>
+
+<img data-src="images/clt.png" class="r-stretch quarto-figure-center"><p class="caption">Source. <a href="https://medium.com/@seema.singh/central-limit-theorem-simplified-46ddefeb13f3">Medium</a></p></section>
+<section id="standard-error" class="slide level2">
+<h2>Standard Error</h2>
+<ul>
+<li>Measures the reliability and precision of an estimate</li>
+</ul>
+<p><span class="math display">\[
+SE = \frac{\sigma}{\sqrt{n}}
+\]</span></p>
+</section>
+<section id="standard-error-for-mean" class="slide level2">
+<h2>Standard error for mean</h2>
+<p><span class="math display">\[
+SE(\bar{X}) = \frac{s}{\sqrt{n}}
+\]</span></p>
+</section>
+<section id="standard-error-of-the-proportion" class="slide level2">
+<h2>Standard Error of the Proportion</h2>
+<p><span class="math display">\[
+SE(p) = \sqrt{\frac{p(1-p)}{n}}
+\]</span></p>
+</section>
+<section id="standard-deviation-vs-standard-error" class="slide level2">
+<h2>Standard deviation vs standard error</h2>
 <table>
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
 <thead>
 <tr class="header">
-<th><span class="math inline">\(X\)</span></th>
-<th>0</th>
-<th>1</th>
-<th>2</th>
-<th>3</th>
-<th>4</th>
+<th>Standard deviation</th>
+<th>Standard Error</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><span class="math inline">\(P(x)\)</span></td>
-<td>0.413</td>
-<td>0.236</td>
-<td>0.211</td>
-<td>0.090</td>
-<td>0.05</td>
+<td>Used with individual measurements</td>
+<td>Used with deviation of a statistic</td>
+</tr>
+<tr class="even">
+<td>Describes variation or dispersion in the dataset</td>
+<td>Describes the precision of the sample mean estimate</td>
+</tr>
+<tr class="odd">
+<td>Does not change significantly with sample size</td>
+<td>Decreases as sample size increases</td>
 </tr>
 </tbody>
 </table>
 </section></section>
 <section>
-<section id="terms-and-terminologies" class="title-slide slide level1 center">
-<h1>Terms and Terminologies</h1>
+<section id="interval-estimate" class="title-slide slide level1 center">
+<h1>Interval Estimate</h1>
 
 </section>
-<section id="section" class="slide level2">
-<h2></h2>
+<section id="interval-estimate-1" class="slide level2">
+<h2>Interval Estimate</h2>
 <ul>
-<li><p><strong>Random Variable</strong>: A variable represents outcomes of a random process, that can either be discrete or continous.</p></li>
-<li><p><strong>Probability Distributions</strong>: Describes how probability is distributed over possible outcomes.</p></li>
-<li><p><strong>Probability Mass Function</strong>: This is the given probability that a discrete random variable is exactly equal to some value, and is used with discrete random variables</p></li>
+<li><p>Combination of the point estimate and its standard error</p></li>
+<li><p>The two numerical values are referred to as confidence interval</p></li>
 </ul>
 </section>
-<section id="section-1" class="slide level2">
-<h2></h2>
+<section id="confidence-interval-c.i" class="slide level2">
+<h2>Confidence Interval (C.I)</h2>
 <ul>
-<li><p><strong>Probability Density Function</strong>: This is the given probability of a random variable falling within a specific range of values, rather than a single value. It is used for continuous random variables.</p></li>
-<li><p><strong>Cumulative Distribution Function</strong>: This is the probability that a random variable takes a value less that or equal to a certain value. It is the cumulative sum of probabilities for discrete variables and the integral of the PDF for continuous variables.</p></li>
-<li><p><strong>Expected Value</strong>: This is the long run average of outcomes of a random variable. Which is also the average of all possible values that the random variable can take.</p></li>
+<li><p><span class="math inline">\(\text{statistic}\pm{\text{reliability coefficient}\cdot{S.E(statistic)}}\)</span></p></li>
+<li><p><span class="math inline">\(\text{reliability coefficient}\cdot\text{S.E(statistic)}=\text{precision of estimaate or margin of error}\)</span></p></li>
 </ul>
-</section></section>
-<section>
-<section id="types-of-probability-distribution" class="title-slide slide level1 center">
-<h1>Types of Probability Distribution</h1>
+</section>
+<section id="confidence-interval-c.i-1" class="slide level2">
+<h2>Confidence Interval (C.I)</h2>
 
-</section>
-<section id="discrete-probability-distributions" class="slide level2">
-<h2>Discrete Probability Distributions</h2>
+<img data-src="images/ci.png" class="r-stretch quarto-figure-center"><p class="caption">Source. <a href="https://mathblog.com/statistics/definitions/confidence-interval/95-ci/">MathBlog</a></p></section>
+<section id="reliability-coefficient" class="slide level2">
+<h2>Reliability coefficient</h2>
 <ul>
-<li>Bernoulli Distribution</li>
-<li><strong>Binomial Distribution</strong></li>
-<li><strong>Poisson Distribution</strong></li>
-<li>Geometric Distribution</li>
-<li>Negative Binomial Distribution</li>
-</ul>
-</section>
-<section id="continuous-probability-distributions" class="slide level2">
-<h2>Continuous Probability Distributions</h2>
+<li>Depends on:
 <ul>
-<li><strong>Normal (Gaussian) Distribution</strong></li>
-<li>Uniform Distribution</li>
-<li>Exponential Distribution</li>
-<li>Gamma Distribution</li>
-<li>Beta Distribution</li>
-</ul>
-</section></section>
-<section>
-<section id="binomial-distribution" class="title-slide slide level1 center">
-<h1>Binomial Distribution</h1>
-
-</section>
-<section id="definition-1" class="slide level2">
-<h2>Definition</h2>
-<ul>
-<li>If you have only two possible outcomes in <span class="math inline">\(n\)</span> independent number of trials, then the probability of exactly <span class="math inline">\(X\)</span> successes.</li>
-</ul>
-<p><span class="math display">\[
-P(X=x) = {n\choose x}p^x(1-p)^{n-x} \\
-X = 1,2,3,\cdots, n
-\]</span></p>
-<ul>
-<li><p>The total number of successes <span class="math inline">\(X\)</span> is a binomial variable with parameters <span class="math inline">\(n\)</span> and <span class="math inline">\(p\)</span>.</p>
-<ul>
-<li>where <span class="math inline">\(n\)</span> is fixed number of trials and</li>
-<li>each trial results in a “success” with probability <span class="math inline">\(p\)</span> and a “failure” with probability <span class="math inline">\((1-p=1)\)</span>.</li>
+<li>Desired degree of confidence (95% confidence level)</li>
+<li>Normality of the data distribution</li>
+<li>Knowledge of population variance</li>
+<li>Sample size</li>
 </ul></li>
 </ul>
 </section>
-<section id="properties" class="slide level2">
-<h2>Properties</h2>
+<section id="interpreting-confidence-intervals" class="slide level2">
+<h2>Interpreting Confidence Intervals</h2>
+<p><strong>Comparing mean values or proportions</strong></p>
 <ul>
-<li>Trial has only two possible outcomes.</li>
-<li>Trials repeated “n” times.</li>
-<li>Successive trials are independent.</li>
-<li>Probability of success is constant from trial to trial.</li>
-<li>The random variable <span class="math inline">\(X\)</span> is the number of successes in the <span class="math inline">\(n\)</span> trials.</li>
+<li>Confidence intervals containing 0 implies data is consistent with Null Hypothesis</li>
+</ul>
+<p><strong>For Relative Risks or Odds Ratio</strong></p>
+<ul>
+<li>Confidence intervals containing 1 implies risk factor not statistically significant</li>
+</ul>
+<p><strong>Random sampling error</strong></p>
+<ul>
+<li>Confidence interval only accounts for random sapling error not other systematic sources of error or bias</li>
 </ul>
 </section>
-<section id="mean-and-variance" class="slide level2">
-<h2>Mean and Variance</h2>
-<p><span class="math display">\[
-\mu = np \\
-\sigma = np(1-p)
-\]</span></p>
-</section>
-<section id="example-1" class="slide level2">
-<h2>Example</h2>
+<section id="advantages-of-ci" class="slide level2">
+<h2>Advantages of CI</h2>
 <ul>
-<li><p>A drug is known to have a 90% success rate in curing a disease. A doctor treats 20 patients and wants to know the probability that exactly 18 patients will be cured.</p></li>
-<li><p>Suppose the proability of a positive result for a genetic disorder is 0.1, and 15 individuals are tested. What is the probability that exactly 3 individudals test positive?</p></li>
+<li><p>Gives range of plausible values for the population</p></li>
+<li><p>Conveys information on the magnitude of differences, let’s say systolic blood pressure values between male and female patients</p></li>
+<li><p>Explains the level of exposure a subject is affected by</p></li>
 </ul>
-</section></section>
-<section>
-<section id="poisson-distribution" class="title-slide slide level1 center">
-<h1>Poisson Distribution</h1>
-
-</section>
-<section id="poisson-distribution-1" class="slide level2">
-<h2>Poisson Distribution</h2>
-<ul>
-<li><p>Distribution of a given variable <span class="math inline">\(X\)</span> with parameter <span class="math inline">\(\lambda\)</span>, the average number of occurrences of an event in a given space, time or volume.</p></li>
-<li><p>Discrete events are observed in a continuous interval o time, space and volume.</p></li>
-<li><p>Occurrence of events is random (space or time)</p></li>
-<li><p>Probability of occurrence very small</p></li>
-<li><p>Trial size is large a</p></li>
-<li><p>Events are rare</p></li>
-</ul>
-</section>
-<section id="formular" class="slide level2">
-<h2>Formular</h2>
-<p><span class="math display">\[
-f(x) = P(X=x) = \frac{e^{-\lambda}\lambda^x}{x!}
-\]</span></p>
-</section>
-<section id="properties-1" class="slide level2">
-<h2>Properties</h2>
-<ul>
-<li><p>Used for rare events</p></li>
-<li><p>Used when the distribution are counts</p></li>
-<li><p>The mean and variance are the same, that is <span class="math inline">\(\lambda = \sigma^2\)</span></p></li>
-</ul>
-</section>
-<section id="example-2" class="slide level2">
-<h2>Example</h2>
-<ul>
-<li><p>If on average 4 patients experience a heart attach in a hospital per day, the Poisson distribution can model the probability of having exactly 6 heart attacks in a given day.</p></li>
-<li><p>On average, a hospital records 2 cases of hospital-acquired infections per week. What is the probability that there will be 5 such infections in a particular week?</p></li>
-</ul>
-</section></section>
-<section>
-<section id="normal-distribution" class="title-slide slide level1 center">
-<h1>Normal Distribution</h1>
-
-</section>
-<section id="normal-distribution-1" class="slide level2">
-<h2>Normal Distribution</h2>
-<ul>
-<li><p>Also known as <strong>Gaussian Distribution</strong></p></li>
-<li><p>It is symmetric about its mean, median and mode</p></li>
-<li><p>It is bell shaped</p></li>
-</ul>
-</section>
-<section id="parameters-of-the-normal-distribution" class="slide level2">
-<h2>Parameters of the normal distribution</h2>
-<ul>
-<li><p>mean (<span class="math inline">\(\mu\)</span>)</p></li>
-<li><p>sigma (<span class="math inline">\(\sigma\)</span>)</p></li>
-</ul>
-</section>
-<section id="properties-2" class="slide level2">
-<h2>Properties</h2>
-<ul>
-<li><p>It’s bell shaped</p></li>
-<li><p>It’s symmetrical about the mean value</p></li>
-<li><p>Determined by the mean and variance</p></li>
-<li><p>It’s mean,, median, and mode are equal</p></li>
-<li><p>Total area under the curve is 1 (100%)</p></li>
-<li><p>68% of total observation approximately lie within 1SD (left and right) of the mean value</p></li>
-<li><p>95% of total observation approximately lie within 1.96SD (left and right) of the mean value</p></li>
-<li><p>Over 99% of total observation approximatley lie within 2..576SD (left and rightt) of the mean value.</p></li>
-</ul>
-</section>
-<section id="normal-distribution-2" class="slide level2">
-<h2>Normal Distribution</h2>
-
-<img data-src="images/normal_distribution.png" class="r-stretch quarto-figure-center"><p class="caption">Source: <a href="https://www.scribbr.com/statistics/normal-distribution/">Scribbr</a></p></section>
-<section id="uses-of-normal-disribution" class="slide level2">
-<h2>Uses of Normal Disribution</h2>
-<ul>
-<li><p>When n is large, the binomial distribution approximates to a normal distribution.</p></li>
-<li><p>It is the foundation of other distributions (e.g chi-square, F-distribution, T-distribution, etc)</p></li>
-</ul>
-</section>
-<section id="standard-normal-distribution" class="slide level2">
-<h2>Standard Normal Distribution</h2>
-<ul>
-<li>Normal distribution with mean 0 and standard deviation 1.</li>
-</ul>
-
-<img data-src="images/snd.png" class="r-stretch quarto-figure-center"><p class="caption">Source: <a href="https://articles.outlier.org/normal-distribution-curve-definition">Outlier</a></p></section>
-<section id="transforming-of-standard-normal-distribution" class="slide level2">
-<h2>Transforming of Standard normal distribution</h2>
-<ul>
-<li><p>Standardizing involves subtracting each observation from the mean and diving by the standard deviation.</p></li>
-<li><p>This process is also known as computing the z-score.</p></li>
-</ul>
-<p><span class="math display">\[
-z = \frac{x-\mu}{\sigma}
-\]</span></p>
 <div class="footer footer-default">
 
 </div>

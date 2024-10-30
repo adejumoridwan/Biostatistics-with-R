@@ -13,6 +13,16 @@ p <- 0.9 # probability of success (drug success rate)
 # Calculate the probability of exactly 18 successes
 dbinom(18, size = n, prob = p)
 
+# Suppose the probability of a positive result for a genetic disorder is 0.1, and 15 individuals are tested. 
+# What is the probability that exactly 3 individuals test positive?
+
+
+# Parameters
+n <- 15  # number of tests
+p <- 0.1 # probability of a positive result
+
+# Calculate the probability of exactly 3 positive tests
+dbinom(3, size = n, prob = p)
 
 # Poisson Distribution Example: Heart Attack Incidents
 
@@ -26,6 +36,15 @@ lambda <- 4  # average number of occurrences (heart attacks per day)
 # Calculate the probability of exactly 6 occurrences
 dpois(6, lambda = lambda)
 
+
+# On average, 2 cases of hospital-acquired infections are recorded per week. 
+# What is the probability of observing 5 such cases in a particular week?
+
+# Parameters
+lambda <- 2  # average number of infections per week
+
+# Calculate the probability of exactly 5 infections in a week
+dpois(5, lambda = lambda)
 
 # Normal Distribution Example: Blood Pressure Measurements
 
@@ -41,31 +60,8 @@ sd_bp <- 15     # standard deviation of blood pressure
 pnorm(130, mean = mean_bp, sd = sd_bp) - pnorm(110, mean = mean_bp, sd = sd_bp)
 
 
-# Poisson Distribution Example: Hospital-acquired Infections
-
-# On average, 2 cases of hospital-acquired infections are recorded per week. 
-# What is the probability of observing 5 such cases in a particular week?
-
-# Parameters
-lambda <- 2  # average number of infections per week
-
-# Calculate the probability of exactly 5 infections in a week
-dpois(5, lambda = lambda)
-
-
-# Binomial Distribution Example: Genetic Disorder Test
-
-# Suppose the probability of a positive result for a genetic disorder is 0.1, and 15 individuals are tested. 
-# What is the probability that exactly 3 individuals test positive?
-
-
-
-# Parameters
-n <- 15  # number of tests
-p <- 0.1 # probability of a positive result
-
-# Calculate the probability of exactly 3 positive tests
-dbinom(3, size = n, prob = p)
+# Standardization
+library(NHANES)
 
 # Select relevant columns: ID, Cholesterol (TotChol), and Age for context
 cholesterol_data <- NHANES[, c("ID", "TotChol", "Age")]
@@ -82,3 +78,7 @@ cholesterol_data$Z_Score <- (cholesterol_data$TotChol - mean_cholesterol) / sd_c
 
 # View the first few rows of the standardized data
 head(cholesterol_data)
+
+# Alternatively
+
+head(scale(cholesterol_data$TotChol)
