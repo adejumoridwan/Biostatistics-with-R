@@ -1,0 +1,105 @@
+Here are 10 multiple-choice questions (MCQs) based on the provided material on hypothesis testing:
+
+---
+
+### 1. What is a statistical hypothesis?
+   - A) A fact that has already been verified.
+   - B) A statement that cannot be evaluated by statistical techniques.
+   - C) A statement or fact about population characteristics that is yet to be tested.
+   - D) A personal opinion on a research topic.
+
+   **Answer**: C
+
+---
+
+### 2. The null hypothesis ($H_0$) generally represents which of the following?
+   - A) A statement of equality or no effect.
+   - B) A statement of inequality or effect.
+   - C) A confirmed conclusion.
+   - D) A hypothesis that will always be accepted.
+
+   **Answer**: A
+
+---
+
+### 3. Which of the following is an example of an alternative hypothesis ($H_1$)?
+   - A) The average age of a sample is exactly 30 years.
+   - B) Smokers have no additional risk of lung cancer.
+   - C) The average weight of patients in a clinic is more than 60 kg.
+   - D) No association exists between exercise and weight loss.
+
+   **Answer**: C
+
+---
+
+### 4. What is the probability of making a Type I error called?
+   - A) Power
+   - B) Confidence level
+   - C) Alpha ($\alpha$)
+   - D) Beta ($\beta$)
+
+   **Answer**: C
+
+---
+
+### 5. A Type II error occurs when:
+   - A) A true null hypothesis is rejected.
+   - B) A false null hypothesis is rejected.
+   - C) A false null hypothesis is accepted.
+   - D) A true alternative hypothesis is accepted.
+
+   **Answer**: C
+
+---
+
+### 6. If a p-value is less than the significance level ($\alpha$), we:
+   - A) Fail to reject the null hypothesis.
+   - B) Conclude that there is no effect.
+   - C) Reject the null hypothesis.
+   - D) Increase the sample size.
+
+   **Answer**: C
+
+---
+
+### 7. The confidence level of a test is given by:
+   - A) $1 - \alpha$
+   - B) $1 + \alpha$
+   - C) $\alpha - \beta$
+   - D) $\beta$
+
+   **Answer**: A
+
+---
+
+### 8. What does the p-value represent in hypothesis testing?
+   - A) The probability that the null hypothesis is true.
+   - B) The probability of observing an effect by chance if the null hypothesis is true.
+   - C) The power of a test.
+   - D) The total sample size used in the test.
+
+   **Answer**: B
+
+---
+
+### 9. Which test is appropriate for comparing the means of two groups when the data is normally distributed?
+   - A) Chi-square test
+   - B) t-test
+   - C) Z-test
+   - D) F-test
+
+   **Answer**: B
+
+---
+
+### 10. When is a non-parametric test used in hypothesis testing?
+   - A) When the data is normally distributed.
+   - B) When the sample size is large.
+   - C) When the data is not normally distributed, or the sample size is small.
+   - D) When all variables are qualitative.
+
+   **Answer**: C
+
+--- 
+
+These questions cover fundamental aspects of hypothesis testing, null and alternative hypotheses, types of errors, p-values, and types of tests.
