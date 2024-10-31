@@ -15,7 +15,7 @@ Statement about an expected relationship between one or more independentt variab
 
 - **Research Hypothesis:** Statement that motivates the research
 
-- **Statistical Hypothesis:** Statements that can be evaluateed by statistical techniques.
+- **Statistical Hypothesis:** Statements that can be evaluated by statistical techniques.
 
 ## What is Statistical Hypothesis?
 
@@ -53,7 +53,6 @@ Statement about an expected relationship between one or more independentt variab
     - $H_1$: The average weight of patients in the clinic is more that 60kg
     - $H_1$: Smokers have a higher risk of getting lung cancer
 
-
 ## Steps in Hypothesis Testing
 
 1. State the null hypothesis ($H_0$)
@@ -76,17 +75,17 @@ Statement about an expected relationship between one or more independentt variab
 
 - Rejecting a true null hypothesis
 
-- Probabiliy of committing a type I error is denoted by $\alpha$
+- Probability of committing a type I error is denoted by $\alpha$
 
-- Incorreclty concluding that a difference exists, when actually there is no difference
+- Incorrectly concluding that a difference exists, when actually there is no difference
 
-- A fase positive decision
+- A false positive decision
 
 ## Type II Error
 
 - Accepting a false null hypothesis
 
-- Probabiliy of committing a type II error is denoted by $\beta$
+- Probability of committing a type II error is denoted by $\beta$
 
 - Incorrectly concluding that no difference exists, when actually there is a difference
 
@@ -123,14 +122,14 @@ Statement about an expected relationship between one or more independentt variab
 
 ## P-value
 
-- Measure of the amount of evidence we have againstt the null hypothesis
+- Measure of the amount of evidence we have against the null hypothesis
 
 
-- The smaller the p-value the more the evidence againstt $H_0$ and vice versa
+- The smaller the p-value the more the evidence against $H_0$ and vice versa
 
 ## P-value Interpretation
 
-- If $\alpha=0.05$, and $\text{p-value}<0.03$, this implies statistical signficance.
+- If $\alpha=0.05$, and $\text{p-value}<0.03$, this implies statistical significance.
 
 - This means that the probability of getting an observed effect if truly there was no effect is 3%
 
@@ -163,8 +162,8 @@ Statement about an expected relationship between one or more independentt variab
 ## Selecting appropriate Test Statistic
 
 - Relationship between two qualitative variables
-    - Z-test or chi-square test (for difference in proportion)
-    - Chi-square test (for association/independence)
+    - **Z-test** or **chi-square test** (for difference in proportion)
+    - **Chi-square test** (for association/independence)
 
 - Relationship between one qualitative and one quantitative variable
     - two groups - **t-test**
@@ -192,7 +191,7 @@ Assumes measurements are **normally distributed**
 
 ##
 
-add image
+![](images/statistical_tests.png)
 
 
 

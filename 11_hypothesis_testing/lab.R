@@ -12,7 +12,9 @@ head(ToothGrowth)
 # H1: μ ≠ 18 (The mean tooth length is not equal to 18 mm)
 
 # Perform one-sample t-test
-one_sample_test <- t.test(ToothGrowth$len, mu = 18)
+one_sample_test <- t.test(ToothGrowth$len, 
+                          alternative = c("two.sided"),
+                          mu = 18)
 cat("\nOne-Sample t-test Results:")
 print(one_sample_test)
 
