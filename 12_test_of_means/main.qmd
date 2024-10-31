@@ -1,0 +1,97 @@
+---
+title: "Test of Means"
+author: "Adejumo Ridwan Suleiman"
+format: revealjs
+---
+
+# Student t-test
+
+## Student t-test
+
+- Used to compare mean values betwween two groupsp
+
+- Compare sample mean with hypothetical population mean value
+
+- Data distribution is normally distributed
+
+- Sample size is less than 30
+
+## Assumptions
+
+- Data is measured on an interval scale
+
+- Groups are measured independently
+
+- Outcome variable is normally distributed
+
+- Homogeneity of variance
+
+- Samples are independently drawn
+
+## How to check for assumptions
+
+| Assumption | Check |
+| --- | --- |
+| Normality | Histogram, Shapiro-Wilk Test |
+| Homogeneity of Variance | Levene's Test |
+| Independence of observation | Examine data collecttion methodology or Durbin Watson test |
+ 
+
+## Types of Student t-test
+
+- One sample t-test
+
+- Dependent 2-sample or Paired sample t-test
+
+- Independent 2-sample t-test
+
+# One Sample t-test
+
+## Assumptions
+
+General assumption of t-test applies
+
+# Dependent 2-sample or Paired sample t-test
+
+## Assumptions
+
+- General assumption of t-test applies 
+
+- Data comes from paired observations
+
+# Independent 2-sample t-test
+
+- General assumption of t-test applies
+
+- No relationship between observations of different groups
+
+# F-test
+
+## F-test
+
+- More than two groups
+
+- Means are tested through ANOVA
+
+    - One-way ANOVA (Single Factor)
+    - Two-way ANOVA (Two factors)
+
+## One-way ANOVA Assumptions
+
+- The data is randomly sampled
+
+- The samples are normall distributed
+
+- Samples size may or may not be equal
+
+- Homogeneity of variances
+
+- Residuals are normally distributed
+
+## Post-hoc tests
+
+- Least Significan Difference (LSD)
+
+- Duncan Multiple range test
+
+- Turkey test
