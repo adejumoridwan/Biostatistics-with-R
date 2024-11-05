@@ -1,0 +1,27 @@
+---
+title: "Correlation and Regression"
+author: "Adejumo Ridwan Suleiman"
+format: revealjs
+---
+
+# Correlation
+
+## What is Correlation?
+
+- Measures the strength and direction of relationship between two variables.
+
+- Does not imply causation.
+
+- Change in a variable influences another variable
+
+## Types of Correlation
+
+- Pearson Correlation
+
+- Spearman Rank Correlation
+
+- Kendall's Tau Correlation
+
+- Point-Biserial Correlation
+
+##
