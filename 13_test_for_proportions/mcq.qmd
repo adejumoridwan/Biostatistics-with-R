@@ -1,0 +1,75 @@
+Here are 10 multiple-choice questions (MCQs) based on the topics of **test of proportion** and **test of association** in medical data analysis. 
+
+### Multiple-Choice Questions
+
+1. **Which of the following best describes a proportion?**
+   - A) The ratio of one categorical variable to another
+   - B) The fraction of the total population that has a certain attribute
+   - C) The difference in means between two continuous variables
+   - D) The percentage change in a variable over time  
+   - **Answer:** B
+
+2. **In a one-sample Z-test for proportion, which of the following is an assumption?**
+   - A) The sample size is very small
+   - B) The data contains multiple categories
+   - C) Observations are independent of each other
+   - D) The sample includes paired observations  
+   - **Answer:** C
+
+3. **If you want to test the hypothesis that the proportion of smokers is the same in two independent groups, which test would you use?**
+   - A) One-sample Z-test for proportion
+   - B) Two-sample T-test
+   - C) Two-sample Z-test for proportion
+   - D) Chi-square test of independence  
+   - **Answer:** C
+
+4. **Which of the following can be used to determine the association between two categorical variables?**
+   - A) Correlation coefficient
+   - B) Two-sample Z-test for proportions
+   - C) Chi-square test of independence
+   - D) Linear regression  
+   - **Answer:** C
+
+5. **The sampling distribution of the sample proportion becomes approximately normal when:**
+   - A) The sample size is large enough
+   - B) The sample size is small
+   - C) The sample has continuous data
+   - D) The population proportion is zero  
+   - **Answer:** A
+
+6. **When would you use Fisher's Exact Test instead of a Chi-square test of independence?**
+   - A) When the sample size is very large
+   - B) When there are more than 20% of expected frequencies below 5
+   - C) When analyzing continuous data
+   - D) When the variables are independent  
+   - **Answer:** B
+
+7. **In a two-sample Z-test for proportion, if the p-value is less than 0.05, we conclude that:**
+   - A) The proportions in the two groups are the same
+   - B) There is a significant difference between the two proportions
+   - C) The sample size is insufficient
+   - D) The test assumptions are violated  
+   - **Answer:** B
+
+8. **Which test statistic is used in a Chi-square test of independence?**
+   - A) Z-score
+   - B) T-score
+   - C) F-statistic
+   - D) Chi-square statistic  
+   - **Answer:** D
+
+9. **The Chi-square test of independence is sensitive to:**
+   - A) Continuous data
+   - B) Categorical data with very large sample sizes
+   - C) Small sample sizes and low expected frequencies
+   - D) Data with zero variance  
+   - **Answer:** C
+
+10. **If we are testing the proportion of people with high cholesterol in a population, which of the following hypotheses might we use in a one-sample Z-test?**
+    - A) \( H_0: p = 0.5 \)
+    - B) \( H_0: \mu = 0.5 \)
+    - C) \( H_0: p_1 = p_2 \)
+    - D) \( H_0: \sigma^2 = 1 \)  
+    - **Answer:** A
+
+These questions cover key concepts related to tests of proportion, assumptions of statistical tests, and tests of association in categorical data, all relevant to the topics provided.

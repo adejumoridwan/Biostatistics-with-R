@@ -9,7 +9,7 @@ format: revealjs
 
 ## What is Hypothesis?
 
-Statement about an expected relationship between one or more independentt variables and a dependent variable
+Statement about an expected relationship between one or more independent variables and a dependent variable
 
 ## Types of Hypothesis
 

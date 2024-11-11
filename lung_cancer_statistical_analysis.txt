@@ -1,0 +1,69 @@
+[1] "One Sample T-Test (Age):"
+
+	One Sample t-test
+
+data:  lung$age
+t = 4.0728, df = 227, p-value =
+6.42e-05
+alternative hypothesis: true mean is not equal to 60
+95 percent confidence interval:
+ 61.26330 63.63143
+sample estimates:
+mean of x 
+ 62.44737 
+
+[1] "Shapiro-Wilk Test for Age:"
+
+	Shapiro-Wilk normality test
+
+data:  lung$age
+W = 0.98173, p-value = 0.004829
+
+[1] "Two-Sample T-Test (Survival Time by Sex):"
+
+	Welch Two Sample t-test
+
+data:  time by sex_label
+t = -1.9843, df = 196.51, p-value =
+0.04861
+alternative hypothesis: true difference in means between group Male and group Female is not equal to 0
+95 percent confidence interval:
+ -111.1266705   -0.3428947
+sample estimates:
+  mean in group Male mean in group Female 
+            283.2319             338.9667 
+
+[1] "Levene's Test:"
+Levene's Test for Homogeneity of Variance (center = median)
+       Df F value Pr(>F)
+group   1   0.023 0.8797
+      226               
+[1] "ANOVA Summary:"
+             Df  Sum Sq Mean Sq F value
+age_group     3  118070   39357   0.886
+Residuals   224 9954270   44439        
+            Pr(>F)
+age_group    0.449
+Residuals         
+[1] "Tukey Post-hoc Test:"
+  Tukey multiple comparisons of means
+    95% family-wise confidence level
+
+Fit: aov(formula = time ~ age_group, data = lung)
+
+$age_group
+                          diff       lwr
+Middle-Aged-Young    -2.633484 -128.4502
+Senior-Young        -20.294580 -142.0925
+Elderly-Young       -63.648829 -197.5290
+Senior-Middle-Aged  -17.661096 -105.7623
+Elderly-Middle-Aged -61.015345 -165.1834
+Elderly-Senior      -43.354249 -142.6310
+                          upr     p adj
+Middle-Aged-Young   123.18321 0.9999428
+Senior-Young        101.50335 0.9730460
+Elderly-Young        70.23131 0.6080863
+Senior-Middle-Aged   70.44014 0.9544968
+Elderly-Middle-Aged  43.15271 0.4295347
+Elderly-Senior       55.92252 0.6711680
+

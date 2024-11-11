@@ -12,7 +12,7 @@ format: revealjs
 
 - Two possible outcomes **Success** or **Failure**
 
-- Population proprotion of success is denoted by p
+- Population proportion of success is denoted by p
 
 ## What is Proportion?
 

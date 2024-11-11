@@ -16,11 +16,6 @@ lung$sex_label <- factor(lung$sex, labels = c("Male", "Female"))
 lung$status_label <- factor(lung$status, labels = c("Censored", "Dead"))
 
 # 1. ONE SAMPLE T-TEST
-# Test if the mean age is different from a hypothetical population age of 60
-t_test_one_sample <- t.test(lung$age, mu = 60)
-print("One Sample T-Test (Age):")
-print(t_test_one_sample)
-
 # Normality Check for Age
 # Histogram
 ggplot(lung, aes(x = age)) +
@@ -32,22 +27,31 @@ shapiro_test_age <- shapiro.test(lung$age)
 print("Shapiro-Wilk Test for Age Normality:")
 print(shapiro_test_age)
 
+
+# Test if the mean age is different from a hypothetical population age of 60
+t_test_one_sample <- t.test(lung$age, mu = 60)
+print("One Sample T-Test (Age):")
+print(t_test_one_sample)
+
+
+
 # 2. INDEPENDENT TWO-SAMPLE T-TEST
 # Compare survival times between males and females
+
+# Levene's Test for Homogeneity of Variance
+levene_test_survival <- leveneTest(
+  lung$time, 
+  lung$sex_label
+)
+print("Levene's Test for Homogeneity of Variance:")
+print(levene_test_survival)
+
 t_test_survival_by_sex <- t.test(
   time ~ sex_label, 
   data = lung
 )
 print("Independent Two-Sample T-Test (Survival Time by Sex):")
 print(t_test_survival_by_sex)
-
-# Levene's Test for Homogeneity of Variance
-levene_test_survival <- levene.test(
-  lung$time, 
-  lung$sex_label
-)
-print("Levene's Test for Homogeneity of Variance:")
-print(levene_test_survival)
 
 # 3. ANOVA 
 # Create age groups for ANOVA
@@ -84,21 +88,6 @@ ggplot(lung, aes(x = age_group, y = time)) +
 # Q-Q Plot to check normality of residuals
 plot(anova_model, which = 2)
 
-# Save diagnostic information
-sink("lung_cancer_statistical_analysis.txt")
-print("One Sample T-Test (Age):")
-print(t_test_one_sample)
-print("Shapiro-Wilk Test for Age:")
-print(shapiro_test_age)
-print("Two-Sample T-Test (Survival Time by Sex):")
-print(t_test_survival_by_sex)
-print("Levene's Test:")
-print(levene_test_survival)
-print("ANOVA Summary:")
-print(summary(anova_model))
-print("Tukey Post-hoc Test:")
-print(tukey_test)
-sink()
 
 # Additional Descriptive Statistics
 summary_stats <- lung %>%
