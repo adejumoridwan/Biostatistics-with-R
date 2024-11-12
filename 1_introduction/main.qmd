@@ -8,57 +8,80 @@ format: revealjs
 ## What is Biostatistics?
 
 - Derivation of insights from biological data using statistical methods.
+
 - It is also known as Biometry
 
 ## Key aspects of Biostatistics
 
 - Data Analysis
+
 - Experimental Design
+
 - Hypothesis Testing
+
 - Predictive Modelling
+
 - Risk Assessment
 
 ## Importance of Biostatistics in biological research
 
 - Validity of Scientific findings
+
 - Evidence-based decision making
+
 - Handle complex data
+
 - Facilitates interdisciplinary research
 
 ## Roles and Responsibilities of Biostatisticians
 
 - Study design
+
 - Data Analysis
+
 - Methodological development
 
 ## Application of Biostatistics
 
 - Clinical trials
+
 - Survival analysis
+
 - Categorical data analysis
+
 - Genetic studies
+
 - Public Health
+
 - Epidemiology
 
 ## Career prospects in Biostatistics
 
 - Academia
+
 - Government Agencies
+
 - Pharmaceutical companies
+
 - Research Institutions
 
 ## Statistical softwares
 
 - R
+
 - Python
+
 - Stata
+
 - SPSS
+
 - SAS
 
 
 ## What this course is all about?
 
 - Learn how to use statistical methods on biological data.
+
 - How to use R to effectively derive insights from data.
 
 ## Course Repository

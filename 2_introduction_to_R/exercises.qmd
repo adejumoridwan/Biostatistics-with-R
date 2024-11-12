@@ -1,0 +1,101 @@
+
+5. 
+6. `matrix` tables can be created from vectors using the function of the same name. Using the vector `x <- 1:6` use `matrix` to create the following matrices:
+
+$$\begin{pmatrix}
+  1 & 2 & 3\\ 
+  4 & 5 & 6
+\end{pmatrix}$$
+and 
+$$\begin{pmatrix}
+  1 & 4\\ 
+  2 & 5\\
+  3 & 6
+\end{pmatrix}.$$
+  
+Remember to check `?matrix` to find out how to set the dimensions of the matrix, and how it is filled with the numbers from the vector!
+
+#### Exercise
+The following tasks are concerned with converting and checking data types:
+
+1. What happens if you apply `as.logical` to the `numeric` values 0 and 1? What happens if you apply it to other numbers?
+  
+2. What happens if you apply `as.character` to a vector containing `numeric` values?
+  
+3. The functions `is.logical`, `is.numeric` and `is.character` can be used to check if a variable is a `logical`, `numeric` or `character`, respectively. What type of object do they return?
+  
+4. Is `NA` a `logical`, `numeric` or `character`?
+
+
+#### Exercise
+The following tasks all involve using the the `[i, j]` notation for extracting data from data frames:
+  
+1. Why does `airquality[, 3]` not return the third row of `airquality`?
+  
+2. Extract the first five rows from `airquality`. 
+_Hint:_ a fast way of creating the vector `c(1, 2, 3, 4, 5)` is to write `1:5`.
+3. Compute the correlation between the `Temp` and `Wind` vectors of `airquality` without referring to them using `$`.
+4. Extract all columns from `airquality` _except_ `Temp` and `Wind`.
+
+
+#### Exercise
+Use the `bookstore` data frame to do the following:
+  
+1. Add a new variable `rev_per_minute` which is the ratio between purchase and the visit length.
+2. Replace the purchase amount for the 80-year old customer with `16`.
+
+
+#### Exercise
+The following tasks all involve checking conditions for the `airquality` data:
+  
+1. Which was the coldest day during the period?
+  
+2. How many days was the wind speed greater than 17 mph?
+  
+3. How many missing values are there in the `Ozone` vector?
+  
+4. How many days are there for which the temperature was below 70 and the wind speed was above 10?
+
+#### Exercise
+The abbreviation CSV stands for _Comma Separated Values_, i.e. that commas `,` are used to separate the data columns. Unfortunately, the `.csv` format is not standardised, and `.csv` files can use different characters to delimit the columns. Examples include semicolons (`;`) and tabs (multiple spaces, denoted `\t` in strings in R). Moreover, decimal points can be given either as points (`.`) or as commas (`,`).
+
+In this dataset, a number of patients with chronic pain have recorded how much pain they experience each day during a period, using the Visual Analogue Scale (VAS, ranging from 0 - no pain - to 10 - worst imaginable pain). Inspect the file in a spreadsheet software and a text editor - check which symbol is used to separate the columns and whether a decimal point or a decimal comma is used. Then set `file_path` to its path and import the data from it using the code below:
+```{r eval=FALSE}
+vas <- read.csv(file_path, sep = ";", dec = ",", skip = 4)
+View(vas)
+str(vas)
+```
+
+1. Why are there two variables named `X` and `X.1` in the data frame?
+
+2. What happens if you remove the `sep = ";"` argument?
+
+3. What happens if you instead remove the `dec = ","` argument?
+
+4. What happens if you instead remove the `skip = 4` argument?
+
+5. What happens if you change `skip = 4` to `skip = 5`?
+
+
+#### Exercise
+
+1. Change the category names to `Mild`, `Moderate` and `Hot`.
+
+2. Combine `Moderate` and `Hot` into a single level named `Hot`.
+
+
+
+#### Exercise
+Load the `msleep` data from the `ggplot2` package. Note that categorical variable `vore` is stored as a `character`. Convert it to a `factor` by running `msleep$vore <- factor(msleep$vore)`.
+
+1. How are the resulting factor levels ordered? Why are they ordered in that way?
+  
+2. Compute the mean value of `sleep_total` for each `vore` group.
+
+3. Sort the factor levels according to their `sleep_total` means. Hint: this can be done manually, or more elegantly using e.g. a combination of the functions `rank` in an intermediate step.
+
+#### Exercise
+R will return non-numerical answers if you try to perform computations where the answer is infinite or undefined. Try the following to see some possible results:
+1. Compute $1/0$.
+2. Compute $0/0$.
+3. Compute $\sqrt{-1}$.
