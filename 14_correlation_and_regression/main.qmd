@@ -129,7 +129,18 @@ Where
 
 ## Interpretation of MLR
 
-- 
+**Coefficients**
+- Represent the change in the dependent variable for a one-unit change in the corresponding predictor variable.
+
+- If $\beta_1 = 3$, a unit incrase in $X_1$ will incrase $Y$ by 3 units.
+
+- The sign indicates direction of the relationship.
+
+
+**$\beta_0$**
+
+- Represent expected value of Y when all predictor variables $X_1, X_2, \cdots, X_k$ are zero. 
+
 
 
 
