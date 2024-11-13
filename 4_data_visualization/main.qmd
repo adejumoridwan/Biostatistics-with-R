@@ -4,6 +4,7 @@ author: "Adejumo Ridwan Suleiman"
 format: revealjs
 ---
 
+# What is Data Visualization?
 
 ## What is Data Visualization?
 
@@ -16,7 +17,7 @@ format: revealjs
 
 - Bar Chart
 
-- Box plots
+- Box plot
 
 - Pie Chart
 

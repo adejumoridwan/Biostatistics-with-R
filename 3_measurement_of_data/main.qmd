@@ -6,16 +6,16 @@ format: revealjs
 
 # Data Collection
 
-## Data Collection
+## Types of Data
 
 - **Primary data:** Surveys, Questionnaires
 - **Secondary data:** Hospital records, public repositories
 
-##
+## Data Collection
 
 ![Source: [Medium](https://medium.com/@shubavarma/data-variables-and-their-types-a007bccb36c6)](images/data_collection.jpg){fig-align="center"}
 
-# Scales of Measurement
+## Scales of Measurement
 
 **Qualitative Data (Categorical data)**
 
@@ -42,8 +42,7 @@ format: revealjs
 ## Examples
 - **Blood Group:** A, B, AB, O
 - **Sex:** Male, Female
-- Socio-economic status
-- Marital Status
+- **Marital Status:** Single, Married
 
 # Ordinal Scale
 
@@ -95,11 +94,11 @@ format: revealjs
 
 A variable is a characteristic, number, or quantity that can be measured or quantified.
 
-## 
+## Variable
 
 ![Source: [Medium](https://medium.com/@shubavarma/data-variables-and-their-types-a007bccb36c6)](images/variable.jpg){fig-align="center"}
 
-## 
+## Variable
 
 ![Source: [Medium](https://medium.com/@shubavarma/data-variables-and-their-types-a007bccb36c6)](images/data_categories.jpg){fig-align="center"}
 
