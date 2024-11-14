@@ -4,6 +4,8 @@ author: "Adejumo Ridwan Suleiman"
 format: revealjs
 ---
 
+# Descriptive Statistics and Measures of Central Tendency.
+
 ## Descriptive statistics
 
 - Branch of statistics that involves summarizing, organizing and presenting data in a meaningful way.
@@ -32,7 +34,7 @@ format: revealjs
 
 - Average of a given set of values
 - Denoted mathematically as $\bar{x}$
-- 
+
 
 ## Example
 
@@ -66,7 +68,7 @@ format: revealjs
 
 ## Geometric Mean
 
-- nth root of the product of all observations in a variable.
+- $n_\text{th}$ root of the product of all observations in a variable.
 - Always less than the arithmetic mean
   
 ## Harmonic mean
@@ -74,11 +76,11 @@ format: revealjs
 - Reciprocal of the arithmetic mean i.e reciprocal of the average of the reciprocals of the data values.
 - Good at handling extreme values.
 
-## Mean - Example
+## Example
 
-For example the ages of children in a primary health care center is given as follows:
-- $12, 10, 11, 8, 7$
-- The arithmetic mean is given as $9,6$
+The ages of children in a primary health care center is given as follows - $12, 10, 11, 8, 7$: 
+
+- The arithmetic mean is given as $9.6$
 - The geometric mean is given as $9.4$
 - The harmonic mean is given as $9.22$
 
@@ -92,12 +94,13 @@ For example the ages of children in a primary health care center is given as fol
 
 
 ## Median
-- ![Source: [BYJU](https://byjus.com/maths/median/)](images/median.jpg)
+
+![Source: [BYJU](https://byjus.com/maths/median/)](images/median.jpg)
 
 ## Median - Example
 
 - The age of women attending ANC were recorded as follows.
-$23, 19, 21, 20, 23, 21, 22, 24, 22, \text{ and 22}
+$23, 19, 21, 20, 23, 21, 22, 24, 22, \text{ and 22}$
 
 - **Step 1:** Arrange in ascending order.
 
@@ -112,7 +115,7 @@ $23, 19, 21, 20, 23, 21, 22, 24, 22, \text{ and 22}
 ## Mode
 
 - The most occuring observation in a given set of data.
-- May can either be **Bimodal**, **Trimodal**, or **MultiModal**.
+- Mode can either be **Bimodal**, **Trimodal**, or **MultiModal**.
 
 
 ## Mode - Example 
