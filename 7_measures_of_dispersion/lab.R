@@ -22,10 +22,3 @@ cat("Variance:", glucose_variance, "(mg/dL)²\n")
 cat("Standard Deviation:", glucose_sd, "mg/dL\n")
 cat("Coefficient of Variation:", glucose_cv, "%\n")
 
-# Optional: Create a summary table
-summary_table <- data.frame(
-  Statistic = c("Range", "Variance", "Standard Deviation", "Coefficient of Variation"),
-  Value = c(glucose_range, glucose_variance, glucose_sd, glucose_cv)
-)
-
-print(summary_table)
