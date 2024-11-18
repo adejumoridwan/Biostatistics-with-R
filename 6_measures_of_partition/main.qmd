@@ -11,24 +11,23 @@ format: revealjs
 - Deciles
 
 
-
 # Quartiles
 
 ## Quartiles
 
-- Divided the data into four equal parts.
+- Divide the data into four equal parts.
 
-- There are three quartile points; Q1, Q2, and Q3.
+- There are three quartile points; **Q1, Q2, and Q3.**
 
 
-## Quartiles - continued
+## Quartiles
 
-- First quartile - 25%
-- Second quartile(Median) - 25.1% - 50%
-- Third quartile - 51% - 75%
-- Fourth quartile - 25%
+- First quartile - **25%**
+- Second quartile(Median) - **25.1% - 50%**
+- Third quartile - **51% - 75%**
+- Fourth quartile - **25%**
 
-## Quartiles - continued 
+## Quartiles
 
 - Semi interquartile range is half of the distance between the third and first quartile point. 
 
@@ -40,12 +39,12 @@ format: revealjs
 
 ## Percentiles
 
-- Splits a data into 100.
-- 25th percentile - Q1
-- 50th percentile - Q2(median)
-- 75th percentile - Q3
+- Splits data into 100 parts
+- **25th** percentile - **Q1**
+- **50th** percentile - **Q2(median)**
+- **75th** percentile - **Q3**
 
-## Percentiles - continued
+## Percentiles
 
 ![Source: [data36](https://data36.com/statistical-variability-standard-deviation-percentiles-histogram/)](images/percentiles.jpg)
 
@@ -56,9 +55,9 @@ format: revealjs
 
 - Divides a distribution into ten equal parts
 
-- 2nd decile is Q1
-- 5th decile is the median
-- 7th decile is Q3
+- **2nd** decile is **Q1**
+- **5th** decile is the **median**
+- **7th** decile is **Q3**
 
 
 ## Deciles continued
