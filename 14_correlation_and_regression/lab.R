@@ -47,6 +47,12 @@ plot(birthwt$lwt, birthwt$bwt, main = "Simple Linear Regression: Birth Weight vs
      xlab = "Mother's Weight", ylab = "Birth Weight")
 abline(simple_lm, col = "blue")
 
+### Multiple Linear Regression
+
+# Multiple Linear Regression: bwt ~ lwt + age + smoke
+multiple_lm <- lm(bwt ~ lwt + age + smoke, data = birthwt)
+summary(multiple_lm)
+
 ### Assumptions of Multiple Linear Regression
 
 # Linearity Check: Residuals vs Fitted Values Plot
@@ -58,11 +64,7 @@ abline(h = 0, col = "red")
 qqnorm(residuals(multiple_lm))
 qqline(residuals(multiple_lm), col = "blue")
 
-### Multiple Linear Regression
 
-# Multiple Linear Regression: bwt ~ lwt + age + smoke
-multiple_lm <- lm(bwt ~ lwt + age + smoke, data = birthwt)
-summary(multiple_lm)
 
 
 

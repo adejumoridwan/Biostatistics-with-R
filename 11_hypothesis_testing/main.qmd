@@ -34,9 +34,9 @@ Statement about an expected relationship between one or more independent variabl
 
 - Statement of **no difference**, **no association**, **no effect** or **statement of equality**.
 
-- Examples:
+- Example:
 
-    - $H_0$: The average weight of patients in the clinic is not equal to 60kg
+    - $H_0$: The average weight of patients in the clinic is not equal to **60kg**
     - $H_0$: Smokers have no risk of getting lung cancer
 
 - This hypothesis is either **rejected** or **not rejected**
@@ -49,8 +49,8 @@ Statement about an expected relationship between one or more independent variabl
 
 - Investigators will accept if $H_0$ is rejected 
 
-- Examples:
-    - $H_1$: The average weight of patients in the clinic is more that 60kg
+- Example:
+    - $H_1$: The average weight of patients in the clinic is more that **60kg**
     - $H_1$: Smokers have a higher risk of getting lung cancer
 
 ## Steps in Hypothesis Testing
@@ -75,7 +75,7 @@ Statement about an expected relationship between one or more independent variabl
 
 - Rejecting a true null hypothesis
 
-- Probability of committing a type I error is denoted by $\alpha$
+- Probability of committing a **Type I error** is denoted by **$\alpha$**
 
 - Incorrectly concluding that a difference exists, when actually there is no difference
 
@@ -85,7 +85,7 @@ Statement about an expected relationship between one or more independent variabl
 
 - Accepting a false null hypothesis
 
-- Probability of committing a type II error is denoted by $\beta$
+- Probability of committing a **Type II error** is denoted by **$\beta$**
 
 - Incorrectly concluding that no difference exists, when actually there is a difference
 
@@ -110,11 +110,11 @@ Statement about an expected relationship between one or more independent variabl
 
 ## Level of significance
 
-- Maximum probability of committing a type I error
+- Maximum probability of committing a **Type I error**
 
-- Mostly 0.05
+- Mostly **0.05**
 
-- Denoted by $\alpha$
+- Denoted by **$\alpha$**
 
 
 
@@ -122,22 +122,22 @@ Statement about an expected relationship between one or more independent variabl
 
 ## P-value
 
-- Measure of the amount of evidence we have against the null hypothesis
+- Measure of the amount of evidence we have against the **null hypothesis**
 
 
-- The smaller the p-value the more the evidence against $H_0$ and vice versa
+- The smaller the **p-value** the more the evidence against $H_0$ and vice versa
 
 ## P-value Interpretation
 
-- If $\alpha=0.05$, and $\text{p-value}<0.03$, this implies statistical significance.
+- If **$\alpha=0.05$**, and **$\text{p-value}<0.03$**, this implies statistical significance.
 
-- This means that the probability of getting an observed effect if truly there was no effect is 3%
+- This means that the probability of getting an observed effect if truly there was no effect is **3%**.
 
-- In other words, there is a 3% probability that an observed effect is likely by chance.
+- In other words, there is a **3%** probability that an observed effect is likely by chance.
 
 ## Decision Making 
 
-| $\text{p-value}<\alpha$ | $\text{p-value}\ge\alpha$ |
+| **$\text{p-value}<\alpha$** | **$\text{p-value}\ge\alpha$** |
 | --- | --- |
 | Difference is unlikely due to chance | Difference might be due to chance |
 
@@ -169,7 +169,7 @@ Statement about an expected relationship between one or more independent variabl
     - two groups - **t-test**
     - more than two groups - **F-test**
 
-- Relatioship between two quantitative variables
+- Relationship between two quantitative variables
     - Correlation analysis
     - Linear regression analysis
 

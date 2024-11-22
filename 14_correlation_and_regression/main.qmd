@@ -18,7 +18,7 @@ format: revealjs
 
 ## Types of Correlation
 
-- **Pearson Correlation ($\r$)**
+- **Pearson Correlation ($r$)**
 
 - **Spearman Rank Correlation ($\rho$)**
 
@@ -30,32 +30,38 @@ format: revealjs
 
 | Feature | Pearson Correlation | Spearman Correlation |
 | --- | --- | --- | 
-Type of relationship | Linear | Monotonic (increasing or decreasing) |
-| Data Type | Interval or ratio, normally distributed | Ordinal, interval, or ratio; non-normal distribution is fine |
-| Outlier Sensitivity | Sensitive to outliers | Less sensitive to outliers |
+**Type of relationship** | Linear | Monotonic (increasing or decreasing) |
+| **Data Type** | Interval or ratio, normally distributed | Ordinal, interval, or ratio; non-normal distribution is fine |
+| **Outlier Sensitivity** | Sensitive to outliers | Less sensitive to outliers |
 
 ## Measurement of Correlation 
 
-- Ranges from -1 to +1
+- Ranges from **-1** to **+1**
 
-  - +1 indicates a perfect positive correlation 
+  - **+1** indicates a perfect positive correlation 
   
-  - -1 indicates a perfect negative correlation 
+  - **-1** indicates a perfect negative correlation 
   
-  - 0 indicates no correlation
+  - **0** indicates no correlation
 
 ## Measurement of correlation
 
 | Correlation Coefficient | Interpretation |
 | --- | --- |
-| -1 | Very strong negative correlation |
-| Between -1 and <= -0.6 | Strong negative correlation |
-| Between > -0.6 and <= -0.4 | Moderate Negative Correlation |
-| Between > -0.4 and < 0 | Weak Negative Correlation |
-| 0 | No Correlation |
-| Between 0 and < 0.4 | Weak Positive Correlation |
-| Between >= 0.4 and < 0.6 | Moderate Positive Correlation |
-| Between >= 0.6 and < 1 | Strong Positive Correlation | | 1 | very strong positive correlation | 
+| **-1** | Very strong negative correlation |
+| **Between -1 and <= -0.6** | Strong negative correlation |
+| **Between > -0.6 and <= -0.4** | Moderate negative correlation |
+| **Between > -0.4 and < 0** | Weak negative correlation |
+
+## Measurement of correlation
+
+| Correlation Coefficient | Interpretation |
+| --- | --- | 
+| **0** | No correlation |
+| **Between 0 and < 0.4** | Weak positive correlation |
+| **Between >= 0.4 and < 0.6** | Moderate positive correlation |
+| **Between >= 0.6 and < 1** | Strong positive correlation | 
+| **1** | Very strong positive correlation | 
 
 ## Visualizing Correlation 
 
@@ -63,9 +69,9 @@ Type of relationship | Linear | Monotonic (increasing or decreasing) |
 
 ## Examples
 
-- Correlation between hypertension and heart disease is 0.7.
+- Correlation between hypertension and heart disease is **0.7.**
 
-- Correlation between obesity and lung cancer is 0.2.
+- Correlation between obesity and lung cancer is **0.2.**
 
 # Regression 
 
@@ -86,13 +92,16 @@ Type of relationship | Linear | Monotonic (increasing or decreasing) |
 $$
 y = \beta_0 + \beta_1x_1 + \epsilon
 $$
+
+
+
 Where
 
-- y - dependent variable
-- x - independent variable
-- $\beta_0$ - the intercept, representing the expected value of y when x = 0
-- $\beta_1$ - the slope, representing the change in y for a unit change in x.
-- $\epsilon$ - the error term capturing the difference between predicted and actual values of y. 
+- $y$- dependent variable
+- $x$ - independent variable
+- $\beta_0$ - the intercept, representing the expected value of $y$ when $x = 0$
+- $\beta_1$ - the slope, representing the change in $y$ for a unit change in $x.$
+- $\epsilon$ - the error term capturing the difference between predicted and actual values of $y.$ 
 
 ## Multiple Linear Regression
 
@@ -105,7 +114,7 @@ y = \beta_0 + \beta_1x_1 + \beta_2x_2 + ... + \beta_nx_n + \epsilon
 $$
 Where
 
-- y - the dependent variable
+- $y$ - the dependent variable
 
 - $x_1, x_2, \cdots, x_n$ - the independent variables
 
@@ -130,16 +139,16 @@ Where
 ## Interpretation of MLR
 
 **Coefficients**
+
 - Represent the change in the dependent variable for a one-unit change in the corresponding predictor variable.
 
-- If $\beta_1 = 3$, a unit incrase in $X_1$ will incrase $Y$ by 3 units.
 
 - The sign indicates direction of the relationship.
 
 
 **$\beta_0$**
 
-- Represent expected value of Y when all predictor variables $X_1, X_2, \cdots, X_k$ are zero. 
+- Represent expected value of $Y$ when all predictor variables $X_1, X_2, \cdots, X_k$ are zero. 
 
 
 
@@ -148,13 +157,13 @@ Where
 
 - Measures variation in the dependent variable accounted by independent variables.
 
-- Ranges between 0 to 1
+- Ranges between **$0$** to **$1$**
 
-- $R^2 = 1$ - perfect fit
-
-- $R^ = 0$ - explains none of the variability
-
-- $R^2 = 0.75$ - explains that 75% of the variation in the dependent variable is explained by the model.
+  - $R^2 = 1$: perfect fit
+  
+  - $R^2 = 0$: explains none of the variability
+  
+  - $R^2 = 0.75$: explains that **75%** of the variation in the dependent variable is explained by the model.
 
 
 
@@ -168,7 +177,7 @@ Where
 
 - Example
 
-- What are the predictors of **heart disease(yes/no)**
+  - What are the predictors of **heart disease(yes/no)**
 
 ## Assumptions of Logistic Regression
 
@@ -188,23 +197,23 @@ Where
 
 ## Log-Odds and Odds
 
-- Logistic regression doen't predict probabilities directly, it first predicts log odds.
+- **Logistic regression** doesn't predict probabilities directly, it first predicts **log odds.**
 
-- Log odds is transformation of probabilities that makes the relationship between features and the outcome roughly linear.
+- **Log odds** is transformation of probabilities that makes the relationship between features and the outcome roughly linear.
 
-- Odds is the ratio of probability of an event happening versus not happening.
+- **Odds** is the ratio of probability of an event happening versus not happening.
 
-- Coefficients are converted to log-odds by taking their exponential.
+- **Coefficients** are converted to **log-odds**s by taking their exponential.
 
 ## Interpreting Effect of a Predictor
 
 - A feature effect is interpreted through the log-odds.
 
-- If odds ratio > 1: outcome increases by 1
+- If **odds ratio > 1:** outcome increases by 1
 
-- If odds ratio < 1: outcome decreases by 1
+- If **odds ratio < 1:** outcome decreases by 1
 
-- If odds ratio = 1: Feature has no effect on the odds of the outcome.
+- If **odds ratio = 1:** Feature has no effect on the odds of the outcome.
 
 
 

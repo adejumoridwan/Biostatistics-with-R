@@ -7,12 +7,12 @@ data(NHANES)
 str(NHANES)
 
 # Filter data to include only relevant columns
-nhanes_data <- NHANES[, c("Gender", "SysBP", "SmokeNow")]
+nhanes_data <- NHANES[, c("Gender", "BPSysAve", "SmokeNow")]
 
-# Create a binary variable for high systolic blood pressure (SysBP > 120)
-nhanes_data$HighSysBP <- ifelse(nhanes_data$SysBP > 120, "Yes", "No")
+# Create a binary variable for high systolic blood pressure (BPSysAve > 120)
+nhanes_data$HighBPSysAve <- ifelse(nhanes_data$BPSysAve > 120, "Yes", "No")
 
-# Filter out missing values for SysBP and SmokeNow
+# Filter out missing values for BPSysAve and SmokeNow
 nhanes_data <- na.omit(nhanes_data)
 
 ### Test of Proportion
@@ -21,7 +21,7 @@ nhanes_data <- na.omit(nhanes_data)
 # For simplicity, we will consider only male participants.
 male_data <- subset(nhanes_data, Gender == "male")
 n_male <- nrow(male_data)
-n_high_bp_male <- sum(male_data$HighSysBP == "Yes")
+n_high_bp_male <- sum(male_data$HighBPSysAve == "Yes")
 
 # Proportion of males with high systolic blood pressure
 p_hat <- n_high_bp_male / n_male
@@ -31,18 +31,12 @@ p_hat
 # Null hypothesis: The proportion of males with high BP is 0.5
 prop.test(x = n_high_bp_male, n = n_male, p = 0.5, correct = FALSE)
 
-# Load necessary libraries
-if(!require(NHANES)) install.packages("NHANES")
-library(NHANES)
 
-# Load and clean the data
-data(NHANES)
-nhanes_data <- NHANES[, c("Gender", "SysBP")]
 
-# Create a binary variable for high systolic blood pressure (SysBP > 120)
-nhanes_data$HighSysBP <- ifelse(nhanes_data$SysBP > 120, "Yes", "No")
+# Create a binary variable for high systolic blood pressure (BPSysAve > 120)
+nhanes_data$HighBPSysAve <- ifelse(nhanes_data$BPSysAve > 120, "Yes", "No")
 
-# Filter out missing values for SysBP and Gender
+# Filter out missing values for BPSysAve and Gender
 nhanes_data <- na.omit(nhanes_data)
 
 # Calculate counts for males and females with high blood pressure
@@ -53,8 +47,8 @@ female_data <- subset(nhanes_data, Gender == "female")
 # Count number of successes (High BP) and sample size for each gender
 n_male <- nrow(male_data)
 n_female <- nrow(female_data)
-n_high_bp_male <- sum(male_data$HighSysBP == "Yes")
-n_high_bp_female <- sum(female_data$HighSysBP == "Yes")
+n_high_bp_male <- sum(male_data$HighBPSysAve == "Yes")
+n_high_bp_female <- sum(female_data$HighBPSysAve == "Yes")
 
 # Two-sample Z-test for population proportions
 # Null hypothesis: The proportions of high BP in males and females are the same.
@@ -78,7 +72,7 @@ list(
 
 # Chi-Square Test of Independence between Smoking and High Blood Pressure
 # Create a contingency table for Smoking and High Systolic BP
-table_smoke_bp <- table(nhanes_data$SmokeNow, nhanes_data$HighSysBP)
+table_smoke_bp <- table(nhanes_data$SmokeNow, nhanes_data$HighBPSysAve)
 
 # View the contingency table
 table_smoke_bp

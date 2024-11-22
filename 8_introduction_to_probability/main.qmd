@@ -8,17 +8,16 @@ format: revealjs
 
 ## Why Proability
 
-## Why Probability
 
 -   Make inference from data.
 
--   Check for the significane of our statistic.
+-   Check for the significance of our statistic.
 
 ## Why Probability
 
--   Imagine a pharmaceutical company has developed a new vaccine to prevent a viral infection.
+-   Imagine a pharmaceutical company that developed a new vaccine to prevent a viral infection.
 
--   Before release it is important to if it is safe and effective.
+-   Before release, it is important to if it is safe and effective.
 
 -   Probability makes it easy to quantify the uncertainty of the data.
 
@@ -32,7 +31,7 @@ format: revealjs
 
 -   This is a measure of the likelihood or uncertainty of an event.
 
--   Probability ranges from 0 to 1.
+-   Probability ranges from **0** to **1**.
 
 ## Ways of Defining Probability.
 
@@ -48,17 +47,15 @@ format: revealjs
 
 -   Examples:
 
-    -   Rolling a fair die($\frac{1}{6}$).
+    -   Rolling a fair die **($\frac{1}{6}$)**.
 
-    -   Flipping a fair coin($\frac{1}{2}$)
+    -   Flipping a fair coin **($\frac{1}{2}$)**.
 
 ## Empirical Probability
 
 -   This is based on actual observations or experiments.
 
--   
-
-    ## Measures the likeliood of an event through trials.
+- Measures the likelihood of an event through trials.
 
 -   Examples:
 
@@ -88,11 +85,11 @@ format: revealjs
 
 - **Outcome** - The result of a trial.
 
-- **Sample Space** - Totality of all possible outcoesn of an experiment.
+- **Sample Space** - Totality of all possible outcomes of an experiment.
 
 - **Equally Likely** - All outcomes of an experiment having the same chance of occurence.
 
-## Terms and Definitions - Events
+## Events
 
 - **Event** - Set of outcomes of an experiment defined by a given rule.
 
@@ -100,29 +97,29 @@ format: revealjs
   
   - **Compound Events** - More than one possible outcome of an event.
   
-  - **Mutually Exclusive Events** - Two events A and B are mutuall exclusive if they cannot occur together. 
+  - **Mutually Exclusive Events** - Two events A and B are mutually exclusive if they cannot occur together. 
   
-  - **Independent Events** - Two events are independent if the occurence of one does not affects the occurence of the other event. 
+  - **Independent Events** - Two events are independent if the occurrence of one does not affects the occurrence of the other event. 
   
-## Terms and Definitions - Probability Values
+## Probability Values
 
-- 0 - means an event did not take place.
+- **0** - means an event did not take place.
 
-- 1 - means the event is sure to take place
+- **1** - means the event is sure to take place
 
 ![Source: [Medium](https://medium.com/analytics-vidhya/introduction-to-probability-616a50776ff8)](images/prob.jpg)
 
-## Terms and Definitions - Complement of an event 
+## Complement of an event 
 
 - This is an event that occurs when the other event fails.
 
-- If the probability of surviving an epidemic is 0.65, then the probability of dying from the epidemic is $1 - 0.65 = 0.35$
+- If the probability of surviving an epidemic is **0.65**, then the probability of dying from the epidemic is $1 - 0.65 = 0.35$
 
-- ## Terms and Definitions - Notations
+## Notations
 
-- Intersection (and) - $A \bigcap B$
+- Intersection **(and)** - $A \bigcap B$
 
-- Union (or) - $A \bigcup B$
+- Union **(or)** - $A \bigcup B$
 
 
 # Types of Probability
@@ -134,11 +131,13 @@ format: revealjs
 
 - Conditional probability of an event A is given as.
 
-$$
-P(A/B) = \frac{P(A\bigcap B)}{P(B)}
-$$
+  $$
+  P(A/B) = \frac{P(A\bigcap B)}{P(B)}
+  $$
   - If $P(A \bigcap B)=0$, the two events are mutually exclusive.
+    
   - If $P(A/B)=P(A)$, if the events are independent.
+    
   - $P(A)$ and $P(B)$ are known as the marginal probabilities of an event A and event B.
   
 # Additions and Multiplication Rule of Probability

@@ -1,5 +1,5 @@
 ---
-title: "Introduction to Probability"
+title: "Probability Distributions"
 author: "Adejumo Ridwan Suleiman"
 format: revealjs
 ---
@@ -9,7 +9,7 @@ format: revealjs
 ## Definition
 
 - Distribution of the probability of all possible outcomes of a random variable
-
+ 
 - Arrangement of the events and their corresponding probabilities in a tabular form
 
 ## Example
@@ -73,12 +73,12 @@ $$
 - The total number of successes $X$ is a binomial variable with parameters $n$ and $p$.
 
   - where $n$ is fixed number of trials and
-  - each trial results in a "success" with probability $p$ and a "failure" with probability $(1-p=1)$.
+  - each trial results in a **success** with probability $p$ and a **failure** with probability $(1-p=1)$.
   
 ## Properties
 
 - Trial has only two possible outcomes.
-- Trials repeated "n" times.
+- Trials repeated $n$ times.
 - Successive trials are independent.
 - Probability of success is constant from trial to trial.
 - The random variable $X$ is the number of successes in the $n$ trials.
@@ -131,7 +131,7 @@ $$
 
 ## Example
 
-- If on average 4 patients experience a heart attach in a hospital per day, the Poisson distribution can model the probability of having exactly 6 heart attacks in a given day.
+- If on average 4 patients experience a heart attack in a hospital per day, the Poisson distribution can model the probability of having exactly 6 heart attacks in a given day.
 
 - On average, a hospital records 2 cases of hospital-acquired infections per week. What is the probability that there will be 5 such infections in a particular week?
 
@@ -144,7 +144,7 @@ $$
 
 - It is symmetric about its mean, median and mode
 
-- It is bell shaped
+- It is **bell shaped**
 
 
 ## Parameters of the normal distribution
@@ -161,15 +161,15 @@ $$
 
 - Determined by the mean and variance
 
-- It's mean,, median, and mode are equal
+- It's mean, median, and mode are equal
 
-- Total area under the curve is 1 (100%)
+- Total area under the curve is **1 (100%)**
 
-- 68% of total observation approximately lie within 1SD (left and right) of the mean value
+- **68%** of total observation approximately lie within **1SD** (left and right) of the mean value
 
-- 95% of total observation approximately lie within 1.96SD (left and right) of the mean value
+- **95%** of total observation approximately lie within **1.96SD** (left and right) of the mean value
  
-- Over 99% of total observation approximately lie within 2..576SD (left and right) of the mean value.
+- Over **99%** of total observation approximately lie within **2.576SD** (left and right) of the mean value.
 
 ## Normal Distribution
 
@@ -177,13 +177,13 @@ $$
 
 ## Uses of Normal Disribution
 
-- When n is large, the binomial distribution approximates to a normal distribution.
+- When $n$ is large, the binomial distribution approximates to a normal distribution.
 
 - It is the foundation of other distributions (e.g chi-square, F-distribution, T-distribution, etc)
 
 ## Standard Normal Distribution
 
-- Normal distribution with mean 0 and standard deviation 1.
+Normal distribution with mean 0 and standard deviation 1.
 
 ![Source: [Outlier](https://articles.outlier.org/normal-distribution-curve-definition)](images/snd.png)
 

@@ -20,17 +20,26 @@ This is the process of making conclusions about a population based on informatio
 
 - When the sample is choosen at random
 
-## Categories of Statistical Inference
-
-- **Estimation:** Interest in estimating the value of a parameter, for example response rate of a cancer investigative drug.
-
-- **Hypothesis testing**: Compare the parameters for two samples using statistical tests of significance, for example investigating whether a particular racial group have higher blood sugar level on average when compared to another racial group.
 
 ## Definition of Terms
 
-- **Parameter:** This is a value that describes the whole population
+**Parameter:** 
 
-- **Statistic:** This is a value that describes the sample.
+This is a value that describes the whole population
+
+**Statistic:** 
+
+This is a value that describes the sample.
+
+## Categories of Statistical Inference
+
+- **Estimation:** 
+  - Interest in estimating the value of a parameter.
+  - For example response rate of a cancer investigative drug.
+
+- **Hypothesis testing**: 
+  - Compare the parameters for two samples using statistical tests of significance.
+  - For example investigating whether a particular racial group have higher blood sugar level on average when compared to another racial group.
 
 
 # Point Estimate
@@ -39,7 +48,7 @@ This is the process of making conclusions about a population based on informatio
 
 - One of the uses of biostatistics in health is to investigate certain characteristics of a population.
 
-- Charactereistics of a population are either:
+- Characteristics of a population are either:
     - **Quantitative** (average blood sugar level)
     - **Qualitative** (proportion of adult men who are hypertensive)
 
@@ -71,15 +80,15 @@ This is the process of making conclusions about a population based on informatio
 
 ## Central Limit Theorem
 
-**Central Limit Theorem** states that:
+
 
 *Regardless the distribution of a variable in the population, the sampling distribution of a statistic is always approximately normally distributed.*
 
-- Sampling distribution is normally distributed with parameters **population mean($\mu$)** and **standard error($\frac{\sigma}{\sqrt{n}})**.
+- Sampling distribution is normally distributed with parameters **population mean($\mu$)** and **standard error($\frac{\sigma}{\sqrt{n}})$**.
 
-- Mean of sampling distribution = true population mean
+- **Mean of sampling distribution** = **True population mean**
 
-- Standard deviation of sampling distribution is referred to as standard error
+- Standard deviation of sampling distribution is referred to as standard error.
 
 - The standard deviation of these sample means will be approximately equal to the standard error calculated from a single sample.
 
@@ -129,7 +138,7 @@ $$
 
 - $\text{statistic}\pm{\text{reliability coefficient}\cdot{S.E(statistic)}}$
 
-- $\text{reliability coefficient}\cdot\text{S.E(statistic)}=\text{precision of estimaate or margin of error}$
+- $\text{reliability coefficient}\cdot\text{S.E(statistic)}=\text{precision of estimate or margin of error}$
 
 ## Confidence Interval (C.I)
 
@@ -138,7 +147,7 @@ $$
 ## Reliability coefficient
 
 - Depends on:
-    - Desired degree of confidence (95% confidence level)
+    - Desired degree of confidence **(95% confidence level)**
     - Normality of the data distribution
     - Knowledge of population variance
     - Sample size
@@ -147,15 +156,15 @@ $$
 
 **Comparing mean values or proportions**
 
-- Confidence intervals containing 0 implies data is consistent with Null Hypothesis.
+- Confidence intervals containing $0$ implies data is consistent with Null Hypothesis.
 
 **For Relative Risks or Odds Ratio**
 
-- Confidence intervals containing 1 implies risk factor not statistically significant.
+- Confidence intervals containing $1$ implies risk factor not statistically significant.
 
 **Random sampling error**
 
-- Confidence interval only accounts for random sapling error not other systematic sources of error or bias.
+- Confidence interval only accounts for random sampling error not other systematic sources of error or bias.
 
 
 ## Advantages of CI

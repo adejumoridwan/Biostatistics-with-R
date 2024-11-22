@@ -8,13 +8,13 @@ format: revealjs
 
 ## Student t-test
 
-- Used to compare mean values betwween two groupsp
+- Used to compare mean values between two groups.
 
-- Compare sample mean with hypothetical population mean value
+- Compare sample mean with hypothetical population mean value.
 
-- Data distribution is normally distributed
+- Data distribution is normally distributed.
 
-- Sample size is less than 30
+- Sample size is **less than 30**.
 
 ## Assumptions
 
@@ -39,27 +39,29 @@ format: revealjs
 
 ## Types of Student t-test
 
-- One sample t-test
+- **One sample t-test**.
 
-- Dependent 2-sample or Paired sample t-test
+- **Dependent 2-sample** or **Paired sample t-test**.
 
-- Independent 2-sample t-test
+- **Independent 2-sample t-test**.
 
 # One Sample t-test
 
 ## Assumptions
 
-General assumption of t-test applies
+General assumption of **t-test** applies
 
 # Dependent 2-sample or Paired sample t-test
 
 ## Assumptions
 
-- General assumption of t-test applies 
+- General assumption of **t-test** applies .
 
-- Data comes from paired observations
+- Data comes from paired observations.
 
 # Independent 2-sample t-test
+
+## Assumptions
 
 - General assumption of t-test applies
 
@@ -73,14 +75,14 @@ General assumption of t-test applies
 
 - Means are tested through ANOVA
 
-    - One-way ANOVA (Single Factor)
-    - Two-way ANOVA (Two factors)
+    - **One-way ANOVA** (Single Factor)
+    - **Two-way ANOVA** (Two factors)
 
 ## One-way ANOVA Assumptions
 
 - The data is randomly sampled
 
-- The samples are normall distributed
+- The samples are normal distributed
 
 - Samples size may or may not be equal
 
@@ -90,7 +92,7 @@ General assumption of t-test applies
 
 ## Post-hoc tests
 
-- Least Significan Difference (LSD)
+- Least Significant Difference (LSD)
 
 - Duncan Multiple range test
 

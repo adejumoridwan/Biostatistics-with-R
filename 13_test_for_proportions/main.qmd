@@ -12,21 +12,21 @@ format: revealjs
 
 - Two possible outcomes **Success** or **Failure**
 
-- Population proportion of success is denoted by p
+- Population proportion of success is denoted by **$p$**.
 
 ## What is Proportion?
 
 - Fraction of the total population that possesses a certain attribute.
 
-- For example, what is the proportion of men in a given sample of 10 that have systolic high blood pressure above 120
+- For example, what is the proportion of men in a given sample of $10$ that have systolic high blood pressure above $120$.
 
-- I 4 men have systolic high blood pressure above 120, then $p = 4/10$
+- I 4 men have systolic high blood pressure above $120$, then $p = \frac{4}{10}$.
 
-- Proportion can also be expressed in terms of percentage $p = 4/10\dot100 = 40$
+- Proportion can also be expressed in terms of percentage $p = \frac{4}{10}\cdot{100} = 40$
 
 ## Sampling distribution of a proportion
 
-- As sample size increases, sampling distribution of $\cap{p}$ becomes approximately normal 
+- As sample size increases, sampling distribution of $\hat{p}$ becomes approximately normal 
 
 - The mean of the sampling distribution is $p$
 
@@ -47,25 +47,26 @@ format: revealjs
 
 - Same as that of one sample
 
-- The two samples are indpendent of each other
+- The two samples are independent of each other
 
 # Test of Association
 
 ## What is a Contingency table?
 
-- Dispaly association between two catgorical variables
+- Display association between two catgorical variables
 
-- One or both of which has more tha two possible values
+- One or both of which has more than two possible values
 
 ## Examples
 
 - Smoking and Lung Cancer
 
+
 |  | Have Lung Cancer | Does not have Lung Cancer | Total | 
 | --- | --- | --- | --- |
-| Smoke |  |  |  |
-| Does not smoke |  |  |  | 
-| Total |  |  |  |
+| Smoke | 20 | 35 | 55 |
+| Does not smoke | 15 | 18 | 33 | 
+| Total | 35 | 53 | 88 |
 
 ## Chi-square test statistic $\chi^2$ - Assumptions
 
@@ -75,7 +76,7 @@ format: revealjs
 
 - Independence of Observations
 
-- Each cell in the contingency table should have at least an expeced frequency of 5 in at most 20% of the cells
+- Each cell in the contingency table should have at least an expeced frequency of **5** in at most **20%** of the cells
 
 - No cells should have expected frequency of 0
 
@@ -94,7 +95,7 @@ format: revealjs
 - Used in place of chi-square test when 
     - Cell counts are sparse
 
-    - More than 20% of the cells have expected frequencies of less than 5
+    - More than **20%** of the cells have expected frequencies of less than **5**
 
     - Sample size is small $n<20$
 

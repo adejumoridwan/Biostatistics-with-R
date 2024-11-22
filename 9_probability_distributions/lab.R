@@ -81,4 +81,24 @@ head(cholesterol_data)
 
 # Alternatively
 
-head(scale(cholesterol_data$TotChol)
+head(scale(cholesterol_data$TotChol))
+
+# Birth weights of babies in a certain population are generally distributed 
+# with a mean of 3.2 kg and a standard deviation of 0.6 kg. 
+# What is the probability that a randomly selected baby weighs between 
+# 2.5 kg and 4.0 kg?
+
+# Given parameters
+mean_weight <- 3.2  # mean weight in kg
+sd_weight <- 0.6    # standard deviation in kg
+
+# Calculate the cumulative probabilities
+P_4 <- pnorm(4.0, mean = mean_weight, sd = sd_weight)
+P_2_5 <- pnorm(2.5, mean = mean_weight, sd = sd_weight)
+
+# Probability that the weight is between 2.5 and 4.0
+probability <- P_4 - P_2_5
+
+# Print the result
+probability
+

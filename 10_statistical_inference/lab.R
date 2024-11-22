@@ -74,7 +74,7 @@ cat("95% Confidence Interval for the Sample Mean: [", conf_interval[1], ", ", co
 # Visualizing Confidence Interval
 ci_plot <- ggplot(data = data.frame(sample_data), aes(x = sample_data)) +
   geom_histogram(bins = 20, fill = "lightgreen", color = "black", alpha = 0.7) +
-  geom_vline(xintercept = conf_interval, color = "red", linetype = "dashed", size = 1) +
+  geom_vline(xintercept = conf_interval, color = "red", linetype = "dashed", linewidth = 1) +
   ggtitle("Sample Distribution with 95% Confidence Interval") +
   xlab("Values") + ylab("Frequency") + theme_minimal()
 
