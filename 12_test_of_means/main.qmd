@@ -14,7 +14,7 @@ format: revealjs
 
 - Data distribution is normally distributed.
 
-- Sample size is **less than 30**.
+- Sample size is less than 30.
 
 ## Assumptions
 

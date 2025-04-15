@@ -67,7 +67,7 @@ Statement about an expected relationship between one or more independent variabl
 
 6. Decision making
 
-# Errors in Hypotheis Testing
+# Errors in Hypothesis Testing
 
 
 
