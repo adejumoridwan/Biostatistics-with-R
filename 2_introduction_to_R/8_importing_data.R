@@ -30,7 +30,7 @@ bookstore <- data.frame(age, purchase)
 write.csv(bookstore, "2_introduction_to_R/bookstore.csv")
 
 # Export to .xlsx (Excel):
-
+install.packages("openxlsx")
 library(openxlsx)
 write.xlsx(bookstore, "2_introduction_to_R/bookstore.xlsx")
 

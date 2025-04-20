@@ -16,9 +16,11 @@
 x <- 6
 y <- "Scotland"
 z <- TRUE
+a <- 55L
 class(x)
 class(y)
 class(z)
+class(a)
 
 # What happens if we use `class` on a vector?
 
@@ -27,7 +29,7 @@ class(numbers)
 
 # What of class on objects of different data types
 
-all_together <- c(x, y, z)
+all_together <- c(x, y, z, a)
 all_together
 class(all_together)
 

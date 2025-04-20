@@ -13,7 +13,7 @@ harmonic.mean(birthwt$age)
 library(DescTools)
 
 # Mode
-mode(birthwt$age)
+Mode(birthwt$age)
 
 # Median
 median(birthwt$age)

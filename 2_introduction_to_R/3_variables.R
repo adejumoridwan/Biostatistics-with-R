@@ -3,8 +3,9 @@
 # so that we can refer to a dataset when we write code. 
 # As the name *variable* implies, what is stored can change over time.
 x <- 4
+x
 
-x + 1
+y = x + 1
 x + x
 
 
@@ -22,7 +23,7 @@ x <- 1 + 2 + 3 + 4
 # What's in a name?
 
 # Give clear names instead of single letter names
-y <- 100
+eee <- 100
 z <- 20
 x <- y - z
 

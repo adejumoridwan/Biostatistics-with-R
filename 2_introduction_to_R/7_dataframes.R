@@ -2,18 +2,23 @@
 # Use the airquality data
 
 # Extract the Temp vector:
-airquality$Temp
+temp_column <- airquality$Temp
+
 # Compute the mean temperature:
 mean(airquality$Temp)
 
 airquality$Temp[5]
 
+temp_column[5]
+
 # First, we check the order of the columns:
 names(airquality)
+
 # We see that Temp is the 4th column.
 airquality[5, 4]    # The 5th element from the 4th column,
 # i.e. the same as airquality$Temp[5]
-airquality[5,]      # The 5th row of the data
+
+airquality[1,]      # The 5th row of the data
 airquality[, 4]     # The 4th column of the data, like airquality$Temp
 airquality[[4]]     # The 4th column of the data, like airquality$Temp
 airquality[, c(2, 4, 6)] # The 2nd, 4th and 6th columns of the data
@@ -22,7 +27,7 @@ airquality[, c("Temp", "Wind")] # The Temp and Wind columns
 
 # Using the $ sign
 
-age <- c(28, 48, 47, 71, 22, 80, 48, 30, 31)
+age <- c(28, 48, 47, 71, 22, 80, 48, 30, NA)
 purchase <- c(20, 59, 2, 12, 22, 160, 34, 34, 29)
 bookstore <- data.frame(age, purchase)
 

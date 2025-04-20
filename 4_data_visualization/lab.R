@@ -34,6 +34,8 @@ sleep_summary <- msleep %>%
   arrange(desc(avg_sleep)) |> 
   top_n(5)
 
+
+
 # Create the bar chart
 ggplot(sleep_summary, aes(x = order, y = avg_sleep, fill = order)) +
   geom_bar(stat = "identity") +
@@ -135,7 +137,7 @@ data(ToothGrowth)
 
 # Create the frequency polygon
 ggplot(ToothGrowth, aes(x = len)) +
-  geom_freqpoly(binwidth = 2, color = "blue") +
+  geom_freqpoly(binwidth = 5, color = "blue") +
   labs(title = "Frequency Polygon of Tooth Length",
        x = "Tooth Length",
        y = "Frequency") +
