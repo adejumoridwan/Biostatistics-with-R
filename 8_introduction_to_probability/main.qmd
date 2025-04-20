@@ -6,7 +6,7 @@ format: revealjs
 
 # Why Probability?
 
-## Why Proability
+## Why Probability
 
 
 -   Make inference from data.
@@ -142,10 +142,17 @@ format: revealjs
   
 # Additions and Multiplication Rule of Probability
 
-## Additions and Multiplication Rule of Probability
+## Additions rule for multually exclusive events
 
 $$
 P(A \text{ or } B)=P(A)+P(B)-P(A \text{ and } B) \\
 P(A \bigcup B)=P(A)+P(B)-P(A \bigcap B)
 $$
 - When the events are mutually exclusive, $P(A \text{ and } B)=0$
+
+## Multiplication rule for independent events
+
+$$
+P(A \text{ and } B)=P(A) \cdot P(B) \\
+P(A \bigcap B)=P(A) \cdot P(B)
+$$
