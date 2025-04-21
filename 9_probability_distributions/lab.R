@@ -13,6 +13,10 @@ p <- 0.9 # probability of success (drug success rate)
 # Calculate the probability of exactly 18 successes
 dbinom(18, size = n, prob = p)
 
+prob_at_least_18 <- dbinom(18, size = n, prob = p) + dbinom(19, size = n, prob = p) + dbinom(20, size = n, prob = p)
+
+prob_less_than_18 <- 1 - prob_at_least_18
+
 # Suppose the probability of a positive result for a genetic disorder is 0.1, and 15 individuals are tested. 
 # What is the probability that exactly 3 individuals test positive?
 

@@ -165,6 +165,8 @@ $$
 
 - Total area under the curve is **1 (100%)**
 
+## Properties (contd)
+
 - **68%** of total observation approximately lie within **1SD** (left and right) of the mean value
 
 - **95%** of total observation approximately lie within **1.96SD** (left and right) of the mean value
