@@ -21,7 +21,7 @@ population_plot <- ggplot(data = data.frame(population), aes(x = population)) +
   xlab("Values") + ylab("Frequency") + theme_minimal()
 
 sample_plot <- ggplot(data = data.frame(sample_data), aes(x = sample_data)) +
-  geom_histogram(bins = 20, fill = "lightgreen", color = "black", alpha = 0.7) +
+  geom_histogram(bins = 50, fill = "lightgreen", color = "black", alpha = 0.7) +
   ggtitle("Sample Distribution") + 
   xlab("Values") + ylab("Frequency") + theme_minimal()
 
@@ -41,7 +41,7 @@ cat("Population Mean: ", population_mean, "\n")
 # Lesson 3: Sampling Distribution and Central Limit Theorem
 # --------------------------------
 # Simulating sampling distribution of the sample mean
-sample_means <- replicate(1000, mean(sample(sample_data, 50)))
+sample_means <- replicate(1000, mean(sample(population, 100)))
 
 # Plot the sampling distribution
 sampling_dist_plot <- ggplot(data = data.frame(sample_means), aes(x = sample_means)) +
