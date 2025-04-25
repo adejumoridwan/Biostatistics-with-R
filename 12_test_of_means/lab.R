@@ -7,8 +7,6 @@ library(tidyverse)
 library(ggplot2)
 library(car)  # For Levene's test
 
-# Load the lung cancer dataset
-data(lung)
 
 # Data preparation
 # Convert categorical variables
@@ -19,7 +17,7 @@ lung$status_label <- factor(lung$status, labels = c("Censored", "Dead"))
 # Normality Check for Age
 # Histogram
 ggplot(lung, aes(x = age)) +
-  geom_histogram(bins = 10, fill = "blue", alpha = 0.7) +
+  geom_histogram(bins = 30, fill = "blue", alpha = 0.7) +
   labs(title = "Histogram of Patient Age")
 
 # Shapiro-Wilk Test for Normality of Age
@@ -29,7 +27,7 @@ print(shapiro_test_age)
 
 
 # Test if the mean age is different from a hypothetical population age of 60
-t_test_one_sample <- t.test(lung$age, mu = 60)
+t_test_one_sample <- t.test(lung$age, mu = 62)
 print("One Sample T-Test (Age):")
 print(t_test_one_sample)
 
@@ -52,6 +50,12 @@ t_test_survival_by_sex <- t.test(
 )
 print("Independent Two-Sample T-Test (Survival Time by Sex):")
 print(t_test_survival_by_sex)
+
+lung_male <- lung |> 
+  filter(sex_label == "Male")
+
+lung_female <- lung |> 
+  filter(sex_label == "Female")
 
 # 3. ANOVA 
 # Create age groups for ANOVA
