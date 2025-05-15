@@ -15,7 +15,7 @@ population <- rnorm(10000, mean = 100, sd = 15)  # Population with mean 100 and 
 sample_data <- sample(population, 100)
 
 # Plotting the population and sample distribution
-population_plot <- ggplot(data = data.frame(population), aes(x = population)) +
+population_plot <- ggplot(data = data.frame(population_2), aes(x = population_2)) +
   geom_histogram(bins = 50, fill = "lightblue", color = "black", alpha = 0.7) +
   ggtitle("Population Distribution") + 
   xlab("Values") + ylab("Frequency") + theme_minimal()
@@ -42,6 +42,8 @@ cat("Population Mean: ", population_mean, "\n")
 # --------------------------------
 # Simulating sampling distribution of the sample mean
 sample_means <- replicate(1000, mean(sample(population, 100)))
+
+population_2 <- rlnorm(10000,meanlog=0,sdlog=1)
 
 # Plot the sampling distribution
 sampling_dist_plot <- ggplot(data = data.frame(sample_means), aes(x = sample_means)) +

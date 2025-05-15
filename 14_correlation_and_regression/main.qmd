@@ -79,7 +79,7 @@ format: revealjs
 
 - Understand relationships between variables and make predictions.
 
-- Modelling the relationship between one or more dependent variable and an outcome variable. 
+- Modelling the relationship between one or more independent variable and an outcome variable. 
 
 - Estimate how changes in predictors impact the dependent variable.
 

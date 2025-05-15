@@ -10,7 +10,7 @@ str(NHANES)
 nhanes_data <- NHANES[, c("Gender", "BPSysAve", "SmokeNow")]
 
 # Create a binary variable for high systolic blood pressure (BPSysAve > 120)
-nhanes_data$HighBPSysAve <- ifelse(nhanes_data$BPSysAve > 120, "Yes", "No")
+nhanes_data$HighBPSysAve <- ifelse(nhanes_data$BPSysAve > 120, "High", "Low")
 
 # Filter out missing values for BPSysAve and SmokeNow
 nhanes_data <- na.omit(nhanes_data)
@@ -29,15 +29,9 @@ p_hat
 
 # One-sample z-test for proportion
 # Null hypothesis: The proportion of males with high BP is 0.5
-prop.test(x = n_high_bp_male, n = n_male, p = 0.5, correct = FALSE)
+prop.test(x = n_high_bp_male, n = n_male, p = 0.51)
 
 
-
-# Create a binary variable for high systolic blood pressure (BPSysAve > 120)
-nhanes_data$HighBPSysAve <- ifelse(nhanes_data$BPSysAve > 120, "Yes", "No")
-
-# Filter out missing values for BPSysAve and Gender
-nhanes_data <- na.omit(nhanes_data)
 
 # Calculate counts for males and females with high blood pressure
 # Separate data by gender
