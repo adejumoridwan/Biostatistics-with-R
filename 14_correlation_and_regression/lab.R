@@ -7,6 +7,7 @@ library(tidyverse)
 
 # Load and Inspect Dataset
 data("birthwt", package = "MASS")
+
 birthwt <- birthwt %>%
   mutate(race = as.factor(race), 
          smoke = as.factor(smoke), 
