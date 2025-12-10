@@ -23,7 +23,7 @@ Where:
 - $\beta_1, \beta_2, ..., \beta_p$ = regression coefficients
 - $\epsilon$ = error term
 
----
+
 
 ## Why Use Multivariable Regression?
 
@@ -49,7 +49,7 @@ Where:
 - Real-world phenomena rarely depend on a single factor
 - Examine simultaneous effects of multiple variables
 
----
+
 
 ## Interpreting Coefficients
 
@@ -66,7 +66,7 @@ If studying blood pressure with predictors: age, weight, and smoking status:
 - **Age coefficient (β₁ = 0.8)**: For each additional year of age, blood pressure increases by 0.8 mmHg, adjusting for weight and smoking
 - **Weight coefficient (β₂ = 0.3)**: For each additional kg, blood pressure increases by 0.3 mmHg, adjusting for age and smoking
 
----
+
 
 ## R² and Adjusted R²
 
@@ -86,7 +86,7 @@ $$\text{Adj } R^2 = 1 - \frac{(1-R^2)(n-1)}{n-p-1}$$
 - More reliable for comparing models with different numbers of predictors
 - Can decrease if added variables don't improve the model sufficiently
 
----
+
 
 # Checking Model Assumptions
 
@@ -101,7 +101,7 @@ For valid inference from linear regression, we must verify:
 
 **Remember**: LINE assumptions (Linearity, Independence, Normality, Equal variance)
 
----
+
 
 ## Assumption 1: Linearity
 
@@ -124,7 +124,9 @@ The relationship between each predictor and the outcome should be linear (or app
 - Examine linearity for each predictor individually
 - Useful when multiple predictors are present
 
----
+## Assumption 1: Linearity (cont.)
+
+![](images/linearity.png)
 
 ## Assumption 2: Independence
 
@@ -150,7 +152,8 @@ Observations should be independent of each other - one observation shouldn't inf
 
 Use specialized models: mixed effects, time series, or spatial models
 
----
+
+
 
 ## Assumption 3: Normality of Residuals
 
@@ -176,6 +179,11 @@ The residuals (not the raw data!) should follow a normal distribution.
 
 ## Assumption 3: Normality of Residuals (cont.)
 
+
+![](images/normaligy.png)
+
+## Assumption 3: Normality of Residuals (cont.)
+
 ### How to Check
 
 **Shapiro-Wilk Test**
@@ -183,7 +191,7 @@ The residuals (not the raw data!) should follow a normal distribution.
 - Formal hypothesis test for normality
 - p > 0.05 suggests normality (but sensitive in large samples)
 
----
+
 
 ## Why Normality Matters (and Doesn't)
 
@@ -210,7 +218,7 @@ With **large sample sizes** (n > 30-40), the Central Limit Theorem protects us:
 - Use robust regression methods
 - Consider non-parametric alternatives
 
----
+
 
 ## Assumption 4: Homoscedasticity
 
@@ -235,7 +243,11 @@ With **large sample sizes** (n > 30-40), the Central Limit Theorem protects us:
 - Plot square root of standardized residuals vs. fitted values
 - Should show horizontal line with random scatter
 
----
+
+## Assumption 4: Homoscedasticity (cont.)
+
+![](images/homoscedasticity.png)
+
 
 ## Consequences of Heteroscedasticity
 
@@ -260,7 +272,7 @@ With **large sample sizes** (n > 30-40), the Central Limit Theorem protects us:
 - **Weighted least squares**: Give less weight to high-variance observations
 - **Robust standard errors**: Adjust SEs without changing coefficients
 
----
+
 
 # Multicollinearity
 
@@ -280,7 +292,7 @@ In a health study predicting blood pressure:
 
 Makes it difficult to isolate the individual effect of each correlated predictor.
 
----
+
 
 ## Consequences of Multicollinearity
 
@@ -310,7 +322,7 @@ Makes it difficult to isolate the individual effect of each correlated predictor
 - Overall model fit (R²)
 - Predictions and fitted values
 
----
+
 
 ## Detecting Multicollinearity
 
@@ -330,14 +342,14 @@ $$VIF_j = \frac{1}{1 - R^2_j}$$
 
 Where R²ⱼ is from regressing predictor j on all other predictors.
 
----
+
 
 ## Interpreting VIF Values
 
 ### VIF Interpretation Guidelines
 
 | VIF Value | Interpretation | Action |
-|-----------|----------------|--------|
+|--|-|--|
 | VIF = 1 | No correlation | Ideal |
 | 1 < VIF < 5 | Moderate correlation | Generally acceptable |
 | 5 ≤ VIF < 10 | High correlation | Investigate |
@@ -351,7 +363,7 @@ VIF = 5 means the standard error is √5 = 2.24 times larger than it would be wi
 
 VIF = 10 means variance is inflated 10-fold.
 
----
+
 
 ## Dealing with Multicollinearity
 
@@ -383,7 +395,7 @@ VIF = 10 means variance is inflated 10-fold.
 - Reduces standard errors
 - Not always feasible
 
----
+
 
 ## When to Worry About Multicollinearity
 
@@ -414,7 +426,7 @@ VIF = 10 means variance is inflated 10-fold.
 - Be cautious with interpretation
 - Report VIF values
 
----
+
 
 # Interaction Terms
 
@@ -430,7 +442,7 @@ $$Y = \beta_0 + \beta_1X_1 + \beta_2X_2 + \beta_3(X_1 \times X_2) + \epsilon$$
 
 The coefficient β₃ represents the interaction effect.
 
----
+
 
 ## Understanding Interactions
 
@@ -446,7 +458,7 @@ The effect of X₁ changes depending on X₂.
 
 **Example**: Exercise reduces blood pressure by 3 mmHg in young adults but 8 mmHg in older adults. Age **modifies** the effect of exercise.
 
----
+
 
 ## Types of Interactions
 
@@ -470,7 +482,7 @@ One continuous, one categorical predictor.
 - Men and women may respond differently to the same dose
 - Creates different slopes for each group
 
----
+
 
 ## Types of Interactions (cont.)
 
@@ -489,7 +501,7 @@ Both predictors are categorical.
 - **Stratified analyses**: Separate analyses within subgroups
 - **Predicted values plots**: Display fitted values across predictor combinations
 
----
+
 
 ## Interpreting Models with Interactions
 
@@ -509,7 +521,7 @@ $$\text{Blood Pressure} = \beta_0 + \beta_1(\text{Age}) + \beta_2(\text{Exercise
 
 **For specific ages**: Must calculate the effect at meaningful values of the moderator.
 
----
+
 
 ## Testing for Interactions
 
@@ -531,7 +543,7 @@ $$\text{Blood Pressure} = \beta_0 + \beta_1(\text{Age}) + \beta_2(\text{Exercise
 
 The interaction term is meaningless without the main effects.
 
----
+
 
 ## When to Include Interactions
 
@@ -568,7 +580,7 @@ The interaction term is meaningless without the main effects.
 - Interactions require larger sample sizes to detect
 - Model complexity increases rapidly
 
----
+
 
 # Model Selection
 
@@ -589,7 +601,7 @@ When you have many potential predictors, which ones should you include in your f
 - **Too many predictors**: High variance, overfitting
 - **Goal**: Find the sweet spot
 
----
+
 
 ## Information Criteria: AIC
 
@@ -619,7 +631,7 @@ Where:
 - ΔAIC 4-7: Considerable less support
 - ΔAIC > 10: Essentially no support
 
----
+
 
 ## Information Criteria: BIC
 
@@ -651,7 +663,7 @@ Where:
 - **BIC**: Better for finding the "true" model
 - Report both when possible
 
----
+
 
 ## Stepwise Selection Methods
 
@@ -677,7 +689,7 @@ Where:
 3. Keep removing predictors one at a time
 4. Stop when all remaining predictors are significant
 
----
+
 
 ## Stepwise Selection Methods (cont.)
 
@@ -704,7 +716,7 @@ Where:
 - Small changes in data lead to different models
 - Not stable across samples
 
----
+
 
 ## Alternative Approaches
 
@@ -727,7 +739,7 @@ Test all possible combinations of predictors.
 
 Compare using R², Adjusted R², AIC, BIC.
 
----
+
 
 ## Regularization Methods
 
@@ -761,7 +773,7 @@ Modern approaches that **shrink coefficients** toward zero.
 - Combines Lasso and Ridge
 - Best of both worlds
 
----
+
 
 ## Practical Recommendations
 
@@ -787,7 +799,7 @@ Modern approaches that **shrink coefficients** toward zero.
    - Use AIC, BIC, and Adjusted R²
    - Assess model assumptions for top candidates
 
----
+
 
 ## Validation and Overfitting
 
@@ -812,7 +824,7 @@ A model that fits the current data perfectly may perform poorly on new data.
 - Evaluate performance on test set
 - Test set simulates new data
 
----
+
 
 ## Model Selection: Summary
 
@@ -834,7 +846,7 @@ A model that fits the current data perfectly may perform poorly on new data.
 
 **Report Your Process**: Be transparent about how you selected your final model
 
----
+
 
 ## Final Thoughts
 
@@ -851,4 +863,4 @@ Building a multivariable regression model requires:
 
 A model is a simplified representation of reality. All models are wrong, but some are useful.
 
----
+
