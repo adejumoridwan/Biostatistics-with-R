@@ -1,8 +1,3 @@
-# ==============================================================================
-# Lecture 101: Lab - Survival Analysis on Cancer Dataset
-# Practical Biostatistics with R
-# ==============================================================================
-
 # Load required packages
 # If not installed, run: install.packages(c("survival", "survminer"))
 library(survival)
@@ -180,29 +175,6 @@ ggsurvplot(
   ggtheme = theme_minimal()
 )
 
-# 4.4 Survival by ECOG Performance Status
-# ----------------------------------------
-
-# Filter out missing ECOG scores
-lung_ecog <- lung_clean %>% filter(!is.na(ph.ecog_f))
-
-# Fit KM curves
-km_ecog <- survfit(Surv(time, death) ~ ph.ecog_f, data = lung_ecog)
-
-# Plot
-ggsurvplot(
-  km_ecog,
-  data = lung_ecog,
-  conf.int = TRUE,
-  pval = TRUE,
-  risk.table = TRUE,
-  legend.title = "ECOG Score",
-  title = "Survival by ECOG Performance Status",
-  xlab = "Time (days)",
-  ylab = "Survival Probability",
-  break.time.by = 100,
-  ggtheme = theme_minimal()
-)
 
 # ==============================================================================
 # 5. LOG-RANK TEST
@@ -229,11 +201,6 @@ print(logrank_sex)
 logrank_age <- survdiff(Surv(time, death) ~ age_group, data = lung_age)
 print(logrank_age)
 
-# 5.3 Compare Survival by ECOG Score
-# -----------------------------------
-
-logrank_ecog <- survdiff(Surv(time, death) ~ ph.ecog_f, data = lung_ecog)
-print(logrank_ecog)
 
 # 5.4 Pairwise Comparisons
 # -------------------------
@@ -321,6 +288,9 @@ anova(cox_multi, cox_interaction)
 hr_sex <- exp(coef(cox_multi)["sex_fFemale"])
 ci_sex <- exp(confint(cox_multi)["sex_fFemale",])
 
+hr_sex
+ci_sex
+
 cat("\nSex (Female vs Male):\n")
 cat("Hazard Ratio:", round(hr_sex, 3), "\n")
 cat("95% CI:", round(ci_sex[1], 3), "-", round(ci_sex[2], 3), "\n")
@@ -361,12 +331,8 @@ ph_test <- cox.zph(cox_multi)
 print(ph_test)
 
 # Plot Schoenfeld residuals
-# Flat line indicates proportional hazards assumption is met
-par(mfrow = c(2, 2))
-plot(ph_test)
-par(mfrow = c(1, 1))
 
-# Alternative: use ggcoxzph from survminer
+# use ggcoxzph from survminer
 ggcoxzph(ph_test)
 
 # 8.2 Check Influential Observations
@@ -521,17 +487,3 @@ lung_complete %>%
   ) %>%
   print()
 
-# ==============================================================================
-# END OF LAB
-# ==============================================================================
-
-cat("\n=== LAB COMPLETE ===\n")
-cat("You've successfully completed survival analysis on the lung cancer dataset!\n")
-cat("\nKey takeaways:\n")
-cat("1. Created and interpreted Kaplan-Meier survival curves\n")
-cat("2. Performed log-rank tests to compare groups\n")
-cat("3. Fit Cox proportional hazards models (univariable and multivariable)\n")
-cat("4. Interpreted hazard ratios and confidence intervals\n")
-cat("5. Checked model assumptions (proportional hazards)\n")
-cat("6. Created publication-quality visualizations\n")
-cat("\nNext steps: Apply these methods to your own survival data!\n")
