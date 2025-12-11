@@ -1,0 +1,1477 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="main_files/libs/clipboard/clipboard.min.js"></script>
+<script src="main_files/libs/quarto-html/tabby.min.js"></script>
+<script src="main_files/libs/quarto-html/popper.min.js"></script>
+<script src="main_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="main_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="main_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="main_files/libs/quarto-html/quarto-syntax-highlighting-0815c480559380816a4d1ea211a47e91.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.7.29">
+
+  <meta name="author" content="Adejumo Ridwan Suleiman">
+  <title>Survival Analysis</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="main_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="main_files/libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="main_files/libs/revealjs/dist/theme/quarto-f563837468303362081e247dddd440d0.css">
+  <link href="main_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="main_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="main_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="main_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Survival Analysis</h1>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Adejumo Ridwan Suleiman 
+</div>
+</div>
+</div>
+
+</section>
+<section>
+<section id="introduction-to-survival-analysis" class="title-slide slide level1 center">
+<h1>Introduction to Survival Analysis</h1>
+
+</section>
+<section id="what-is-survival-analysis" class="slide level2">
+<h2>What is Survival Analysis?</h2>
+<p><strong>Survival analysis</strong> is a collection of statistical methods for analyzing time-to-event data.</p>
+<ul>
+<li class="fragment"><strong>Time-to-event</strong>: Duration until a specific event occurs</li>
+<li class="fragment">Originally developed for studying death (hence “survival”)</li>
+<li class="fragment">Now used broadly: disease progression, equipment failure, customer churn, etc.</li>
+</ul>
+</section>
+<section id="why-not-use-standard-methods" class="slide level2">
+<h2>Why Not Use Standard Methods?</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Problems with standard methods:</strong></p>
+<ul>
+<li>Censoring (incomplete observations)</li>
+<li>Non-normal distributions</li>
+<li>Time-dependent covariates</li>
+<li>Interest in hazard rates</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><strong>Example:</strong></p>
+<p>A patient enters a study on Day 0 and is followed for 2 years. If they’re still alive at the end, we know they survived <em>at least</em> 2 years, but not their actual survival time.</p>
+</div></div>
+</section>
+<section id="key-concepts-censoring" class="slide level2">
+<h2>Key Concepts: Censoring</h2>
+<p><strong>Censoring</strong> occurs when we have incomplete information about survival time.</p>
+</section>
+<section id="types-of-censoring" class="slide level2">
+<h2>Types of Censoring:</h2>
+<ol type="1">
+<li><strong>Right censoring</strong> (most common)
+<ul>
+<li>Event hasn’t occurred by end of study</li>
+<li>Patient lost to follow-up</li>
+<li>Patient withdraws</li>
+</ul></li>
+<li><strong>Left censoring</strong> (rare)
+<ul>
+<li>Event occurred before observation began</li>
+</ul></li>
+<li><strong>Interval censoring</strong>
+<ul>
+<li>Event occurred between two observation times</li>
+</ul></li>
+</ol>
+</section>
+<section id="visual-example-of-censoring" class="slide level2">
+<h2>Visual Example of Censoring</h2>
+<pre><code>Patient 1: |--------●              Event at 8 months
+Patient 2: |---------------●       Event at 15 months  
+Patient 3: |--------------------○  Censored at 20 months (study ended)
+Patient 4: |----------○            Censored at 10 months (lost to follow-up)
+Patient 5: |-----●                 Event at 5 months
+
+Time →     0    5    10   15   20
+           ● = Event occurred
+           ○ = Censored observation</code></pre>
+</section>
+<section id="the-survival-function-st" class="slide level2">
+<h2>The Survival Function S(t)</h2>
+<p>The <strong>survival function</strong> gives the probability of surviving beyond time t:</p>
+<p><span class="math display">\[S(t) = P(T &gt; t)\]</span></p>
+<p>Where T is the survival time random variable.</p>
+<p><strong>Properties:</strong></p>
+<ul>
+<li>S(0) = 1 (everyone alive at start)</li>
+<li>S(∞) = 0 (eventually everyone experiences event)</li>
+<li>S(t) is non-increasing (monotone decreasing)</li>
+</ul>
+</section>
+<section id="the-hazard-function-ht" class="slide level2">
+<h2>The Hazard Function h(t)</h2>
+<p>The <strong>hazard function</strong> (or hazard rate) is the instantaneous event rate at time t, given survival up to time t:</p>
+<p><span class="math display">\[h(t) = \lim_{\Delta t \to 0} \frac{P(t \leq T &lt; t + \Delta t | T \geq t)}{\Delta t}\]</span></p>
+<p><strong>Interpretation:</strong></p>
+<ul>
+<li>Risk of event at time t among those who haven’t experienced it yet</li>
+<li>Can increase, decrease, or stay constant over time</li>
+<li>Unlike probability, can exceed 1.0</li>
+</ul>
+</section>
+<section id="survival-data-structure" class="slide level2">
+<h2>Survival Data Structure</h2>
+<p>Each observation requires:</p>
+<ol type="1">
+<li><strong>Time</strong>: Duration from start to event or censoring</li>
+<li><strong>Status</strong>: Event occurred (1) or censored (0)</li>
+<li><strong>Covariates</strong>: Variables that might affect survival (age, treatment, etc.)</li>
+</ol>
+</section>
+<section id="survival-data-structure-cont." class="slide level2">
+<h2>Survival Data Structure (cont.)</h2>
+<p><strong>Example:</strong></p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Patient</th>
+<th>Time</th>
+<th>Status</th>
+<th>Treatment</th>
+<th>Age</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>15</td>
+<td>1</td>
+<td>A</td>
+<td>45</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>20</td>
+<td>0</td>
+<td>B</td>
+<td>52</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>8</td>
+<td>1</td>
+<td>A</td>
+<td>38</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="common-applications-in-biostatistics" class="slide level2">
+<h2>Common Applications in Biostatistics</h2>
+<ul>
+<li class="fragment"><strong>Clinical trials</strong>: Time to death, disease progression, or relapse</li>
+<li class="fragment"><strong>Epidemiology</strong>: Time to disease onset</li>
+<li class="fragment"><strong>Cancer research</strong>: Overall survival, progression-free survival</li>
+<li class="fragment"><strong>Infectious diseases</strong>: Time to infection or recovery</li>
+<li class="fragment"><strong>Cardiology</strong>: Time to heart attack or stroke</li>
+<li class="fragment"><strong>Health economics</strong>: Time to hospital readmission</li>
+</ul>
+</section>
+<section id="types-of-survival-analysis-methods" class="slide level2">
+<h2>Types of Survival Analysis Methods</h2>
+<ol type="1">
+<li><strong>Non-parametric methods</strong>
+<ul>
+<li>Kaplan-Meier estimator</li>
+<li>Log-rank test</li>
+</ul></li>
+<li><strong>Semi-parametric methods</strong>
+<ul>
+<li>Cox proportional hazards model</li>
+</ul></li>
+<li><strong>Parametric methods</strong>
+<ul>
+<li>Exponential, Weibull, log-normal models</li>
+</ul></li>
+</ol>
+<p>We’ll focus on the first two in this course.</p>
+</section></section>
+<section>
+<section id="kaplan-meier-curves" class="title-slide slide level1 center">
+<h1>Kaplan-Meier Curves</h1>
+
+</section>
+<section id="the-kaplan-meier-estimator" class="slide level2">
+<h2>The Kaplan-Meier Estimator</h2>
+<p>The <strong>Kaplan-Meier (KM) estimator</strong> is a non-parametric method for estimating the survival function from observed survival times.</p>
+<p><strong>Also known as:</strong> - Product-limit estimator - KM curve - Survival curve</p>
+<p><strong>Key advantage:</strong> Handles censored data naturally</p>
+</section>
+<section id="km-formula" class="slide level2">
+<h2>KM Formula</h2>
+<p>The KM estimate at time t is:</p>
+<p><span class="math display">\[\hat{S}(t) = \prod_{t_i \leq t} \left(1 - \frac{d_i}{n_i}\right)\]</span></p>
+<p>Where:</p>
+<ul>
+<li><span class="math inline">\(t_i\)</span> = distinct event times</li>
+<li><span class="math inline">\(d_i\)</span> = number of events at time <span class="math inline">\(t_i\)</span></li>
+<li><span class="math inline">\(n_i\)</span> = number at risk just before <span class="math inline">\(t_i\)</span></li>
+</ul>
+<p>The survival probability is the product of conditional survival probabilities.</p>
+</section>
+<section id="step-by-step-example" class="slide level2">
+<h2>Step-by-Step Example</h2>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Time</th>
+<th>At Risk</th>
+<th>Events</th>
+<th>Censored</th>
+<th>Survival Probability</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>10</td>
+<td>0</td>
+<td>0</td>
+<td>1.0</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>10</td>
+<td>1</td>
+<td>0</td>
+<td>0.9 (9/10)</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>9</td>
+<td>0</td>
+<td>1</td>
+<td>0.9</td>
+</tr>
+<tr class="even">
+<td>7</td>
+<td>8</td>
+<td>2</td>
+<td>0</td>
+<td>0.675 (0.9 × 6/8)</td>
+</tr>
+<tr class="odd">
+<td>10</td>
+<td>6</td>
+<td>1</td>
+<td>0</td>
+<td>0.563 (0.675 × 5/6)</td>
+</tr>
+</tbody>
+</table>
+<p>Note: Censored observations contribute to “at risk” until their censoring time.</p>
+</section>
+<section id="interpreting-km-curves" class="slide level2">
+<h2>Interpreting KM Curves</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Key features:</strong></p>
+<ul>
+<li>Y-axis: Survival probability (0 to 1)</li>
+<li>X-axis: Time</li>
+<li>Step function (drops at event times)</li>
+<li>Vertical tick marks = censored observations</li>
+<li>Confidence bands show uncertainty</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><strong>What to look for:</strong></p>
+<ul>
+<li>Median survival time</li>
+<li>Survival at specific timepoints</li>
+<li>Shape of curve (steep vs.&nbsp;gradual decline)</li>
+<li>Comparison between groups</li>
+</ul>
+</div></div>
+</section>
+<section id="median-survival-time" class="slide level2">
+<h2>Median Survival Time</h2>
+<p><strong>Median survival</strong> is the time at which 50% of subjects have experienced the event.</p>
+<ul>
+<li>Read from KM curve where S(t) = 0.5</li>
+<li>More robust than mean survival</li>
+<li>May be undefined if &lt;50% experience event</li>
+<li>Preferred in medical literature</li>
+</ul>
+<p><strong>Note:</strong> If the curve never drops below 0.5, median survival is not reached (censored).</p>
+</section>
+<section id="confidence-intervals" class="slide level2">
+<h2>Confidence Intervals</h2>
+<p>KM estimates come with confidence intervals using:</p>
+<ol type="1">
+<li><strong>Greenwood’s formula</strong> for standard error</li>
+<li><strong>Log-log transformation</strong> for CI construction (most common)</li>
+<li><strong>Plain or log transformation</strong> (alternatives)</li>
+</ol>
+<p><strong>Wider CIs occur when:</strong> - Fewer subjects at risk - More censoring - Later time points</p>
+</section>
+<section id="comparing-survival-curves" class="slide level2">
+<h2>Comparing Survival Curves</h2>
+<p>When comparing multiple groups (e.g., treatment A vs.&nbsp;B):</p>
+<p><strong>Visual comparison:</strong> - Separate KM curves on same plot - Non-overlapping CIs suggest difference - Crossing curves indicate non-proportional hazards</p>
+<p><strong>Statistical test:</strong> - Log-rank test (next lecture) - Tests whether survival distributions differ</p>
+</section>
+<section id="assumptions-of-km-method" class="slide level2">
+<h2>Assumptions of KM Method</h2>
+<ol type="1">
+<li><strong>Censoring is independent of survival</strong>
+<ul>
+<li>Censored subjects have same prognosis as those continuing</li>
+</ul></li>
+<li><strong>Survival probabilities are the same for early and late recruits</strong>
+<ul>
+<li>No time trends in underlying risk</li>
+</ul></li>
+<li><strong>Events occur at specified times</strong>
+<ul>
+<li>No measurement error in event times</li>
+</ul></li>
+</ol>
+</section>
+<section id="limitations-of-km-method" class="slide level2">
+<h2>Limitations of KM Method</h2>
+<ul>
+<li class="fragment"><strong>No covariate adjustment</strong>: Can’t control for confounders</li>
+<li class="fragment"><strong>Descriptive only</strong>: Doesn’t quantify effects</li>
+<li class="fragment"><strong>Limited to categorical comparisons</strong>: Can’t use continuous variables</li>
+<li class="fragment"><strong>Assumes independence</strong>: Issues with competing risks</li>
+<li class="fragment"><strong>Small sample problems</strong>: Unstable at tail of distribution</li>
+</ul>
+<p><strong>Solution:</strong> Use Cox regression for multivariable analysis</p>
+</section>
+<section id="when-to-use-km-curves" class="slide level2">
+<h2>When to Use KM Curves</h2>
+<p><strong>Ideal for:</strong></p>
+<ul>
+<li>Describing survival experience</li>
+<li>Initial exploratory analysis</li>
+<li>Comparing 2-3 groups visually</li>
+<li>Reporting outcomes in clinical trials</li>
+<li>Communicating with non-statisticians</li>
+</ul>
+</section>
+<section id="when-to-use-km-curves-cont." class="slide level2">
+<h2>When to Use KM Curves (cont.)</h2>
+<p><strong>Use with caution:</strong></p>
+<ul>
+<li>When many covariates need adjustment</li>
+<li>Small sample sizes</li>
+<li>Heavy censoring (&gt;50%)</li>
+</ul>
+</section></section>
+<section>
+<section id="log-rank-test" class="title-slide slide level1 center">
+<h1>Log-Rank Test</h1>
+
+</section>
+<section id="purpose-of-the-log-rank-test" class="slide level2">
+<h2>Purpose of the Log-Rank Test</h2>
+<p>The <strong>log-rank test</strong> is a hypothesis test to compare survival distributions of two or more groups.</p>
+<p><strong>Null hypothesis (H₀):</strong> Survival distributions are the same across groups</p>
+<p><strong>Alternative hypothesis (H₁):</strong> At least one group differs</p>
+<p>It’s the most common statistical test for comparing survival curves.</p>
+</section>
+<section id="how-the-log-rank-test-works" class="slide level2">
+<h2>How the Log-Rank Test Works</h2>
+<p>The test compares:</p>
+<ul>
+<li><strong>Observed</strong> number of events in each group</li>
+<li><strong>Expected</strong> number of events if H₀ were true</li>
+</ul>
+<p>At each event time:</p>
+<ol type="1">
+<li>Calculate expected events under H₀</li>
+<li>Sum over all event times</li>
+<li>Compute test statistic</li>
+<li>Compare to chi-square distribution</li>
+</ol>
+</section>
+<section id="log-rank-test-statistic" class="slide level2">
+<h2>Log-Rank Test Statistic</h2>
+<p>The test statistic follows a chi-square distribution:</p>
+<p><span class="math display">\[\chi^2 = \frac{(O - E)^2}{E}\]</span></p>
+<p>For multiple groups:</p>
+<p><span class="math display">\[\chi^2 = \sum_{j=1}^{g} \frac{(O_j - E_j)^2}{E_j}\]</span></p>
+<ul>
+<li>Degrees of freedom = number of groups - 1</li>
+<li>Larger values provide evidence against H₀</li>
+</ul>
+</section>
+<section id="example-calculation-concept" class="slide level2">
+<h2>Example Calculation Concept</h2>
+<p>At each event time t:</p>
+<p><strong>Expected events in group 1:</strong></p>
+<p><span class="math display">\[E_{1t} = \frac{n_{1t}}{n_t} \times d_t\]</span></p>
+<p>Where: - <span class="math inline">\(n_{1t}\)</span> = at risk in group 1 at time t - <span class="math inline">\(n_t\)</span> = total at risk at time t<br>
+- <span class="math inline">\(d_t\)</span> = total events at time t</p>
+<p>Sum expected and observed across all event times, then compute test statistic.</p>
+</section>
+<section id="interpreting-log-rank-results" class="slide level2">
+<h2>Interpreting Log-Rank Results</h2>
+<p><strong>P-value interpretation:</strong></p>
+<ul>
+<li>p &lt; 0.05: Evidence of difference in survival between groups</li>
+<li>p ≥ 0.05: Insufficient evidence of difference</li>
+</ul>
+<p><strong>Important notes:</strong></p>
+<ul>
+<li>Tests equality of entire survival distributions</li>
+<li>Doesn’t specify which group is better</li>
+<li>Doesn’t quantify magnitude of difference</li>
+<li>Look at KM curves for direction and clinical significance</li>
+</ul>
+</section>
+<section id="assumptions-of-log-rank-test" class="slide level2">
+<h2>Assumptions of Log-Rank Test</h2>
+<ol type="1">
+<li><strong>Independent censoring</strong>
+<ul>
+<li>Censoring unrelated to prognosis</li>
+</ul></li>
+<li><strong>Similar censoring patterns</strong>
+<ul>
+<li>Censoring mechanisms similar across groups</li>
+</ul></li>
+<li><strong>Proportional hazards</strong> (approximately)
+<ul>
+<li>Hazard ratio is roughly constant over time</li>
+<li>Most powerful when this holds</li>
+</ul></li>
+</ol>
+</section>
+<section id="when-assumptions-are-violated" class="slide level2">
+<h2>When Assumptions Are Violated</h2>
+<p><strong>Non-proportional hazards:</strong></p>
+<ul>
+<li>KM curves cross</li>
+<li>Early vs.&nbsp;late effects differ</li>
+<li>Treatment effect changes over time</li>
+</ul>
+<p><strong>Solutions:</strong></p>
+<ul>
+<li>Weighted log-rank tests (e.g., Peto-Peto, Fleming-Harrington)</li>
+<li>Stratified log-rank test</li>
+<li>Restricted mean survival time comparison</li>
+<li>Report results at specific time points</li>
+</ul>
+</section>
+<section id="stratified-log-rank-test" class="slide level2">
+<h2>Stratified Log-Rank Test</h2>
+<p>Used when you want to:</p>
+<ul>
+<li>Compare groups <strong>while adjusting</strong> for a categorical variable</li>
+<li>Account for a potential confounder</li>
+<li>Test within strata and combine results</li>
+</ul>
+<p><strong>Example:</strong> Comparing treatments while stratifying by disease stage</p>
+<p><strong>Limitation:</strong> Can only stratify by categorical variables with few levels</p>
+</section>
+<section id="multiple-group-comparisons" class="slide level2">
+<h2>Multiple Group Comparisons</h2>
+<p>When comparing &gt;2 groups:</p>
+<ol type="1">
+<li><strong>Overall test</strong>
+<ul>
+<li>Single p-value testing any difference</li>
+<li>Degrees of freedom = groups - 1</li>
+</ul></li>
+<li><strong>Pairwise comparisons</strong>
+<ul>
+<li>All possible pairs</li>
+<li>Adjust for multiple testing (e.g., Bonferroni)</li>
+<li>Or use trend test if groups are ordered</li>
+</ul></li>
+</ol>
+</section>
+<section id="log-rank-vs.-other-tests" class="slide level2">
+<h2>Log-Rank vs.&nbsp;Other Tests</h2>
+<p><strong>Alternatives:</strong></p>
+<ol type="1">
+<li><strong>Wilcoxon test (Breslow)</strong>
+<ul>
+<li>Gives more weight to early events</li>
+<li>Better when early differences matter</li>
+</ul></li>
+<li><strong>Tarone-Ware test</strong>
+<ul>
+<li>Intermediate weighting</li>
+</ul></li>
+<li><strong>Fleming-Harrington family</strong>
+<ul>
+<li>Flexible weighting schemes</li>
+</ul></li>
+</ol>
+<p><strong>Most common:</strong> Log-rank test (equal weighting)</p>
+</section>
+<section id="reporting-log-rank-results" class="slide level2">
+<h2>Reporting Log-Rank Results</h2>
+<p><strong>Essential elements:</strong></p>
+<ol type="1">
+<li class="fragment">Test statistic and degrees of freedom</li>
+<li class="fragment">P-value</li>
+<li class="fragment">Sample sizes and event numbers per group</li>
+<li class="fragment">Median survival times with CIs</li>
+<li class="fragment">KM curve figure</li>
+<li class="fragment">Clear statement of findings</li>
+</ol>
+<p><strong>Example:</strong> “The log-rank test showed significantly better survival in the treatment group (χ² = 8.42, df = 1, p = 0.004).”</p>
+</section></section>
+<section>
+<section id="cox-proportional-hazards-model" class="title-slide slide level1 center">
+<h1>Cox Proportional Hazards Model</h1>
+
+</section>
+<section id="introduction-to-cox-regression" class="slide level2">
+<h2>Introduction to Cox Regression</h2>
+<p>The <strong>Cox proportional hazards model</strong> is a semi-parametric regression method for survival data.</p>
+<p><strong>Key features:</strong></p>
+<ul>
+<li>Most widely used multivariable survival method</li>
+<li>Estimates effects of covariates on hazard</li>
+<li>No assumption about baseline hazard shape</li>
+<li>Can include multiple predictors</li>
+<li>Handles both continuous and categorical variables</li>
+</ul>
+</section>
+<section id="the-cox-model-formula" class="slide level2">
+<h2>The Cox Model Formula</h2>
+<p><span class="math display">\[h(t|X) = h_0(t) \times \exp(\beta_1X_1 + \beta_2X_2 + ... + \beta_pX_p)\]</span></p>
+<p>Where:</p>
+<ul>
+<li><span class="math inline">\(h(t|X)\)</span> = hazard at time t given covariates X</li>
+<li><span class="math inline">\(h_0(t)\)</span> = baseline hazard (unspecified)</li>
+<li><span class="math inline">\(\beta\)</span> = regression coefficients</li>
+<li><span class="math inline">\(X\)</span> = covariate values</li>
+</ul>
+<p>The hazard is the product of baseline hazard and exponential function of covariates.</p>
+</section>
+<section id="why-proportional-hazards" class="slide level2">
+<h2>Why “Proportional Hazards”?</h2>
+<p><strong>Proportional hazards assumption:</strong> The hazard ratio between any two individuals is constant over time.</p>
+<p>For two subjects with covariate values <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span>:</p>
+<p><span class="math display">\[\frac{h(t|X_1)}{h(t|X_2)} = \exp[\beta(X_1 - X_2)]\]</span></p>
+<p>This ratio doesn’t depend on time t.</p>
+<p><strong>Implication:</strong> Effects are multiplicative on hazard scale</p>
+</section>
+<section id="interpreting-cox-coefficients" class="slide level2">
+<h2>Interpreting Cox Coefficients</h2>
+<p>The coefficient <span class="math inline">\(\beta\)</span> represents:</p>
+<ul>
+<li>Log hazard ratio per unit increase in covariate</li>
+<li>Positive <span class="math inline">\(\beta\)</span>: Increased hazard (worse survival)</li>
+<li>Negative <span class="math inline">\(\beta\)</span>: Decreased hazard (better survival)</li>
+<li><span class="math inline">\(\beta = 0\)</span>: No effect</li>
+</ul>
+<p><strong>Note:</strong> Coefficients are on log scale, so we exponentiate to get hazard ratios (next lecture).</p>
+</section>
+<section id="categorical-predictors" class="slide level2">
+<h2>Categorical Predictors</h2>
+<p>For categorical variables (e.g., treatment group):</p>
+<ul>
+<li>One category is the reference</li>
+<li>Coefficients represent log hazard ratios vs.&nbsp;reference</li>
+<li>Can have multiple categories (multiple dummy variables)</li>
+</ul>
+<p><strong>Example:</strong> Treatment (A vs.&nbsp;B)</p>
+<ul>
+<li>Reference: Treatment A</li>
+<li>Coefficient for B: log(HR) comparing B to A</li>
+</ul>
+</section>
+<section id="continuous-predictors" class="slide level2">
+<h2>Continuous Predictors</h2>
+<p>For continuous variables (e.g., age):</p>
+<ul>
+<li>Coefficient is per one-unit increase</li>
+<li>Assume linear relationship with log-hazard</li>
+<li>Can transform if needed (log, polynomial)</li>
+<li>Can categorize, but loses information</li>
+</ul>
+<p><strong>Example:</strong> Age coefficient = 0.05</p>
+<ul>
+<li>Hazard increases 5% per year of age (approximately)</li>
+</ul>
+</section>
+<section id="multiple-predictors" class="slide level2">
+<h2>Multiple Predictors</h2>
+<p>Cox models can include many predictors simultaneously:</p>
+<p><strong>Advantages:</strong></p>
+<ul>
+<li>Control for confounding</li>
+<li>Identify independent predictors</li>
+<li>More efficient use of data</li>
+<li>Test interactions</li>
+</ul>
+</section>
+<section id="multiple-predictors-cont." class="slide level2">
+<h2>Multiple Predictors (cont.)</h2>
+<p><strong>Considerations:</strong></p>
+<ul>
+<li>Need adequate sample size (events, not just subjects)</li>
+<li>Rule of thumb: ≥10 events per predictor variable</li>
+</ul>
+</section>
+<section id="model-building-strategy" class="slide level2">
+<h2>Model Building Strategy</h2>
+<ol type="1">
+<li><strong>Univariable screening</strong>
+<ul>
+<li>Test each predictor separately</li>
+<li>Identify candidates (p &lt; 0.2 or clinical importance)</li>
+</ul></li>
+<li><strong>Multivariable model</strong>
+<ul>
+<li>Include candidate predictors</li>
+<li>Check proportional hazards assumption</li>
+<li>Consider interactions</li>
+</ul></li>
+</ol>
+</section>
+<section id="model-building-strategy-cont." class="slide level2">
+<h2>Model Building Strategy (cont.)</h2>
+<ol start="3" type="1">
+<li><strong>Model reduction</strong>
+<ul>
+<li>Remove non-significant predictors (if appropriate)</li>
+<li>Compare nested models with likelihood ratio tests</li>
+</ul></li>
+</ol>
+</section>
+<section id="time-dependent-covariates" class="slide level2">
+<h2>Time-Dependent Covariates</h2>
+<p>Standard Cox model: Covariates measured at baseline</p>
+<p><strong>Time-dependent covariates:</strong> Values change during follow-up</p>
+<p><strong>Examples:</strong></p>
+<ul>
+<li>Transplant status (waiting vs.&nbsp;transplanted)</li>
+<li>Disease status (remission vs.&nbsp;relapse)</li>
+<li>Medication changes</li>
+</ul>
+<p>Requires special coding and extended Cox model formulation.</p>
+</section>
+<section id="stratified-cox-model" class="slide level2">
+<h2>Stratified Cox Model</h2>
+<p>When proportional hazards assumption fails for a variable:</p>
+<p><strong>Solution:</strong> Stratify by that variable</p>
+<ul>
+<li>Allows different baseline hazards per stratum</li>
+<li>Estimates common effect for other covariates</li>
+<li>Doesn’t estimate effect of stratification variable</li>
+</ul>
+<p><strong>Example:</strong> Stratify by hospital, estimate treatment effect</p>
+</section>
+<section id="assumptions-of-cox-model" class="slide level2">
+<h2>Assumptions of Cox Model</h2>
+<ol type="1">
+<li><strong>Proportional hazards</strong>
+<ul>
+<li>Hazard ratio constant over time</li>
+</ul></li>
+<li><strong>Linear relationship</strong>
+<ul>
+<li>Log-hazard linear in continuous predictors</li>
+</ul></li>
+<li><strong>Independence</strong>
+<ul>
+<li>Observations independent</li>
+</ul></li>
+<li><strong>Correct functional form</strong>
+<ul>
+<li>Appropriate transformations</li>
+</ul></li>
+</ol>
+</section>
+<section id="checking-proportional-hazards" class="slide level2">
+<h2>Checking Proportional Hazards</h2>
+<p><strong>Methods:</strong></p>
+<ol type="1">
+<li><strong>Graphical</strong>
+<ul>
+<li>Log-log plots should be parallel</li>
+<li>Schoenfeld residuals vs.&nbsp;time (flat line)</li>
+</ul></li>
+<li><strong>Statistical</strong>
+<ul>
+<li>Test correlation of scaled Schoenfeld residuals with time</li>
+<li>Global test for all covariates</li>
+</ul></li>
+</ol>
+</section>
+<section id="checking-proportional-hazards-cont." class="slide level2">
+<h2>Checking Proportional Hazards (cont.)</h2>
+<p><strong>If violated:</strong></p>
+<ul>
+<li>Stratify on that variable</li>
+<li>Include time interaction</li>
+<li>Use time-varying coefficient model</li>
+</ul>
+</section>
+<section id="advantages-of-cox-model" class="slide level2">
+<h2>Advantages of Cox Model</h2>
+<ul>
+<li class="fragment"><strong>Semi-parametric:</strong> Flexible baseline hazard</li>
+<li class="fragment"><strong>Robust:</strong> Handles various distributions</li>
+<li class="fragment"><strong>Multivariable:</strong> Controls for confounding</li>
+<li class="fragment"><strong>Efficient:</strong> Uses all available data</li>
+<li class="fragment"><strong>Interpretable:</strong> Hazard ratios</li>
+<li class="fragment"><strong>Standard:</strong> Widely accepted in medical research</li>
+</ul>
+</section>
+<section id="limitations-of-cox-model" class="slide level2">
+<h2>Limitations of Cox Model</h2>
+<ul>
+<li class="fragment"><strong>Proportional hazards:</strong> May not always hold</li>
+<li class="fragment"><strong>Complexity:</strong> More assumptions than KM</li>
+<li class="fragment"><strong>Sample size:</strong> Needs adequate events</li>
+<li class="fragment"><strong>Non-linearity:</strong> May need transformations</li>
+<li class="fragment"><strong>No absolute risk:</strong> Only relative comparisons</li>
+<li class="fragment"><strong>Competing risks:</strong> Needs special handling</li>
+</ul>
+</section></section>
+<section>
+<section id="interpreting-hazard-ratios" class="title-slide slide level1 center">
+<h1>Interpreting Hazard Ratios</h1>
+
+</section>
+<section id="what-is-a-hazard-ratio" class="slide level2">
+<h2>What is a Hazard Ratio?</h2>
+<p><strong>Hazard Ratio (HR)</strong> is the ratio of hazards between two groups or for a unit change in a continuous variable.</p>
+<p><span class="math display">\[HR = \frac{h_1(t)}{h_0(t)} = \exp(\beta)\]</span></p>
+<p>Where <span class="math inline">\(\beta\)</span> is the Cox regression coefficient.</p>
+<p><strong>Key point:</strong> HR is obtained by exponentiating the coefficient.</p>
+</section>
+<section id="hazard-ratio-scale" class="slide level2">
+<h2>Hazard Ratio Scale</h2>
+<p><strong>HR interpretation:</strong></p>
+<ul>
+<li><strong>HR = 1</strong>: No difference in hazard</li>
+<li><strong>HR &gt; 1</strong>: Increased hazard (worse outcome)</li>
+<li><strong>HR &lt; 1</strong>: Decreased hazard (better outcome)</li>
+</ul>
+</section>
+<section id="hazard-ratio-scale-cont." class="slide level2">
+<h2>Hazard Ratio Scale (cont.)</h2>
+<p><strong>Examples:</strong></p>
+<ul>
+<li>HR = 2.0: Twice the hazard</li>
+<li>HR = 0.5: Half the hazard</li>
+<li>HR = 1.5: 50% increase in hazard</li>
+<li>HR = 0.75: 25% decrease in hazard</li>
+</ul>
+</section>
+<section id="converting-between-representations" class="slide level2">
+<h2>Converting Between Representations</h2>
+<p><strong>From coefficient to HR:</strong></p>
+<p><span class="math display">\[HR = e^{\beta}\]</span></p>
+<p><strong>From HR to coefficient:</strong></p>
+<p><span class="math display">\[\beta = \ln(HR)\]</span></p>
+<p><strong>Percentage change:</strong></p>
+<p><span class="math display">\[(HR - 1) \times 100\%\]</span></p>
+</section>
+<section id="example-binary-predictor" class="slide level2">
+<h2>Example: Binary Predictor</h2>
+<p><strong>Scenario:</strong> Comparing new treatment to standard care</p>
+<p><strong>Cox output:</strong> <span class="math inline">\(\beta = -0.47\)</span>, standard error = 0.15</p>
+<p><strong>Calculations:</strong></p>
+<ul>
+<li><span class="math inline">\(HR = e^{-0.47} = 0.625\)</span></li>
+<li>95% CI: <span class="math inline">\(e^{-0.47 \pm 1.96 \times 0.15}\)</span> = (0.47, 0.84)</li>
+</ul>
+<p><strong>Interpretation:</strong> New treatment reduces hazard of death by 37.5% compared to standard care.</p>
+</section>
+<section id="example-continuous-predictor" class="slide level2">
+<h2>Example: Continuous Predictor</h2>
+<p><strong>Scenario:</strong> Effect of age on mortality</p>
+<p><strong>Cox output:</strong> <span class="math inline">\(\beta = 0.03\)</span> per year</p>
+<p><strong>Calculations:</strong></p>
+<ul>
+<li>HR = <span class="math inline">\(e^{0.03}\)</span> = 1.03 per year</li>
+<li>HR for 10 years = <span class="math inline">\(e^{0.03 \times 10}\)</span> = 1.35</li>
+</ul>
+<p><strong>Interpretation:</strong> Each additional year of age increases hazard by 3%. A 10-year age difference corresponds to 35% increase in hazard.</p>
+</section>
+<section id="confidence-intervals-for-hr" class="slide level2">
+<h2>Confidence Intervals for HR</h2>
+<p><strong>95% CI formula:</strong></p>
+<p><span class="math display">\[e^{\beta \pm 1.96 \times SE(\beta)}\]</span></p>
+<p><strong>Interpretation:</strong></p>
+<ul>
+<li>If CI excludes 1.0: Statistically significant</li>
+<li>If CI includes 1.0: Not statistically significant</li>
+<li>Width indicates precision of estimate</li>
+</ul>
+<p><strong>Example:</strong> HR = 0.62 (95% CI: 0.47-0.84)</p>
+<p>The effect is significant, and we’re 95% confident the true HR is between 0.47 and 0.84.</p>
+</section>
+<section id="p-values-vs.-confidence-intervals" class="slide level2">
+<h2>P-Values vs.&nbsp;Confidence Intervals</h2>
+<p><strong>P-value:</strong></p>
+<ul>
+<li>Tests H₀: HR = 1</li>
+<li>Dichotomous (significant or not)</li>
+<li>Doesn’t show magnitude or precision</li>
+</ul>
+<p><strong>Confidence interval:</strong></p>
+<ul>
+<li>Shows range of plausible values</li>
+<li>Indicates precision</li>
+<li>Shows clinical significance</li>
+<li><strong>Preferred for interpretation</strong></li>
+</ul>
+</section>
+<section id="common-misinterpretations" class="slide level2">
+<h2>Common Misinterpretations</h2>
+<ol type="1">
+<li class="fragment"><strong>“HR = 2 means you’ll die twice as fast”</strong>
+<ul>
+<li class="fragment">Wrong: It means double the instantaneous risk</li>
+</ul></li>
+<li class="fragment"><strong>“HR = 0.5 means 50% will survive”</strong>
+<ul>
+<li class="fragment">Wrong: HR is about rates, not proportions</li>
+</ul></li>
+<li class="fragment"><strong>“HR constant means same absolute benefit”</strong>
+<ul>
+<li class="fragment">Wrong: Absolute benefit depends on baseline risk</li>
+</ul></li>
+<li class="fragment"><strong>“Non-significant means no effect”</strong>
+<ul>
+<li class="fragment">Wrong: Could be due to small sample size</li>
+</ul></li>
+</ol>
+</section>
+<section id="hazard-ratio-vs.-risk-ratio" class="slide level2">
+<h2>Hazard Ratio vs.&nbsp;Risk Ratio</h2>
+<p><strong>Hazard Ratio (HR):</strong></p>
+<ul>
+<li>Compares instantaneous event rates</li>
+<li>From survival analysis</li>
+<li>Accounts for timing</li>
+</ul>
+<p><strong>Risk Ratio (RR):</strong></p>
+<ul>
+<li>Compares cumulative probabilities</li>
+<li>From standard analysis</li>
+<li>Doesn’t account for timing</li>
+</ul>
+<p><strong>Generally:</strong> HR ≠ RR, but often similar in direction</p>
+</section>
+<section id="adjusted-vs.-unadjusted-hr" class="slide level2">
+<h2>Adjusted vs.&nbsp;Unadjusted HR</h2>
+<p><strong>Unadjusted (crude) HR:</strong></p>
+<ul>
+<li>Single predictor model</li>
+<li>May be confounded</li>
+<li>Simple interpretation</li>
+</ul>
+<p><strong>Adjusted HR:</strong></p>
+<ul>
+<li>Multiple predictor model</li>
+<li>Controls for confounders</li>
+<li>“Independent effect”</li>
+<li>Preferred for causal inference</li>
+</ul>
+<p><strong>Example:</strong> Treatment HR = 0.70 (unadjusted) vs.&nbsp;0.75 (adjusted for age, stage)</p>
+</section>
+<section id="clinical-vs.-statistical-significance" class="slide level2">
+<h2>Clinical vs.&nbsp;Statistical Significance</h2>
+<p><strong>Statistical significance:</strong></p>
+<ul>
+<li>Based on p-value or CI</li>
+<li>Depends on sample size</li>
+<li>Mathematical concept</li>
+</ul>
+<p><strong>Clinical significance:</strong></p>
+<ul>
+<li>Based on magnitude of HR</li>
+<li>Considers context</li>
+<li>Practical importance</li>
+</ul>
+</section>
+<section id="clinical-vs.-statistical-significance-cont." class="slide level2">
+<h2>Clinical vs.&nbsp;Statistical Significance (cont.)</h2>
+<p><strong>Example:</strong> HR = 0.95 (p = 0.01)</p>
+<ul>
+<li>Statistically significant</li>
+<li>Clinically trivial (5% reduction)</li>
+</ul>
+</section>
+<section id="number-needed-to-treat-nnt" class="slide level2">
+<h2>Number Needed to Treat (NNT)</h2>
+<p>Unlike odds ratios, you <strong>cannot</strong> easily calculate NNT from HR alone.</p>
+<p><strong>Why?</strong></p>
+<ul>
+<li>HR is a relative measure</li>
+<li>NNT is absolute and time-dependent</li>
+<li>Need baseline risk and time horizon</li>
+</ul>
+<p><strong>Solution:</strong> Calculate from survival curves at specific timepoints.</p>
+</section>
+<section id="effect-modification-interaction" class="slide level2">
+<h2>Effect Modification (Interaction)</h2>
+<p><strong>Interaction term:</strong> HR varies by subgroup</p>
+<p><strong>Example:</strong> Treatment × Gender interaction</p>
+<ul>
+<li>HR for treatment in men = 0.60</li>
+<li>HR for treatment in women = 0.85</li>
+</ul>
+<p><strong>Reporting:</strong></p>
+<ul>
+<li>Main effects alone can be misleading</li>
+<li>Report HR for each subgroup</li>
+<li>Test statistical significance of interaction</li>
+</ul>
+</section>
+<section id="reporting-hazard-ratios" class="slide level2">
+<h2>Reporting Hazard Ratios</h2>
+<p><strong>Good reporting includes:</strong></p>
+<ol type="1">
+<li class="fragment">Point estimate (HR)</li>
+<li class="fragment">95% confidence interval</li>
+<li class="fragment">P-value</li>
+<li class="fragment">Reference category (for categorical variables)</li>
+<li class="fragment">Adjustment variables (if multivariable)</li>
+<li class="fragment">Sample size and number of events</li>
+<li class="fragment">Interpretation in context</li>
+</ol>
+</section>
+<section id="example-complete-reporting" class="slide level2">
+<h2>Example: Complete Reporting</h2>
+<p><strong>Study:</strong> Effect of drug X on mortality in heart failure</p>
+<p><strong>Results:</strong></p>
+<p>“Treatment with drug X was associated with reduced mortality compared to placebo (adjusted HR = 0.68, 95% CI: 0.53-0.87, p = 0.002) after adjusting for age, sex, and disease severity. Among 500 patients (250 per group), 180 deaths occurred during a median follow-up of 36 months. This represents a 32% reduction in the hazard of death.”</p>
+</section>
+<section id="visualizing-hazard-ratios" class="slide level2">
+<h2>Visualizing Hazard Ratios</h2>
+<p><strong>Forest plots:</strong></p>
+<ul>
+<li>Display multiple HRs with CIs</li>
+<li>Vertical line at HR = 1</li>
+<li>Points to left favor intervention</li>
+<li>Points to right favor control</li>
+<li>Useful for meta-analysis or subgroup analysis</li>
+</ul>
+<p><strong>Tips:</strong></p>
+<ul>
+<li>Use log scale for HR axis</li>
+<li>Include sample sizes</li>
+<li>Order by effect size or clinical logic</li>
+</ul>
+</section>
+<section id="special-considerations" class="slide level2">
+<h2>Special Considerations</h2>
+<p><strong>Competing risks:</strong></p>
+<ul>
+<li>Standard HR may be biased</li>
+<li>Use cause-specific or subdistribution hazards</li>
+<li>Interpret carefully</li>
+</ul>
+<p><strong>Non-proportional hazards:</strong></p>
+<ul>
+<li>HR changes over time</li>
+<li>Report time-specific HRs</li>
+<li>Or use alternative measures (restricted mean)</li>
+</ul>
+
+</section></section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="main_files/libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="main_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="main_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="main_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="main_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="main_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="main_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="main_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="main_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="main_files/libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: false,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+            const codeEl = trigger.previousElementSibling.cloneNode(true);
+            for (const childEl of codeEl.children) {
+              if (isCodeAnnotation(childEl)) {
+                childEl.remove();
+              }
+            }
+            return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp('/' + window.location.host + '/');
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>
