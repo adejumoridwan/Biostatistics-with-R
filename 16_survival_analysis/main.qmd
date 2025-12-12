@@ -222,6 +222,8 @@ KM estimates come with confidence intervals using:
 - More censoring
 - Later time points
 
+![](images/sc.png)
+
 ## Comparing Survival Curves
 
 When comparing multiple groups (e.g., treatment A vs. B):
@@ -234,6 +236,8 @@ When comparing multiple groups (e.g., treatment A vs. B):
 **Statistical test:**
 - Log-rank test (next lecture)
 - Tests whether survival distributions differ
+
+![](images/sba.png)
 
 ## Assumptions of KM Method
 
@@ -479,6 +483,8 @@ The coefficient $\beta$ represents:
 - $\beta = 0$: No effect
 
 **Note:** Coefficients are on log scale, so we exponentiate to get hazard ratios (next lecture).
+
+![](images/hr.png)
 
 ## Categorical Predictors
 

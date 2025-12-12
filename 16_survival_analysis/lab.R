@@ -176,6 +176,7 @@ ggsurvplot(
 )
 
 
+
 # ==============================================================================
 # 5. LOG-RANK TEST
 # ==============================================================================
@@ -465,10 +466,9 @@ final_table <- results_table[, c("Characteristic", "HR_CI", "P_Value")]
 print(final_table)
 
 # ==============================================================================
-# 12. SUMMARY STATISTICS FOR MANUSCRIPT
+# 12. SUMMARY STATISTICS
 # ==============================================================================
 
-cat("\n=== SUMMARY STATISTICS ===\n")
 cat("Total patients:", nrow(lung_complete), "\n")
 cat("Total deaths:", sum(lung_complete$death), "\n")
 cat("Median follow-up (days):", median(lung_complete$time), "\n")
