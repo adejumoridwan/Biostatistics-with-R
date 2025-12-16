@@ -1,0 +1,517 @@
+---
+title: "Non-Parametric Tests"
+author: "Adejumo Ridwan Suleiman"
+format: revealjs
+---
+
+# When to use Non-Parametric Tests
+
+## What are Non-Parametric Tests?
+
+**Definition**: Statistical tests that make no assumptions about the distribution of the population
+
+**Key Characteristics**:
+
+- Distribution-free methods
+- Use ranks or signs instead of raw values
+- More robust to outliers
+- Generally have lower statistical power than parametric tests
+
+## Parametric vs Non-Parametric
+
+**Parametric Tests** (e.g., t-test, ANOVA):
+
+- Assume normal distribution
+- Use actual data values
+- More powerful when assumptions are met
+- Sensitive to outliers
+
+## Parametric vs Non-Parametric (cont.)
+
+**Non-Parametric Tests**:
+
+- No distribution assumptions
+- Use ranks or medians
+- Less affected by extreme values
+- Suitable for ordinal data
+
+## When to Choose Non-Parametric Tests
+
+**Use non-parametric tests when**:
+
+1. **Small sample sizes** (n < 30) where normality is uncertain
+2. **Data is not normally distributed** (confirmed by tests or plots)
+3. **Data contains outliers** that cannot be removed or transformed
+4. **Data is ordinal** (ranked categories, Likert scales)
+5. **Variance assumptions violated** (heteroscedasticity)
+6. **Transformations don't help** normalize the data
+
+## Checking for Normality
+
+**Visual Methods**:
+
+- Histograms
+- Q-Q plots (Quantile-Quantile plots)
+- Boxplots
+
+## Checking for Normality (cont.)
+
+**Statistical Tests**:
+
+- Shapiro-Wilk test (best for n < 50)
+- Kolmogorov-Smirnov test
+- Anderson-Darling test
+
+**Rule of thumb**: If p < 0.05 in normality tests, consider non-parametric approaches
+
+## Common Non-Parametric Equivalents
+
+| Parametric Test | Non-Parametric Alternative | Purpose |
+|----------------|---------------------------|---------|
+| One-sample t-test | Wilcoxon Signed Rank | Compare sample to hypothesized median |
+| Paired t-test | Wilcoxon Signed Rank | Compare paired observations |
+
+
+## Common Non-Parametric Equivalents (cont.)
+
+| Parametric Test | Non-Parametric Alternative | Purpose |
+|----------------|---------------------------|---------|
+| Independent t-test | Mann-Whitney U | Compare two independent groups |
+| One-way ANOVA | Kruskal-Wallis | Compare 3+ independent groups |
+| Pearson correlation | Spearman correlation | Measure association |
+
+## Advantages of Non-Parametric Tests
+
+**Benefits**:
+
+- Fewer assumptions required
+- Robust to outliers and skewness
+- Can handle ordinal data
+- Valid for small sample sizes
+- Easy to understand (based on ranks)
+
+## Advantages of Non-Parametric Tests (cont.)
+
+**Trade-offs**:
+
+- Lower statistical power if data is actually normal
+- May miss subtle effects
+- Less familiar to some audiences
+
+
+# Wilcoxon Signed Rank Test
+
+## Overview
+
+**Purpose**: Tests whether the median of paired differences differs from zero
+
+**Non-parametric alternative to**: Paired t-test
+
+**Uses**:
+
+1. **Paired samples**: Before/after measurements on same subjects
+2. **One sample**: Compare sample median to a hypothesized value
+3. **Matched pairs**: Comparing matched case-control data
+
+## How It Works
+
+**Step-by-step process**:
+
+1. Calculate differences between pairs (or subtract hypothesized value)
+2. Remove zero differences
+3. Rank the absolute values of differences
+4. Assign signs (+/−) to ranks based on original differences
+5. Sum positive ranks (W+) and negative ranks (W−)
+6. Test statistic is the smaller of W+ or W−
+
+## Assumptions
+
+**Required**:
+
+1. Paired observations or single sample
+2. Differences are independent
+3. Differences come from a continuous or ordinal distribution
+4. Distribution of differences is symmetric around the median
+
+**Note**: Symmetry assumption is important but often overlooked
+
+## Hypotheses
+
+**Two-sided test**:
+
+- H₀: Median difference = 0
+- H₁: Median difference ≠ 0
+
+**One-sided test** (e.g., improvement):
+
+- H₀: Median difference ≤ 0
+- H₁: Median difference > 0
+
+## Interpreting Results
+
+**Key outputs**:
+
+- **V statistic**: Sum of positive or negative ranks
+- **p-value**: Probability of observing results if H₀ is true
+- **Pseudo-median**: Median of all pairwise averages
+
+**Decision rule**:
+
+- p < 0.05: Reject H₀, significant difference exists
+- p ≥ 0.05: Fail to reject H₀, insufficient evidence of difference
+
+## Example Scenario
+
+**Clinical Trial**:
+
+- Blood pressure measured before and after treatment
+- 15 patients with non-normal differences
+- Question: Does treatment reduce blood pressure?
+
+**Why Wilcoxon**:
+
+- Paired data (same patients)
+- Small sample size
+- Data not normally distributed
+- Interest in median change
+
+
+# Mann-Whitney U Test
+
+## Overview
+
+**Purpose**: Compare distributions of two independent groups
+
+**Non-parametric alternative to**: Independent samples t-test
+
+**Also known as**:
+
+- Wilcoxon rank-sum test
+- Mann-Whitney-Wilcoxon test
+
+**Tests**: Whether two populations have the same distribution
+
+## How It Works
+
+**Procedure**:
+
+1. Combine all observations from both groups
+2. Rank all values from smallest to largest
+3. Sum the ranks for each group (R₁ and R₂)
+4. Calculate U statistic for each group
+5. Use smaller U value for significance testing
+
+**U formula**: U₁ = n₁n₂ + n₁(n₁+1)/2 − R₁
+
+## Assumptions
+
+**Requirements**:
+
+1. Two independent samples
+2. Observations are independent within and between groups
+3. Data is at least ordinal (can be ranked)
+4. For testing difference in medians: distributions have similar shapes
+
+**Flexibility**: Can detect differences in location, spread, or shape
+
+## What the Test Detects
+
+**Common interpretation**: Tests if one group tends to have larger values
+
+**More precise**: Tests for stochastic dominance
+
+**Important**: 
+
+- If distributions have similar shapes → tests median difference
+- If shapes differ → tests general distributional difference
+- Not just a test of medians!
+
+## Hypotheses
+
+**Two-sided**:
+
+- H₀: Distributions are equal
+- H₁: Distributions differ
+
+**One-sided** (e.g., treatment effect):
+
+- H₀: Treatment group ≤ Control group
+- H₁: Treatment group > Control group
+
+## Effect Size
+
+**Common measures**:
+
+1. **Rank-biserial correlation**: Ranges from -1 to +1
+2. **Probability of superiority**: P(X₁ > X₂)
+3. **Median difference**: Only valid if shapes are similar
+
+**Interpretation**:
+
+- Small effect: r ≈ 0.1
+- Medium effect: r ≈ 0.3
+- Large effect: r ≈ 0.5
+
+## Example Scenario
+
+**Medical Study**:
+
+- Compare recovery time between two treatments
+- Treatment A: 20 patients
+- Treatment B: 18 patients
+- Data is heavily right-skewed
+
+**Why Mann-Whitney**:
+
+- Two independent groups
+- Non-normal distribution
+- Interested in which treatment is generally better
+
+
+
+# Lecture 106: Kruskal-Wallis Test
+
+## Overview
+
+**Purpose**: Compare distributions across three or more independent groups
+
+**Non-parametric alternative to**: One-way ANOVA
+
+**Extension of**: Mann-Whitney U test (for 2+ groups)
+
+**Tests**: Whether at least one group differs from the others
+
+## How It Works
+
+**Process**:
+
+1. Pool all observations and rank them
+2. Calculate sum of ranks for each group
+3. Compute H statistic based on rank sums
+4. Compare H to chi-square distribution
+5. If significant, conduct post-hoc tests
+
+**H statistic**: Based on deviation of rank sums from expected values
+
+## Assumptions
+
+**Requirements**:
+
+1. Three or more independent groups
+2. Observations are independent
+3. Data is at least ordinal
+4. For comparing medians: similar distribution shapes across groups
+
+**Robustness**: Handles unequal sample sizes well
+
+## Hypotheses
+
+**Null hypothesis**: All groups come from the same distribution
+
+**Alternative hypothesis**: At least one group differs from the others
+
+**Important**: 
+
+- Does not specify which groups differ
+- Requires post-hoc testing to identify differences
+- Tests for any distributional difference, not just location
+
+## Test Statistic
+
+**H statistic**:
+
+- Approximately follows chi-square distribution
+- Degrees of freedom = k − 1 (k = number of groups)
+- Larger H values indicate greater differences
+
+**Adjustment for ties**:
+
+- Tied ranks are averaged
+- Correction factor applied to H statistic
+
+## Post-Hoc Testing
+
+**When needed**: If Kruskal-Wallis is significant (p < 0.05)
+
+**Common approaches**:
+
+1. **Dunn's test**: Pairwise comparisons with multiple testing correction
+2. **Pairwise Mann-Whitney**: With Bonferroni or other corrections
+3. **Conover's test**: More powerful alternative
+
+**Multiple testing correction**: Essential to control Type I error
+
+## Example Scenario
+
+**Pharmacology Study**:
+
+- Compare pain relief scores across 4 drug doses
+- Ordinal scale: 0 (no relief) to 10 (complete relief)
+- 30 patients per dose group
+- Data is ordinal and skewed
+
+**Why Kruskal-Wallis**:
+
+- More than two groups (4 doses)
+- Ordinal outcome measure
+- Interested in overall dose effect
+
+---
+
+# Lecture 107: Spearman Rank Correlation
+
+## Overview
+
+**Purpose**: Measure monotonic relationship between two variables
+
+**Non-parametric alternative to**: Pearson correlation
+
+**Symbol**: ρ (rho) or rs
+
+**Range**: -1 to +1
+
+## Monotonic vs Linear Relationships
+
+**Pearson correlation**: Measures linear relationships only
+
+**Spearman correlation**: Measures monotonic relationships
+
+**Monotonic relationship**:
+
+- Variables consistently increase or decrease together
+- Not necessarily at a constant rate
+- Can be curved but no reversals in direction
+
+## How It Works
+
+**Simple process**:
+
+1. Rank each variable separately
+2. Calculate Pearson correlation on the ranks
+3. Result is Spearman's rho (ρ)
+
+**Formula**: ρ = 1 − (6Σd²)/(n(n²−1))
+
+where d = difference between paired ranks
+
+## Assumptions
+
+**Minimal requirements**:
+
+1. Paired observations from same subjects
+2. Data is at least ordinal (can be ranked)
+3. Variables have a monotonic relationship
+
+**No assumptions about**:
+
+- Distribution shape
+- Linearity
+- Homoscedasticity
+
+## Interpreting Spearman's Rho
+
+**Magnitude**:
+
+- |ρ| = 0: No monotonic relationship
+- |ρ| = 0.1-0.3: Weak relationship
+- |ρ| = 0.3-0.7: Moderate relationship
+- |ρ| = 0.7-1.0: Strong relationship
+
+**Direction**:
+
+- Positive ρ: Both variables increase together
+- Negative ρ: One increases as other decreases
+
+## When to Use Spearman
+
+**Choose Spearman over Pearson when**:
+
+1. Data is ordinal (Likert scales, rankings)
+2. Relationship is monotonic but not linear
+3. Data contains outliers
+4. Distribution is non-normal
+5. Sample size is small
+
+**Advantage**: Robust to extreme values
+
+## Hypothesis Testing
+
+**Null hypothesis**: No monotonic relationship (ρ = 0)
+
+**Alternative hypothesis**: Monotonic relationship exists (ρ ≠ 0)
+
+**Significance testing**:
+
+- Calculate test statistic
+- Compare to critical value or obtain p-value
+- p < 0.05 indicates significant correlation
+
+## Spearman vs Pearson
+
+| Feature | Spearman | Pearson |
+|---------|----------|---------|
+| Data type | Ordinal or continuous | Continuous |
+| Relationship | Monotonic | Linear |
+| Outliers | Robust | Sensitive |
+| Power | Lower if linear | Higher if linear |
+| Distribution | Any | Normal preferred |
+
+## Example Scenario
+
+**Education Research**:
+
+- Class rank (ordinal: 1st, 2nd, 3rd...)
+- Study hours per week
+- Question: Is higher rank associated with more study time?
+
+**Why Spearman**:
+
+- One variable is ordinal (rank)
+- Relationship may not be perfectly linear
+- Want to detect any monotonic pattern
+
+---
+
+# Summary: Choosing the Right Test
+
+## Decision Framework
+
+**Question 1**: Is your data normally distributed?
+
+- Yes → Consider parametric tests
+- No → Use non-parametric tests
+
+**Question 2**: How many groups are you comparing?
+
+- One or paired → Wilcoxon Signed Rank
+- Two independent → Mann-Whitney U
+- Three or more → Kruskal-Wallis
+
+**Question 3**: Are you measuring association?
+
+- Yes → Spearman correlation
+
+## Reporting Non-Parametric Results
+
+**Essential elements**:
+
+1. Test name and why you chose it
+2. Test statistic and p-value
+3. Median (and IQR) for each group
+4. Effect size when available
+5. Confidence intervals if reported
+
+**Example**: "A Mann-Whitney U test showed significant difference in recovery time between treatments (U = 89, p = 0.023), with Treatment A having lower median recovery time (Mdn = 12 days, IQR = 9-15) than Treatment B (Mdn = 16 days, IQR = 13-20)."
+
+## Key Takeaways
+
+**Remember**:
+
+1. Non-parametric tests use ranks, not raw values
+2. They're robust but less powerful than parametric tests
+3. Always check assumptions before choosing a test
+4. Report medians and IQR, not means and SD
+5. Post-hoc tests needed for Kruskal-Wallis
+6. Spearman detects monotonic, not just linear relationships
+
+**Best practice**: When in doubt about normality with small samples, use non-parametric tests
