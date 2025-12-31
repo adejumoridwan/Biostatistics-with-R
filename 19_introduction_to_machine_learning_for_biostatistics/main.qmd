@@ -1,0 +1,720 @@
+---
+title: "Introduction to Machine Learning for Biostatistics"
+author: "Adejumo Ridwan Suleiman"
+format: revealjs
+---
+
+
+# Introduction to Machine Learning in Healthcare
+
+## What is Machine Learning?
+
+Machine learning is a branch of artificial intelligence that enables computers to learn patterns from data without being explicitly programmed. Instead of following fixed rules, ML algorithms improve their performance through experience.
+
+**Key Difference from Traditional Statistics:**
+
+- Traditional statistics: Focus on inference, hypothesis testing, and understanding relationships
+- Machine learning: Focus on prediction accuracy and pattern recognition
+
+## Why Machine Learning in Healthcare?
+
+- Disease prediction and early diagnosis (diabetes, cancer, cardiovascular disease)
+- Patient risk stratification and prognosis
+- Treatment response prediction and personalized medicine
+- Medical image analysis (radiology, pathology)
+- Drug discovery and development
+- Hospital readmission prediction
+
+Machine learning excels when we have large datasets with complex, non-linear relationships that traditional methods struggle to capture.
+
+
+## Types of Machine Learning
+
+**1. Supervised Learning**
+
+You have labeled data (input features and known outcomes). The algorithm learns to predict outcomes for new data.
+
+- Examples: Disease diagnosis, predicting patient survival, treatment outcomes
+
+## Types of Machine Learning (contd.)
+
+**2. Unsupervised Learning**
+
+You have unlabeled data. The algorithm finds hidden patterns or groupings.
+
+- Examples: Patient clustering, identifying disease subtypes
+
+## Types of Machine Learning (contd.)
+
+**3. Reinforcement Learning**
+
+The algorithm learns through trial and error with rewards.
+
+- Examples: Optimizing treatment strategies, adaptive clinical trials
+
+
+## Supervised Learning: The Focus of This Section
+
+**The Process:**
+
+1. Training Phase: Algorithm learns from historical data with known outcomes
+2. Testing Phase: Evaluate performance on new, unseen data
+3. Deployment: Use the model to make predictions on real patients
+
+## Supervised Learning: The Focus of This Section (contd.)
+
+**Key Concepts:**
+
+- Features (predictors): Patient characteristics, lab values, symptoms
+- Target (outcome): Disease status, risk category, survival
+- Training set: Data used to build the model
+- Test set: Data used to evaluate model performance
+
+
+## Classification vs Regression
+
+**Classification Problems:**
+
+Predicting categorical outcomes (discrete labels)
+
+- Examples: Disease present/absent, low/medium/high risk, cancer type
+- Methods: KNN, Decision Trees, Random Forest, Logistic Regression
+
+## Classification vs Regression (contd.)
+
+**Regression Problems:**
+
+Predicting continuous numerical outcomes
+
+- Examples: Blood pressure level, survival time, tumor size
+- Methods: Linear regression, regression trees, support vector regression
+
+
+## The Machine Learning Workflow
+
+**Step 1: Data Preparation**
+
+- Collect and clean data
+- Handle missing values
+- Feature selection and engineering
+
+## The Machine Learning Workflow (contd.)
+
+**Step 2: Train-Test Split**
+
+- Divide data (typically 70-80% training, 20-30% testing)
+- Ensures unbiased evaluation
+
+## The Machine Learning Workflow (contd.)
+
+**Step 3: Model Training**
+
+- Choose algorithm and train on training data
+- Tune hyperparameters
+
+## The Machine Learning Workflow (contd.)
+
+
+**Step 4: Model Evaluation**
+
+- Test on unseen data
+- Calculate performance metrics
+
+
+**Step 5: Interpretation and Deployment**
+
+
+## Evaluating Classification Models
+
+**Beyond Accuracy: Understanding Performance**
+
+For a disease prediction model, we need to know:
+
+- Sensitivity (Recall): What proportion of diseased patients are correctly identified?
+- Specificity: What proportion of healthy patients are correctly identified?
+- Precision: Of those predicted to have disease, what proportion actually do?
+- Overall Accuracy: What proportion of all predictions are correct?
+
+## Evaluating Classification Models (contd.)
+
+**The Confusion Matrix:**
+
+|                | Predicted Positive | Predicted Negative |
+|----------------|-------------------|-------------------|
+| Actually Positive | True Positive (TP) | False Negative (FN) |
+| Actually Negative | False Positive (FP) | True Negative (TN) |
+
+---
+
+## Key Performance Metrics
+
+**Sensitivity (True Positive Rate):**
+
+- TP / (TP + FN)
+- "Of all patients with disease, how many did we catch?"
+- Critical in cancer screening where missing cases is dangerous
+
+## Key Performance Metrics (contd.)
+
+**Specificity (True Negative Rate):**
+
+- TN / (TN + FP)
+- "Of all healthy patients, how many did we correctly identify?"
+- Important to avoid unnecessary treatments
+
+## Key Performance Metrics (contd.)
+
+
+**Accuracy:**
+
+- (TP + TN) / Total
+- Can be misleading with imbalanced data
+
+**Precision:**
+
+- TP / (TP + FP)
+- "Of all positive predictions, how many were correct?"
+
+
+## The Bias-Variance Tradeoff
+
+**A Fundamental Concept in Machine Learning**
+
+**Bias:** Error from overly simplistic assumptions
+
+- High bias = underfitting
+- Model is too simple to capture data patterns
+- Poor performance on both training and test data
+
+## The Bias-Variance Tradeoff (contd.)
+
+**Variance:** Error from sensitivity to small data fluctuations
+
+- High variance = overfitting
+- Model memorizes training data instead of learning patterns
+- Excellent on training data, poor on test data
+
+**Goal:** Find the sweet spot with optimal model complexity
+
+
+## Overfitting: A Critical Problem
+
+**What is Overfitting?**
+
+When a model learns the training data too well, including noise and random fluctuations, it fails to generalize to new patients.
+
+**Signs of Overfitting:**
+
+- Training accuracy: 99%
+- Test accuracy: 65%
+- Model is useless for real-world predictions
+
+## Overfitting: A Critical Problem (contd.)
+
+**Prevention Strategies:**
+
+- Use more training data
+- Cross-validation
+- Regularization techniques
+- Pruning (for tree-based methods)
+- Feature selection
+
+
+## Cross-Validation
+
+**Why a Single Train-Test Split Isn't Enough**
+
+Your performance estimate depends on which patients happened to be in the test set.
+
+**K-Fold Cross-Validation:**
+
+1. Divide data into K equal parts (folds)
+2. Train on K-1 folds, test on the remaining fold
+3. Repeat K times, each fold serves as test set once
+4. Average the K performance estimates
+
+## Cross-Validation (contd.)
+
+**Benefits:**
+
+- More reliable performance estimate
+- Uses all data for both training and testing
+- Helps detect overfitting
+
+
+# KNN for Disease Prediction
+
+## K-Nearest Neighbors (KNN)
+
+**The Intuition:**
+
+"You are the average of your five closest friends"
+
+In KNN, to predict a new patient's disease status, we look at the K most similar patients in our training data and use majority vote.
+
+## K-Nearest Neighbors (KNN) (contd.)
+
+**How It Works:**
+
+1. Calculate distance between new patient and all training patients
+2. Find the K nearest neighbors
+3. Take majority vote of their disease status
+4. Assign that status to the new patient
+
+## Understanding Distance in KNN
+
+**What Makes Patients "Similar"?**
+
+We measure similarity using distance in feature space. The most common metric is Euclidean distance.
+
+**Example Features:**
+
+- Age
+- BMI
+- Blood pressure
+- Cholesterol level
+- Blood glucose
+
+## Understanding Distance in KNN (contd.)
+
+**Important:** Features should be on similar scales. Age (20-80) and cholesterol (150-300) have different ranges, so we need to standardize them first.
+
+
+## Choosing K: The Number of Neighbors
+
+**The K Dilemma:**
+
+**K = 1 (Very Small K):**
+
+- High variance, low bias
+- Very sensitive to noise
+- Overfitting risk
+- Decision boundary is complex and wiggly
+
+## Choosing K: The Number of Neighbors (contd.)
+
+**K = 100 (Very Large K):**
+
+- Low variance, high bias
+- Overly smooth predictions
+- Underfitting risk
+- May miss important patterns
+
+**Optimal K:** Usually between 3-20, determined through cross-validation
+
+
+## KNN Strengths and Limitations
+
+**Strengths:**
+
+- Simple and intuitive to understand
+- No training phase (lazy learning)
+- Naturally handles multi-class problems
+- Non-parametric (no assumptions about data distribution)
+- Can capture complex decision boundaries
+
+## KNN Strengths and Limitations (contd.)
+
+**Limitations:**
+
+- Computationally expensive for large datasets (must calculate all distances)
+- Sensitive to irrelevant features
+- Requires feature scaling
+- Struggles with high-dimensional data ("curse of dimensionality")
+- Doesn't provide insight into feature importance
+
+
+## When to Use KNN in Healthcare
+
+**Good Use Cases:**
+
+- Moderate-sized datasets (thousands of patients, not millions)
+- When interpretability of individual predictions is more important than global model understanding
+- As a baseline model to compare against more complex methods
+- When decision boundaries are likely to be complex and non-linear
+
+## When to Use KNN in Healthcare (contd.)
+
+**Example Applications:**
+
+- Diabetes prediction based on patient vitals
+- Disease classification from clinical measurements
+- Patient similarity matching for treatment recommendations
+
+
+# Decision Trees in R
+
+## Decision Trees: Visual and Intuitive
+
+**What is a Decision Tree?**
+
+A flowchart-like structure that makes decisions by asking a series of questions about features, splitting patients into increasingly homogeneous groups.
+
+## Decision Trees: Visual and Intuitive (contd.)
+
+**Example:**
+
+- Is glucose > 140? → Yes/No
+  - If Yes: Is age > 50? → Yes/No
+    - If Yes: Predict Diabetes
+    - If No: Is BMI > 30? → ...
+
+Each question splits the data based on a single feature and threshold.
+
+
+## How Trees Make Decisions
+
+**The Tree Structure:**
+
+- **Root Node:** First split, includes all patients
+- **Internal Nodes:** Intermediate splits
+- **Branches:** Represent decision rules
+- **Leaf Nodes:** Final predictions (disease/no disease)
+
+**Reading a Tree:**
+
+Follow the path from root to leaf based on a patient's features. Each patient travels down one path and receives the prediction at their leaf.
+
+
+## Building a Decision Tree: The CART Algorithm
+
+**Classification and Regression Trees (CART)**
+
+**The Growing Process:**
+
+1. Start with all patients at the root
+2. Consider all possible splits on all features
+3. Choose the split that best separates diseased from healthy patients
+4. Repeat recursively for each resulting subset
+5. Stop when a stopping criterion is met
+
+## Building a Decision Tree: The CART Algorithm (contd.)
+
+**Splitting Criteria:**
+
+- Gini Impurity: Measures how mixed the groups are
+- Information Gain: Measures reduction in entropy
+- Goal: Create pure nodes (all diseased or all healthy)
+
+
+## Understanding Gini Impurity
+
+**What is Gini Impurity?**
+
+A measure of how "mixed" a group is. 
+
+- Gini = 0: Perfectly pure (all patients have same disease status)
+- Gini = 0.5: Maximum impurity (50-50 split)
+
+## Understanding Gini Impurity (contd.)
+
+**At Each Split:**
+
+The algorithm calculates weighted average Gini after the split and chooses the split that minimizes it.
+
+**Example:**
+
+Before split: 60 diseased, 40 healthy (Gini = 0.48)
+
+After split on glucose > 140:
+- Left branch: 50 diseased, 10 healthy (Gini = 0.30)
+- Right branch: 10 diseased, 30 healthy (Gini = 0.38)
+- Weighted average Gini is lower → good split!
+
+
+
+## Tree Pruning: Controlling Complexity
+
+**The Problem:**
+
+Unpruned trees grow until each leaf has one patient (perfect training accuracy but terrible overfitting).
+
+**Pruning Strategies:**
+
+**Pre-pruning (Early Stopping):**
+
+- Set maximum tree depth
+- Require minimum patients per leaf
+- Require minimum improvement for a split
+
+## Tree Pruning: Controlling Complexity (contd.)
+
+**Post-pruning:**
+
+- Grow full tree, then remove branches that don't improve validation performance
+- Cost-complexity pruning balances tree size with accuracy
+
+
+## Decision Tree Strengths and Limitations
+
+**Strengths:**
+
+- Highly interpretable (can visualize and explain decisions)
+- Handles both numerical and categorical features
+- No feature scaling needed
+- Captures non-linear relationships
+- Automatically performs feature selection
+- Handles missing values reasonably well
+
+## Decision Tree Strengths and Limitations (contd.)
+
+**Limitations:**
+
+- Prone to overfitting (high variance)
+- Unstable (small data changes can create very different trees)
+- Biased toward features with many levels
+- Can create overly complex trees
+- May not achieve best predictive accuracy
+
+
+## Feature Importance in Trees
+
+**Understanding What Matters**
+
+Decision trees naturally rank feature importance based on how much each feature improves the Gini impurity across all splits.
+
+## Feature Importance in Trees (contd.)
+
+**Interpreting Importance:**
+
+- Features at the top of the tree (early splits) are generally most important
+- Features never used in splits have zero importance
+- Importance scores sum to 100%
+
+## Feature Importance in Trees (contd.)
+
+**Clinical Value:**
+
+Identifying that glucose is the most important feature for diabetes prediction confirms medical knowledge and builds trust in the model.
+
+
+# Random Forest in R
+
+## Random Forest: Wisdom of the Crowd
+
+**The Big Idea:**
+
+Instead of relying on a single decision tree, build hundreds or thousands of trees and let them vote.
+
+## Random Forest: Wisdom of the Crowd (contd.)
+
+**Why This Works:**
+
+Individual trees are unstable and prone to overfitting, but their errors are uncorrelated. By averaging many trees, we reduce variance while maintaining low bias.
+
+## Random Forest: Wisdom of the Crowd (contd.)
+
+**Analogy:** Asking 100 doctors for diagnosis is more reliable than asking just one, especially if they each focus on slightly different aspects.
+
+
+## How Random Forest Works
+
+**Step 1: Bootstrap Sampling (Bagging)**
+
+For each tree, randomly sample patients with replacement to create a training set (about 2/3 of original data). Some patients appear multiple times, others not at all.
+
+**Step 2: Random Feature Selection**
+
+At each split in each tree, randomly select a subset of features to consider (typically √p features, where p is total features).
+
+## How Random Forest Works (contd.)
+
+**Step 3: Grow Many Trees**
+
+Build hundreds of full, unpruned trees using the above randomization.
+
+**Step 4: Aggregate Predictions**
+
+For a new patient, each tree votes. Final prediction is the majority vote (classification) or average (regression).
+
+
+## Why Randomization Matters
+
+**Bootstrap Sampling:**
+
+Creates diversity among trees by training each on slightly different data. Trees make different mistakes.
+
+**Random Feature Selection:**
+
+- Prevents strong features from dominating every tree
+- Ensures all features get a chance to contribute
+- Reduces correlation between trees
+- Particularly important when you have a few very strong predictors
+
+## Why Randomization Matters (contd.)
+
+**Out-of-Bag (OOB) Samples:**
+
+The ~1/3 of patients not in each tree's bootstrap sample serve as a built-in validation set, giving unbiased error estimate without separate test set.
+
+
+## Key Hyperparameters
+
+**Number of Trees (ntree):**
+
+- More trees = more stable predictions but longer computation
+- Typically 500-1000 trees
+- Performance plateaus; more trees rarely hurt
+
+## Key Hyperparameters (contd.)
+
+**Number of Features per Split (mtry):**
+
+- Classification default: √p
+- Regression default: p/3
+- Lower = more randomization, less correlation between trees
+- Tune via cross-validation
+
+## Key Hyperparameters (contd.)
+
+**Minimum Node Size:**
+
+- Minimum patients in a terminal node
+- Larger = simpler trees, less overfitting
+- Smaller = more complex trees, potential overfitting
+
+
+## Random Forest Strengths
+
+**Major Advantages:**
+
+- Excellent predictive performance (often best out-of-the-box)
+- Very resistant to overfitting
+- Handles high-dimensional data well
+- Robust to outliers and noise
+- Provides feature importance rankings
+
+## Random Forest Strengths (contd.)
+
+**Major Advantages:** (contd.)
+
+- No feature scaling needed
+- Handles missing values
+- Estimates prediction uncertainty
+- Minimal hyperparameter tuning needed
+
+## Random Forest Strengths (contd.)
+
+**The Go-To Algorithm:** Often the first choice for supervised learning with tabular medical data.
+
+
+## Feature Importance in Random Forest
+
+**Two Measures of Importance:**
+
+**Mean Decrease in Accuracy:**
+
+For each feature, randomly permute its values in OOB samples and measure how much prediction accuracy drops. Larger drops = more important feature.
+
+**Mean Decrease in Gini:**
+
+Total decrease in Gini impurity contributed by each feature across all trees.
+
+## Feature Importance in Random Forest (contd.)
+
+**Clinical Utility:**
+
+- Identifies key risk factors
+- Validates clinical knowledge
+- Suggests which lab tests are most informative
+- Helps prioritize data collection
+
+
+## Interpretability Trade-off
+
+**The Challenge:**
+
+Random forests sacrifice some interpretability for accuracy. With hundreds of trees, you can't easily trace why a specific patient received a certain prediction.
+
+## Interpretability Trade-off (contd.)
+
+**Solutions:**
+
+- Feature importance rankings tell the global story
+- Partial dependence plots show feature effects
+- Individual tree inspection for general patterns
+- SHAP values for individual prediction explanation
+
+## Interpretability Trade-off (contd.)
+
+**When to Choose:**
+
+- Use decision trees when interpretability is paramount
+- Use random forest when prediction accuracy is the priority
+- In healthcare, often need a balance of both
+
+
+
+## Comparing the Three Methods
+
+| Aspect | KNN | Decision Tree | Random Forest |
+|--------|-----|---------------|---------------|
+| **Interpretability** | Moderate | High | Low-Moderate |
+| **Accuracy** | Moderate | Moderate | High |
+| **Overfitting Risk** | High | High | Low |
+| **Training Speed** | Fast | Fast | Slow |
+
+## Comparing the Three Methods (contd.)
+
+
+| Aspect | KNN | Decision Tree | Random Forest |
+|--------|-----|---------------|---------------|
+| **Prediction Speed** | Slow | Fast | Moderate |
+| **Feature Scaling** | Required | Not needed | Not needed |
+| **Handles High Dimensions** | Poor | Moderate | Good |
+| **Feature Importance** | No | Yes | Yes |
+
+
+
+## Practical Recommendations
+
+**Start Simple, Add Complexity as Needed:**
+
+1. **Baseline:** Begin with logistic regression (from previous sections)
+2. **Visual Insight:** Try decision tree for interpretability
+3. **Performance:** Use random forest for best predictions
+4. **Comparison:** Evaluate all models on same test set
+
+## Practical Recommendations (contd.)
+
+**Model Selection Criteria:**
+
+- Clinical interpretability requirements
+- Dataset size and dimensionality
+- Computational resources
+- Regulatory considerations (FDA approval may favor interpretable models)
+- Performance requirements (sensitivity vs specificity trade-offs)
+
+
+## Real-World Considerations
+
+**Data Quality Matters Most:**
+
+The best algorithm can't overcome poor data. Focus on:
+
+- Accurate outcome labels
+- Representative patient samples
+- Relevant, reliable features
+- Sufficient sample size
+- Proper handling of missing data
+
+## Real-World Considerations (contd.)
+
+**Validation is Critical:**
+
+- Use separate test set that model never sees during development
+- Consider temporal validation (train on old data, test on new)
+- External validation on different hospital/population when possible
+
+## Real-World Considerations (contd.)
+
+**Ethics and Bias:**
+
+- Models can perpetuate biases in training data
+- Ensure diverse, representative training data
+- Regularly audit model performance across patient subgroups
+
+
+
+
+
