@@ -492,20 +492,17 @@ final_model <- model_backward
 
 summary(final_model)
 
-cat("\n--- Model Diagnostics ---\n")
 cat("R-squared:", round(summary(final_model)$r.squared, 3), "\n")
 cat("Adjusted R-squared:", round(summary(final_model)$adj.r.squared, 3), "\n")
 cat("AIC:", round(AIC(final_model), 2), "\n")
 cat("BIC:", round(BIC(final_model), 2), "\n")
 
 # Check assumptions for final model
-cat("\n--- Checking Assumptions for Final Model ---\n")
 par(mfrow = c(2, 2))
 plot(final_model)
 par(mfrow = c(1, 1))
 
 # VIF for final model
-cat("\n--- VIF for Final Model ---\n")
 print(vif(final_model))
 
 
