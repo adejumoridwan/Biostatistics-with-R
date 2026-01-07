@@ -1,5 +1,5 @@
 ---
-title: "Advanced Regression Techniques in Biostatistics"
+title: "Advanced Regression Techniques"
 author: "Adejumo Ridwan Suleiman"
 format: revealjs
 ---

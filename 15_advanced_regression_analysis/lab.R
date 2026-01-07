@@ -1,6 +1,5 @@
 # ==============================================================================
-# Lecture 94: Lab - Building a Clinical Prediction Model
-# Practical Biostatistics with R
+# Lab - Building a Clinical Prediction Model
 # ==============================================================================
 
 # Load required packages
@@ -222,11 +221,11 @@ bp_test
 
 # Comprehensive diagnostic plots
 par(mfrow = c(2, 2))
-plot(model_full)
+0(model_full)
 par(mfrow = c(1, 1))
 
 # ==============================================================================
-# LECTURE 91: MULTICOLLINEARITY & VIF
+# MULTICOLLINEARITY & VIF
 # ==============================================================================
 
 # Calculate correlation matrix for continuous predictors
@@ -276,6 +275,7 @@ model_no_interaction <- lm(bwt ~ smoke + race, data = birth_data)
 
 # Model with interaction
 model_interaction <- lm(bwt ~ smoke * race, data = birth_data)
+
 
 summary(model_no_interaction)
 
