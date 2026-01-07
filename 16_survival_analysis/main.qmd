@@ -209,6 +209,10 @@ Note: Censored observations contribute to "at risk" until their censoring time.
 
 **Note:** If the curve never drops below 0.5, median survival is not reached (censored).
 
+## Median Survival Time (cont)
+
+![](images/sc.png)
+
 ## Confidence Intervals
 
 KM estimates come with confidence intervals using:
@@ -222,7 +226,6 @@ KM estimates come with confidence intervals using:
 - More censoring
 - Later time points
 
-![](images/sc.png)
 
 ## Comparing Survival Curves
 
@@ -236,6 +239,8 @@ When comparing multiple groups (e.g., treatment A vs. B):
 **Statistical test:**
 - Log-rank test (next lecture)
 - Tests whether survival distributions differ
+
+## Comparing Survival Curves (cont)
 
 ![](images/sba.png)
 
@@ -483,6 +488,8 @@ The coefficient $\beta$ represents:
 - $\beta = 0$: No effect
 
 **Note:** Coefficients are on log scale, so we exponentiate to get hazard ratios (next lecture).
+
+## Interpreting Cox Coefficients (cont.)
 
 ![](images/hr.png)
 
@@ -867,6 +874,10 @@ Unlike odds ratios, you **cannot** easily calculate NNT from HR alone.
 - Use log scale for HR axis
 - Include sample sizes
 - Order by effect size or clinical logic
+
+## Visualizing Hazard Ratios (cont.)
+
+![](images/hr.png)
 
 ## Special Considerations
 
