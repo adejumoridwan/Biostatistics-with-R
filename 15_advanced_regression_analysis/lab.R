@@ -481,28 +481,3 @@ plot(actual, predictions,
 abline(a = 0, b = 1, col = "red", lwd = 2, lty = 2)
 legend("topleft", legend = "Perfect prediction", col = "red", lty = 2, lwd = 2)
 
-# ==============================================================================
-# FINAL MODEL AND INTERPRETATION
-# ==============================================================================
-
-
-# Based on our analyses, select final model
-# Let's use the backward elimination result as our final model
-final_model <- model_backward
-
-summary(final_model)
-
-cat("R-squared:", round(summary(final_model)$r.squared, 3), "\n")
-cat("Adjusted R-squared:", round(summary(final_model)$adj.r.squared, 3), "\n")
-cat("AIC:", round(AIC(final_model), 2), "\n")
-cat("BIC:", round(BIC(final_model), 2), "\n")
-
-# Check assumptions for final model
-par(mfrow = c(2, 2))
-plot(final_model)
-par(mfrow = c(1, 1))
-
-# VIF for final model
-print(vif(final_model))
-
-

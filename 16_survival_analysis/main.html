@@ -351,32 +351,31 @@ Time →     0    5    10   15   20
 <td>10</td>
 <td>1</td>
 <td>0</td>
-<td>0.9 (9/10)</td>
+<td>0.9 x 1.0 = 0.9</td>
 </tr>
 <tr class="odd">
 <td>5</td>
 <td>9</td>
 <td>0</td>
 <td>1</td>
-<td>0.9</td>
+<td>1 x 0.9 = 0.9</td>
 </tr>
 <tr class="even">
 <td>7</td>
 <td>8</td>
 <td>2</td>
 <td>0</td>
-<td>0.675 (0.9 × 6/8)</td>
+<td>0.75 x 0.9 = 0.675</td>
 </tr>
 <tr class="odd">
 <td>10</td>
 <td>6</td>
 <td>1</td>
 <td>0</td>
-<td>0.563 (0.675 × 5/6)</td>
+<td>0.833 x 0.675 = 0.562</td>
 </tr>
 </tbody>
 </table>
-<p>Note: Censored observations contribute to “at risk” until their censoring time.</p>
 </section>
 <section id="interpreting-km-curves" class="slide level2">
 <h2>Interpreting KM Curves</h2>
@@ -423,13 +422,27 @@ Time →     0    5    10   15   20
 <li><strong>Log-log transformation</strong> for CI construction (most common)</li>
 <li><strong>Plain or log transformation</strong> (alternatives)</li>
 </ol>
-<p><strong>Wider CIs occur when:</strong> - Fewer subjects at risk - More censoring - Later time points</p>
+<p><strong>Wider CIs occur when:</strong></p>
+<ul>
+<li>Fewer subjects at risk</li>
+<li>More censoring</li>
+<li>Later time points</li>
+</ul>
 </section>
 <section id="comparing-survival-curves" class="slide level2">
 <h2>Comparing Survival Curves</h2>
 <p>When comparing multiple groups (e.g., treatment A vs.&nbsp;B):</p>
-<p><strong>Visual comparison:</strong> - Separate KM curves on same plot - Non-overlapping CIs suggest difference - Crossing curves indicate non-proportional hazards</p>
-<p><strong>Statistical test:</strong> - Log-rank test (next lecture) - Tests whether survival distributions differ</p>
+<p><strong>Visual comparison:</strong></p>
+<ul>
+<li>Separate KM curves on same plot</li>
+<li>Non-overlapping CIs suggest difference</li>
+<li>Crossing curves indicate non-proportional hazards</li>
+</ul>
+<p><strong>Statistical test:</strong></p>
+<ul>
+<li>Log-rank test (next lecture)</li>
+<li>Tests whether survival distributions differ</li>
+</ul>
 </section>
 <section id="comparing-survival-curves-cont" class="slide level2">
 <h2>Comparing Survival Curves (cont)</h2>
@@ -526,9 +539,13 @@ Time →     0    5    10   15   20
 <p>At each event time t:</p>
 <p><strong>Expected events in group 1:</strong></p>
 <p><span class="math display">\[E_{1t} = \frac{n_{1t}}{n_t} \times d_t\]</span></p>
-<p>Where: - <span class="math inline">\(n_{1t}\)</span> = at risk in group 1 at time t - <span class="math inline">\(n_t\)</span> = total at risk at time t<br>
-- <span class="math inline">\(d_t\)</span> = total events at time t</p>
-<p>Sum expected and observed across all event times, then compute test statistic.</p>
+<p>Where:</p>
+<ul>
+<li><span class="math inline">\(n_{1t}\)</span> = at risk in group 1 at time t</li>
+<li><span class="math inline">\(n_t\)</span> = total at risk at time t<br>
+</li>
+<li><span class="math inline">\(d_t\)</span> = total events at time t</li>
+</ul>
 </section>
 <section id="interpreting-log-rank-results" class="slide level2">
 <h2>Interpreting Log-Rank Results</h2>
@@ -1089,6 +1106,10 @@ Time →     0    5    10   15   20
 <li>Order by effect size or clinical logic</li>
 </ul>
 </section>
+<section id="visualizing-hazard-ratios-cont.-1" class="slide level2">
+<h2>Visualizing Hazard Ratios (cont.)</h2>
+
+<img data-src="images/hr.png" class="r-stretch"></section>
 <section id="special-considerations" class="slide level2">
 <h2>Special Considerations</h2>
 <p><strong>Competing risks:</strong></p>

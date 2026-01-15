@@ -168,12 +168,12 @@ The survival probability is the product of conditional survival probabilities.
 | Time | At Risk | Events | Censored | Survival Probability |
 |------|---------|--------|----------|---------------------|
 | 0    | 10      | 0      | 0        | 1.0                |
-| 3    | 10      | 1      | 0        | 0.9 (9/10)         |
-| 5    | 9       | 0      | 1        | 0.9                |
-| 7    | 8       | 2      | 0        | 0.675 (0.9 × 6/8)  |
-| 10   | 6       | 1      | 0        | 0.563 (0.675 × 5/6)|
+| 3    | 10      | 1      | 0        | 0.9 x 1.0 = 0.9         |
+| 5    | 9       | 0      | 1        | 1 x 0.9 = 0.9            |
+| 7    | 8       | 2      | 0        | 0.75 x 0.9 = 0.675  |
+| 10   | 6       | 1      | 0        | 0.833 x 0.675 = 0.562 |
 
-Note: Censored observations contribute to "at risk" until their censoring time.
+
 
 ## Interpreting KM Curves
 
@@ -222,6 +222,7 @@ KM estimates come with confidence intervals using:
 3. **Plain or log transformation** (alternatives)
 
 **Wider CIs occur when:**
+
 - Fewer subjects at risk
 - More censoring
 - Later time points
@@ -232,11 +233,13 @@ KM estimates come with confidence intervals using:
 When comparing multiple groups (e.g., treatment A vs. B):
 
 **Visual comparison:**
+
 - Separate KM curves on same plot
 - Non-overlapping CIs suggest difference
 - Crossing curves indicate non-proportional hazards
 
 **Statistical test:**
+
 - Log-rank test (next lecture)
 - Tests whether survival distributions differ
 
@@ -333,12 +336,13 @@ At each event time t:
 
 $$E_{1t} = \frac{n_{1t}}{n_t} \times d_t$$
 
+
 Where:
+
 - $n_{1t}$ = at risk in group 1 at time t
 - $n_t$ = total at risk at time t  
 - $d_t$ = total events at time t
 
-Sum expected and observed across all event times, then compute test statistic.
 
 ## Interpreting Log-Rank Results
 
@@ -879,16 +883,3 @@ Unlike odds ratios, you **cannot** easily calculate NNT from HR alone.
 
 ![](images/hr.png)
 
-## Special Considerations
-
-**Competing risks:**
-
-- Standard HR may be biased
-- Use cause-specific or subdistribution hazards
-- Interpret carefully
-
-**Non-proportional hazards:**
-
-- HR changes over time
-- Report time-specific HRs
-- Or use alternative measures (restricted mean)
