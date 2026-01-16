@@ -269,7 +269,7 @@ format: revealjs
 
 
 
-# Lecture 106: Kruskal-Wallis Test
+# Kruskal-Wallis Test
 
 ## Overview
 
@@ -356,9 +356,8 @@ format: revealjs
 - Ordinal outcome measure
 - Interested in overall dose effect
 
----
 
-# Lecture 107: Spearman Rank Correlation
+# Spearman Rank Correlation
 
 ## Overview
 
@@ -469,49 +468,3 @@ where d = difference between paired ranks
 - One variable is ordinal (rank)
 - Relationship may not be perfectly linear
 - Want to detect any monotonic pattern
-
----
-
-# Summary: Choosing the Right Test
-
-## Decision Framework
-
-**Question 1**: Is your data normally distributed?
-
-- Yes → Consider parametric tests
-- No → Use non-parametric tests
-
-**Question 2**: How many groups are you comparing?
-
-- One or paired → Wilcoxon Signed Rank
-- Two independent → Mann-Whitney U
-- Three or more → Kruskal-Wallis
-
-**Question 3**: Are you measuring association?
-
-- Yes → Spearman correlation
-
-## Reporting Non-Parametric Results
-
-**Essential elements**:
-
-1. Test name and why you chose it
-2. Test statistic and p-value
-3. Median (and IQR) for each group
-4. Effect size when available
-5. Confidence intervals if reported
-
-**Example**: "A Mann-Whitney U test showed significant difference in recovery time between treatments (U = 89, p = 0.023), with Treatment A having lower median recovery time (Mdn = 12 days, IQR = 9-15) than Treatment B (Mdn = 16 days, IQR = 13-20)."
-
-## Key Takeaways
-
-**Remember**:
-
-1. Non-parametric tests use ranks, not raw values
-2. They're robust but less powerful than parametric tests
-3. Always check assumptions before choosing a test
-4. Report medians and IQR, not means and SD
-5. Post-hoc tests needed for Kruskal-Wallis
-6. Spearman detects monotonic, not just linear relationships
-
-**Best practice**: When in doubt about normality with small samples, use non-parametric tests
