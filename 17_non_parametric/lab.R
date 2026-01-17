@@ -1,8 +1,3 @@
-# ============================================================================
-# Non-Parametric Tests Lab
-# Practical Biostatistics with R
-# ============================================================================
-
 # Load required packages
 library(tidyverse)
 library(ggplot2)
