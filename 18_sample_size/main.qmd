@@ -181,6 +181,10 @@ Higher power requires larger sample size or accepting more Type I errors.
 - Levels off at larger sample sizes
 - Different curves for different effect sizes
 
+## Power Curves: Visualizing Relationships (cont.)
+
+![Power Curve Example](images/power_curve.png)
+
 
 ## Balancing Errors: The Research Context
 
@@ -233,6 +237,8 @@ In any power analysis, you provide **three** parameters and calculate the **four
 ::: {.callout-tip}
 **Most common:** Specify effect size, α, and power → Calculate n
 :::
+
+
 
 
 ## Power Analysis Workflow
@@ -296,6 +302,10 @@ In any power analysis, you provide **three** parameters and calculate the **four
 - Y-axis: Statistical power
 - Multiple curves for different effect sizes
 - Reference line at 0.80 power
+
+## Creating Power Curves (contd.)
+
+![](images/double_power_curve.png)
 
 
 ## Sensitivity Analysis
@@ -634,128 +644,3 @@ Uses discordant pairs, not just proportions. Requires different power calculatio
 **Common Mistake:**
 
 Using t-test formulas for proportion data, proportions have different variance structure!
-
-
-# Wrap-Up & Best Practices
-
-
-## Power Analysis: Best Practices
-
-**Before Starting Research:**
-
-1. ✓ Conduct thorough literature review
-2. ✓ Calculate realistic effect sizes
-3. ✓ Perform sensitivity analyses
-4. ✓ Consider resource constraints
-5. ✓ Document all assumptions
-
-## Power Analysis: Best Practices (contd.)
-
-**During Study:**
-
-- Monitor recruitment and retention
-- Track actual effect sizes
-- Reassess if needed (cautiously!)
-
-
-## Common Pitfalls to Avoid
-
-**❌ Conducting power analysis after data collection**
-
-- This is "post-hoc" power analysis
-- Circular reasoning
-- Not valid for interpretation
-
-## Common Pitfalls to Avoid (contd.)
-
-**❌ Assuming effect sizes without justification**
-
-- Always cite sources
-- Use conservative estimates
-
-**❌ Ignoring practical constraints**
-
-- Budget, time, recruitment feasibility
-
-
-## Reporting Sample Size Justification
-
-**In Research Proposals/Papers:**
-
-"Sample size was determined using power analysis. To detect a medium effect size (Cohen's d = 0.5) with 80% power at α = 0.05 using a two-sided independent samples t-test, 64 participants per group are required (total N = 128). This calculation is based on effect sizes reported in Smith et al. (2023). To account for potential attrition, we will recruit 80 participants per group (N = 160)."
-
-
-## Resources for Further Learning
-
-**Key References:**
-
-- Cohen, J. (1988). *Statistical Power Analysis for the Behavioral Sciences*
-- R Documentation: `?pwr` package
-- G*Power software (free alternative)
-
-## Resources for Further Learning (contd.)
-
-**Online Calculators:**
-
-- StatPages.info
-- ClinCalc.com
-- Sample size calculators by test type
-
-**Always verify calculations using multiple methods!**
-
-## Next Steps in Your Research
-
-**Checklist:**
-
-□ Identify your primary outcome and test type
-
-□ Determine expected effect size from literature
-
-□ Set α and desired power
-
-□ Calculate required sample size
-
-□ Add buffer for attrition
-
-□ Assess feasibility
-
-□ Conduct sensitivity analysis
-
-□ Document all decisions
-
-
-## Questions to Consider
-
-Before finalizing your sample size:
-
-1. Is this effect size clinically/practically meaningful?
-2. Can we realistically recruit this many participants?
-3. What if the true effect is smaller than expected?
-4. Have we considered all sources of variability?
-5. Do we need to adjust for multiple testing?
-6. Is our power adequate for secondary outcomes?
-
-
-## Appendix: Effect Size Cheat Sheet
-
-**Cohen's d (t-tests):**
-
-- Small: 0.2
-- Medium: 0.5
-- Large: 0.8
-
-## Appendix: Effect Size Cheat Sheet (contd.)
-
-**Cohen's f (ANOVA):**
-
-- Small: 0.1
-- Medium: 0.25
-- Large: 0.4
-
-## Appendix: Effect Size Cheat Sheet (contd.)
-
-**Cohen's h (proportions):**
-
-- Small: 0.2
-- Medium: 0.5
-- Large: 0.8
