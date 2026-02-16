@@ -417,6 +417,7 @@ The algorithm calculates weighted average Gini after the split and chooses the s
 Before split: 60 diseased, 40 healthy (Gini = 0.48)
 
 After split on glucose > 140:
+
 - Left branch: 50 diseased, 10 healthy (Gini = 0.30)
 - Right branch: 10 diseased, 30 healthy (Gini = 0.38)
 - Weighted average Gini is lower → good split!

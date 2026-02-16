@@ -1,6 +1,5 @@
 # ============================================================================
-# Sample Size & Power Analysis - R Code
-# Practical Biostatistics with R
+# Sample Size & Power Analysis 
 # ============================================================================
 
 # Install and load required packages
@@ -88,8 +87,6 @@ print(power_analysis_1)
 
 # Extract sample size needed per group
 n_per_group <- ceiling(power_analysis_1$n)
-cat("\nSample size needed per group:", n_per_group, "\n")
-cat("Total sample size:", n_per_group * 2, "\n")
 
 # ---------------------------------------------------------------------------
 # Calculate power for a given sample size
@@ -103,7 +100,6 @@ power_analysis_2 <- pwr.t.test(
   alternative = "two.sided"
 )
 
-cat("\nWith n=50 per group, power =", round(power_analysis_2$power, 3), "\n")
 
 # ---------------------------------------------------------------------------
 # Calculate detectable effect size for given n and power
@@ -116,9 +112,6 @@ power_analysis_3 <- pwr.t.test(
   type = "two.sample",
   alternative = "two.sided"
 )
-
-cat("\nWith n=30 per group and 80% power, detectable effect size d =", 
-    round(power_analysis_3$d, 3), "\n")
 
 # ---------------------------------------------------------------------------
 # Creating comprehensive power curves for multiple effect sizes
@@ -174,18 +167,14 @@ main_analysis <- pwr.t.test(d = expected_d, sig.level = 0.05,
                             power = 0.80, type = "two.sample")
 n_expected <- ceiling(main_analysis$n)
 
-cat("\n=== Sensitivity Analysis ===\n")
-cat("Expected effect (d = 0.5): n =", n_expected, "per group\n")
 
 # What if effect is smaller?
 smaller_effect <- pwr.t.test(n = n_expected, d = 0.3, sig.level = 0.05,
                              type = "two.sample")
-cat("If true effect is d = 0.3: power =", round(smaller_effect$power, 3), "\n")
 
 # What if effect is larger?
 larger_effect <- pwr.t.test(n = n_expected, d = 0.7, sig.level = 0.05,
                             type = "two.sample")
-cat("If true effect is d = 0.7: power =", round(larger_effect$power, 3), "\n")
 
 # ============================================================================
 # Determining Sample Size for t-tests
@@ -195,7 +184,6 @@ cat("If true effect is d = 0.7: power =", round(larger_effect$power, 3), "\n")
 # Independent Samples t-test
 # ---------------------------------------------------------------------------
 
-cat("\n=== INDEPENDENT SAMPLES T-TEST ===\n")
 
 # Example: Comparing treatment vs control groups
 # Treatment mean = 25, Control mean = 20, SD = 10
@@ -214,11 +202,6 @@ independent_two_sided <- pwr.t.test(
   type = "two.sample",
   alternative = "two.sided"
 )
-
-cat("Two-sided test:\n")
-cat("  Effect size d =", d_independent, "\n")
-cat("  Sample size per group:", ceiling(independent_two_sided$n), "\n")
-cat("  Total sample size:", ceiling(independent_two_sided$n) * 2, "\n\n")
 
 # One-sided test (if we predict direction)
 independent_one_sided <- pwr.t.test(
@@ -255,24 +238,12 @@ paired_analysis <- pwr.t.test(
   alternative = "two.sided"
 )
 
-cat("Effect size d =", d_paired, "\n")
-cat("Number of pairs needed:", ceiling(paired_analysis$n), "\n\n")
 
-# Compare paired vs independent design
-cat("Comparison: Paired vs Independent Design\n")
-cat("Paired design needs:", ceiling(paired_analysis$n), "pairs\n")
-cat("Independent design needs:", ceiling(independent_two_sided$n), 
-    "per group =", ceiling(independent_two_sided$n) * 2, "total\n")
-cat("Efficiency gain:", 
-    round((ceiling(independent_two_sided$n) * 2 - ceiling(paired_analysis$n)) / 
-            (ceiling(independent_two_sided$n) * 2) * 100, 1), 
-    "% fewer participants\n\n")
 
 # ---------------------------------------------------------------------------
 # One-sample t-test
 # ---------------------------------------------------------------------------
 
-cat("=== ONE-SAMPLE T-TEST ===\n")
 
 # Example: Is average IQ of medical students different from 100?
 # Hypothesized mean = 105, SD = 15, Population mean = 100
@@ -291,16 +262,10 @@ one_sample_analysis <- pwr.t.test(
   alternative = "two.sided"
 )
 
-cat("Testing if μ ≠", population_mean, "\n")
-cat("Effect size d =", d_one_sample, "\n")
-cat("Sample size needed:", ceiling(one_sample_analysis$n), "\n\n")
-
 # ---------------------------------------------------------------------------
 # Sample Size Table for Different Effect Sizes
 # ---------------------------------------------------------------------------
 
-cat("=== SAMPLE SIZE REFERENCE TABLE ===\n")
-cat("Two-sample t-test, α = 0.05, power = 0.80\n\n")
 
 effect_sizes <- c(0.2, 0.3, 0.4, 0.5, 0.6, 0.8, 1.0)
 sample_size_table <- data.frame(
@@ -322,17 +287,12 @@ print(sample_size_table)
 # Accounting for Attrition
 # ---------------------------------------------------------------------------
 
-cat("\n=== ACCOUNTING FOR ATTRITION ===\n")
 
 required_n <- 64  # From power analysis
 attrition_rate <- 0.20  # 20% expected dropout
 
 recruited_n <- ceiling(required_n / (1 - attrition_rate))
 
-cat("Required sample size (from power analysis):", required_n, "\n")
-cat("Expected attrition rate:", attrition_rate * 100, "%\n")
-cat("Recruit this many participants:", recruited_n, "\n")
-cat("Buffer added:", recruited_n - required_n, "participants\n")
 
 # ============================================================================
 # Sample Size for Proportion Tests
@@ -342,7 +302,6 @@ cat("Buffer added:", recruited_n - required_n, "participants\n")
 # Two-Proportion Test
 # ---------------------------------------------------------------------------
 
-cat("\n=== TWO-PROPORTION TEST ===\n")
 
 # Example: Comparing vaccination efficacy
 # Group 1 (vaccine): 80% success rate
@@ -354,10 +313,7 @@ p2 <- 0.60
 # Calculate Cohen's h
 h <- ES.h(p1, p2)
 
-cat("Proportion 1:", p1, "\n")
-cat("Proportion 2:", p2, "\n")
-cat("Difference:", p1 - p2, "\n")
-cat("Cohen's h =", round(h, 3), "\n\n")
+
 
 # Power analysis for two proportions
 two_prop_analysis <- pwr.2p.test(
@@ -367,14 +323,11 @@ two_prop_analysis <- pwr.2p.test(
   alternative = "two.sided"
 )
 
-cat("Sample size per group:", ceiling(two_prop_analysis$n), "\n")
-cat("Total sample size:", ceiling(two_prop_analysis$n) * 2, "\n\n")
 
 # ---------------------------------------------------------------------------
 # One-Proportion Test
 # ---------------------------------------------------------------------------
 
-cat("=== ONE-PROPORTION TEST ===\n")
 
 # Example: Is local vaccination rate different from national rate?
 # National rate: 70%
@@ -392,17 +345,10 @@ one_prop_analysis <- pwr.p.test(
   alternative = "two.sided"
 )
 
-cat("Null hypothesis proportion:", p_null, "\n")
-cat("Alternative proportion:", p_alternative, "\n")
-cat("Cohen's h =", round(h_one_prop, 3), "\n")
-cat("Sample size needed:", ceiling(one_prop_analysis$n), "\n\n")
 
 # ---------------------------------------------------------------------------
 # Sample Size Table for Proportion Tests
 # ---------------------------------------------------------------------------
-
-cat("=== PROPORTION TEST REFERENCE TABLE ===\n")
-cat("Two-proportion test, α = 0.05, power = 0.80\n\n")
 
 p2_fixed <- 0.50  # Baseline proportion
 differences <- c(0.05, 0.10, 0.15, 0.20, 0.25, 0.30)
@@ -461,7 +407,6 @@ ggplot(baseline_data, aes(x = baseline_p, y = sample_size)) +
 # Comparing Different Scenarios
 # ---------------------------------------------------------------------------
 
-cat("\n=== COMPARING PROPORTION TEST SCENARIOS ===\n\n")
 
 scenarios <- data.frame(
   Scenario = c("High baseline", "Mid baseline", "Low baseline"),
