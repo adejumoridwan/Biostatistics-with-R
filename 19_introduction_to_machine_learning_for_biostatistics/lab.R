@@ -258,7 +258,10 @@ rpart.plot(tree_model,
            extra = 101,
            under = TRUE,
            faclen = 0,
+           cex = 0.7,
            main = "Decision Tree for Heart Disease Prediction")
+
+
 
 # Variable importance
 var_imp <- tree_model$variable.importance
@@ -523,75 +526,3 @@ summary(cv_results)
 bwplot(cv_results, metric = "ROC")
 dotplot(cv_results, metric = "ROC")
 
-# =============================================================================
-# 11. PRACTICAL APPLICATION: PREDICTING NEW PATIENTS
-# =============================================================================
-
-
-# Create new patient profiles
-new_patients <- tibble(
-  patient_id = 1:3,
-  age = c(45, 62, 58),
-  sex = c("Male", "Female", "Male"),
-  chest_pain_type = c("Atypical", "Asymptomatic", "Typical"),
-  resting_bp = c(120, 140, 130),
-  cholesterol = c(200, 280, 240),
-  fasting_bs = c("Normal", "High", "Normal"),
-  max_heart_rate = c(160, 135, 145),
-  exercise_angina = c("No", "Yes", "No"),
-  st_depression = c(0.5, 2.1, 1.0),
-  num_major_vessels = c(0, 2, 1)
-)
-
-# Preprocess new patients
-new_patients_processed <- new_patients %>%
-  mutate(
-    sex_male = ifelse(sex == "Male", 1, 0),
-    cp_typical = ifelse(chest_pain_type == "Typical", 1, 0),
-    cp_atypical = ifelse(chest_pain_type == "Atypical", 1, 0),
-    cp_nonanginal = ifelse(chest_pain_type == "Non-anginal", 1, 0),
-    fasting_bs_high = ifelse(fasting_bs == "High", 1, 0),
-    exercise_angina_yes = ifelse(exercise_angina == "Yes", 1, 0)
-  ) %>%
-  select(patient_id, all_of(features))
-
-# Make predictions with all models
-new_X <- new_patients_processed %>% select(-patient_id)
-
-# KNN predictions (need to scale first)
-new_X_scaled <- predict(preproc, new_X)
-knn_new_pred <- knn(train = X_train_scaled,
-                    test = new_X_scaled,
-                    cl = y_train,
-                    k = best_k)
-
-# Tree predictions
-tree_new_pred <- predict(tree_pruned, new_X, type = "class")
-tree_new_prob <- predict(tree_pruned, new_X, type = "prob")[, 2]
-
-# Random Forest predictions
-rf_new_pred <- predict(rf_final, new_X, type = "class")
-rf_new_prob <- predict(rf_final, new_X, type = "prob")[, 2]
-
-# Combine results
-predictions_summary <- new_patients %>%
-  mutate(
-    KNN_Prediction = knn_new_pred,
-    Tree_Prediction = tree_new_pred,
-    Tree_Probability = round(tree_new_prob, 3),
-    RF_Prediction = rf_new_pred,
-    RF_Probability = round(rf_new_prob, 3)
-  )
-
-print(predictions_summary)
-
-# =============================================================================
-# Save the best model for future use
-# =============================================================================
-
-# Save the model
-saveRDS(rf_final, "heart_disease_rf_model.rds")
-
-# To load later:
-loaded_model <- readRDS("heart_disease_rf_model.rds")
-#predictions <- predict(loaded_model, new_data)
